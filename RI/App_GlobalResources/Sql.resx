@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="sqlAllInspections" xml:space="preserve">
+    <value>SELECT * from RELADMIN.TBLECINSPECTIONTEMPLATE where insptempnumber={0}</value>
+  </data>
+  <data name="sqlAllStandardTemplates" xml:space="preserve">
+    <value>SELECT a.insptempnumber as INSPTASKID,a.TASKDESC,a.Action,a.TOOLS,a.TARGET,a.UPPERLIMIT,a.LOWERLIMIT,a.REFERENCEMATERIAL,a.RESPONSE,a.OPFLAG,a.FREQDESC,a.ROUTEDESC,a.EQUIPCLASS,a.EQUIPTYPE from reladmin.ecinspecttemp_dtl_vw a </value>
+  </data>
+  <data name="sqlArea" xml:space="preserve">
+    <value> Select Distinct SubArea From tblRISuperArea order by SubArea</value>
+  </data>
+  <data name="sqlBusUnit" xml:space="preserve">
+    <value>Select Distinct RISuperArea From tblRISuperArea Order By RISuperArea</value>
+  </data>
+  <data name="sqlBusUnitBySite" xml:space="preserve">
+    <value>Select Distinct RISuperArea From tblRISuperArea a,refsite b where a.bustype=b.bustype and b.siteid='{0}' Order By RISuperArea</value>
+  </data>
+  <data name="sqlCurrentInspection" xml:space="preserve">
+    <value>SELECT TASKDESC,Taskid, Action, TOOLS, TARGET,UPPERLIMIT, LOWERLIMIT, REFERENCEMATERIAL  , RESPONSE,OPFLAG, FREQDESC, ROUTEDESC,ROUTESEQID,ROUTETYPE,FREQCODE,EQUIPCLASS,EQUIPTYPE FROM reladmin.ecroute_dtl_vw  where Equipmentid='{0}' and siteid='{1}' </value>
+  </data>
+  <data name="sqlCurrentInspectionExcel" xml:space="preserve">
+    <value>SELECT distinct SiteName as "Facility", EquipmentID as "Functional Location", EquipmentDesc as "Equipment Description" ,equipclass as "Equipment Class", equiptype as "Equipment Type",criticality as "Criticality" , TASKDESC as "Task Description",Taskid as "Task ID", Action as "Action", TOOLS as "Tools", TARGET as "Target",UPPERLIMIT as "Upper Limit", LOWERLIMIT as "Lower Limit", REFERENCEMATERIAL as "Reference Material"  , RESPONSE as "Response",OPFLAG as "UP?", FREQDESC as "Frequency Description", ROUTEDESC as "Route Description",ROUTETYPE as "Route Type",FREQCODE as "Frequency Code",ROUTESEQID FROM reladmin.ecroute_dtl_vw a,refSite c  where a.EquipmentID='{0}' and  a.siteid='{1}'  and a.siteid = c.siteid </value>
+  </data>
+  <data name="sqlDefaultDivision" xml:space="preserve">
+    <value>select DIVISION from REFSITE,REFEMPLOYEE WHERE REFSITE.SITEID = REFEMPLOYEE.SITEID AND USERNAME='{0}'</value>
+  </data>
+  <data name="sqlEditTemplates" xml:space="preserve">
+    <value>SELECT A.Taskid,A.TASKDESC, A.Action, A.TOOLS, A.TARGET,A.UPPERLIMIT, A.LOWERLIMIT, A.REFERENCEMATERIAL  , A.RESPONSE,A.OPFLAG, a.FREQDESC, a.ROUTEDESC,a.ROUTESEQID,a.FREQCODE,a.ROUTETYPE,a.EQUIPCLASS,a.EQUIPTYPE,a.Equipmentid,a.siteid FROM reladmin.ecroute_dtl_vw A where a.Equipmentid='{0}' and a.siteid='{1}' and a.routeseqid='{2}'</value>
+  </data>
+  <data name="sqlEquipClass" xml:space="preserve">
+    <value>select distinct equipclass as equipclass from refequipment where equipclass &lt;&gt; ' ' order by equipclass</value>
+  </data>
+  <data name="sqlEquipSize" xml:space="preserve">
+    <value>select distinct equipsize from tblecinspectiontemplate where equipsize &lt;&gt;' ' order by equipsize</value>
+  </data>
+  <data name="sqlEquipType" xml:space="preserve">
+    <value>select distinct equiptype from refequipment where equiptype &lt;&gt; ' ' order by equiptype</value>
+  </data>
+  <data name="sqlFacility" xml:space="preserve">
+    <value>Select Distinct Siteid, SiteName From refSite Where BusType = 'PM' and Inactive_Flag = 'N' Order By SiteName</value>
+  </data>
+  <data name="sqlFreqDesc" xml:space="preserve">
+    <value>select distinct Freqcode,FreqDesc from RELADMIN.REFFREQUENCY  order by FREQDESC</value>
+  </data>
+  <data name="sqlInspectionEquipmentClass" xml:space="preserve">
+    <value>SELECT distinct a.EQUIPClass from reladmin.ecinspecttemp_dtl_vw a where a.EQUIPClass &lt;&gt; ' ' order by a.EQUIPClass </value>
+  </data>
+  <data name="sqlInspectionHeader" xml:space="preserve">
+    <value>SELECT distinct '{2}' as "Facility" ,EquipmentID as "Functional Location", EquipmentDesc as "Equipment Description" ,equipclass as "Equipment Class", equiptype as "Equipment Type",criticality as "Criticality" FROM refEquipment,refSite Where  EquipmentID='{0}' and refequipment.siteid='{1}'</value>
+  </data>
+  <data name="sqlLine" xml:space="preserve">
+    <value>Select distinct area from refsitearea order by area</value>
+  </data>
+  <data name="sqlLineBySite" xml:space="preserve">
+    <value>Select distinct area from refsitearea a,refsite b where a.siteid=b.siteid and b.siteid='{0}' order by area</value>
+  </data>
+  <data name="sqlManufacturer" xml:space="preserve">
+    <value>select distinct mfg from tblecinspectiontemplate where mfg&lt;&gt;' ' order by mfg</value>
+  </data>
+  <data name="sqlModel" xml:space="preserve">
+    <value>select distinct model from tblecinspectiontemplate where model&lt;&gt;' ' order by model</value>
+  </data>
+  <data name="sqlPPRMachines" xml:space="preserve">
+    <value>SELECT MACH_NUMBER,TRIM(MACH_DESCRIPTION) || '(' || MACH_NUMBER || ')' MACH_DESCRIPTION FROM MACHINE WHERE MACH_NUMBER &lt;&gt; ' ' AND MACH_TYPE &lt;&gt; ' ' ORDER BY MACH_DESCRIPTION,MACH_NUMBER</value>
+  </data>
+  <data name="sqlPPRReasons" xml:space="preserve">
+    <value>select distinct ReportTitle,reportparametertype,ReportParameters from reladmin.refreportdropdowns where reporttitle='Paper Downtime' and reportparametertype in ('Downtime','Paper Loss','Slab Loss')  order by reportparametertype,ReportParameters</value>
+  </data>
+  <data name="sqlPPRSite" xml:space="preserve">
+    <value>SELECT DISTINCT rtrim(s.site) site,substr(name,1,instr(name,',')-1) name FROM SITE.APPLICATION A, SITE.HOST H, SITE.SITE S
+WHERE A.HOSTNAME = H.HOSTNAME AND H.SITE = S.SITE AND (A.HOSTNAME LIKE '%oms%') AND S.ACTIVE = 'Y' ORDER BY name</value>
+  </data>
+  <data name="sqlReportList" xml:space="preserve">
+    <value>select distinct ReportTitle as ReportTitle from reladmin.REFREPORTDROPDOWNS order by ReportTitle</value>
+  </data>
+  <data name="sqlReportSortList" xml:space="preserve">
+    <value>Select distinct r1.reporttitle,REPORTSORTVALUE,REPORTNAME,SORTVALUEORDER,INACTIVE_FLAG  from reladmin.refreportdropdowns r1, reladmin.refreportdetail r2
+where r1.reporttitle=r2.reporttitle ORDER BY SORTVALUEORDER</value>
+  </data>
+  <data name="sqlRouteDescription" xml:space="preserve">
+    <value>select distinct routetype,routedesc from reladmin.REFROUTETYPE order by routedesc</value>
+  </data>
+  <data name="sqlStandardInspectionAllExcel" xml:space="preserve">
+    <value>SELECT distinct SiteName as "Facility", a.insptempnumber as INSPTASKID,a.TASKDESC as "Task Desc",a.Action as "Action", a.TOOLS as "Tools",a.TARGET as "Target",a.UPPERLIMIT as "Upper Limit",a.LOWERLIMIT as "Lower Limit", a.REFERENCEMATERIAL as "Reference Material",a.RESPONSE as "Response",a.OPFLAG as "Up?", a.FREQDESC as "Frequency Description",a.ROUTEDESC as "Route Description",a.EQUIPCLASS as "Equipment Class", a.EQUIPTYPE as "Equipment Type" from reladmin.ecinspecttemp_dtl_vw a,reladmin.refequipment b,refSite c where a.equipclass = b.equipclass and b.siteid=c.siteid</value>
+  </data>
+  <data name="sqlstandardinspectionExcel" xml:space="preserve">
+    <value>SELECT distinct c.SiteName as "Facility",b.EquipmentID as "Functional Location",b.EquipmentDesc as "Equipment Description" , a.equipclass as "Equipment Class",a.equiptype as "Equipment Type",criticality as "Criticality",  a.TASKDESC as "Task Description",a.Action as "Action",a.TOOLS as "Tools",a.TARGET as "Target",  a.UPPERLIMIT as "Upper Limit", a.LOWERLIMIT as "Lower Limit",a.REFERENCEMATERIAL as "Reference Material",  a.RESPONSE as "Response",a.OPFLAG as "UP?",a.FREQDESC as "Frequency Description",  a.ROUTEDESC as "Route Description",ROUTETYPE as "Route Type",FREQCODE as "Frequency Code"  from reladmin.ecinspecttemp_dtl_vw a,reladmin.refequipment b,refSite c  where a.equipclass = b.equipclass and b.siteid=c.siteid  and b.EquipmentID='{0}' and  b.siteid='{1}'</value>
+  </data>
+  <data name="sqlStandardTaskbyEquipClass" xml:space="preserve">
+    <value>SELECT a.insptempnumber as INSPTASKID,a.TASKDESC,a.Action,a.TOOLS,a.TARGET,a.UPPERLIMIT,a.LOWERLIMIT,a.REFERENCEMATERIAL,a.RESPONSE,a.OPFLAG,a.FREQDESC,a.ROUTEDESC,a.EQUIPCLASS,a.EQUIPTYPE from reladmin.ecinspecttemp_dtl_vw a where EQUIPCLASS='{0}'</value>
+  </data>
+  <data name="sqlStandardTemplates" xml:space="preserve">
+    <value>SELECT a.insptempnumber as INSPTASKID,a.TASKDESC,a.Action,a.TOOLS,a.TARGET,a.UPPERLIMIT,a.LOWERLIMIT,a.REFERENCEMATERIAL,a.RESPONSE,a.OPFLAG,a.FREQDESC,a.ROUTEDESC,a.EQUIPCLASS,a.EQUIPTYPE from reladmin.ecinspecttemp_dtl_vw a,reladmin.refequipment b where a.equipclass = b.equipclass and b.equipmentid='{0}' and b.siteid='{1}'</value>
+  </data>
+  <data name="sqlTaskDescription" xml:space="preserve">
+    <value>select distinct Taskid,TASKDESC from RELADMIN.REFINSPECTIONTASK ORDER BY TASKDESC</value>
+  </data>
+  <data name="sqlTasks" xml:space="preserve">
+    <value>SELECT * from reladmin.ecinspecttemp_dtl_vw</value>
+  </data>
+</root>

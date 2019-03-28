@@ -1,0 +1,351 @@
+<%@ Page Language="VB" MasterPageFile="~/RI.master" AutoEventWireup="false" CodeFile="ViewUpdate.aspx.vb"
+    Inherits="RI_ViewUpdate" EnableTheming="true" StylesheetTheme="RIBlackGold" Theme="RIBlackGold"
+    Title="International Paper: Reliability Reporting" Trace="false"  MaintainScrollPositionOnPostback="true" %>
+
+<%@ MasterType VirtualPath="~/RI.master" %>
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="_cphMain" runat="Server">
+
+<script language="javascript">
+    function setLabel(lbl,cb,val){
+        var display='';
+        if (cb.checked==1){
+            display=val;
+        }
+        lbl.value=display;
+    }
+    function unCheckAll(list,count){
+        if (list!=null){
+            var allList = document.getElementById(list.id+'_' + 0);
+            if (allList!=null && event.srcElement.id==allList.id && (allList.parentElement.outerText=='All' ||allList.parentElement.outerText=='No' )){
+                for (var i=1; i<count;i++){  
+                    var rbl = document.getElementById(list.id+'_' + i);                                  
+                    if (rbl != null){           
+                        rbl.checked=false;
+                    }
+                }
+            }
+            else{
+                if (allList!=null && (allList.parentElement.outerText=='All' ||allList.parentElement.outerText=='No' )){
+                    allList.checked=false;
+                }
+            }
+        }
+    }
+    
+    function unCheckNo(list,count){
+        if (list!=null){
+        var selectedList=null;
+            if (event.srcElement.id!=""){
+                selectedList = document.getElementById(event.srcElement.id);
+            }
+            else if(event.srcElement.htmlFor!=""){
+                selectedList = document.getElementById(event.srcElement.htmlFor);
+            }
+            if (selectedList!=null){
+                if (selectedList.parentElement.outerText=="No"){              
+                    for (var i=0; i<count;i++){  
+                        var rbl = document.getElementById(list.id+'_' + i);                                  
+                        if (rbl != null && rbl.id!=selectedList.id){           
+                            rbl.checked=false;
+                        }
+                    }                   
+                }
+                else if(selectedList.parentElement.outerText=="All"){
+                    for (var i=0; i<count;i++){  
+                        var rbl = document.getElementById(list.id+'_' + i);                                  
+                        if (rbl != null && rbl.id!=selectedList.id && rbl.parentElement.outerText!="No"){           
+                            if (selectedList.checked==true)
+                                rbl.checked=true;
+                            else
+                                rbl.checked=false;
+                        }
+                        else if(rbl.parentElement.outerText=="No"){
+                            rbl.checked=false;
+                        }
+                    }     
+                }
+                else{ //Uncheck All and No
+                    for (var i=0; i<count;i++){  
+                        var rbl = document.getElementById(list.id+'_' + i);                                  
+                        if (rbl != null && rbl.id!=selectedList.id && (rbl.parentElement.outerText=="No"||rbl.parentElement.outerText=="All")){           
+                            rbl.checked=false;
+                        }                        
+                    }     
+                }
+            }
+           
+        }
+    }
+    function checkAll(list,count){
+       unCheckNo(list,count);
+    }
+    
+    function CheckBoxToRadio(list,count){
+        var obj = window.event.srcElement;
+        var selectedId;
+        if (obj.id==""){selectedId=obj.htmlFor;}
+        else{selectedId=obj.id}
+         if (list!=null){
+            
+            var cbl = document.getElementById (selectedId);
+            if (cbl !=null){
+                var curValue=cbl.checked;
+            }
+            var allList = document.getElementById(list.id+'_' + 0);
+            for (var i=0;i<count;i++){
+                var rbl = document.getElementById(list.id+'_' + i);                                  
+                if (rbl != null){           
+                    rbl.checked=false;
+                }
+            }   
+            //var cbl = document.getElementById (event.srcElement.id);
+            if (cbl !=null){
+                cbl.checked=curValue;
+            }
+         }
+            
+    }
+    function UnselectRadio(rd,count){
+        if (rd!=null){           
+            for (var i=0; i<count;i++){
+                var rbl = document.getElementById(rd.id+'_' + i);    
+                if (rbl != null && event.srcElement.id==rbl.id){           
+                    if (rbl.checked==true){rbl.checked=false}
+                 }
+            }
+        }
+    }
+</script>
+
+<Asp:UpdatePanel ID="_upViewScreen" runat="server"  EnableViewState="true" updateMode="conditional">
+    <ContentTemplate>  
+    
+    <%--<div style="TEXT-ALIGN: center" >--%>
+     <asp:Table ID="_tblbutton1"  runat="server">
+   <asp:TableRow>
+   <asp:TableCell Width="40%" >
+   </asp:TableCell>
+   <asp:TableCell Width="60%" >
+    <asp:Button ID="_btnViewUpdate1"  OnClick="_btnViewUpdate_Click" Text="View/Update" runat="server" />
+    <asp:Button ID="_btnExcel1"  Text="Excel" runat="server" />
+    </asp:TableCell></asp:TableRow></asp:Table>
+    
+    <IP:SiteLocation ID="_SiteLocation" runat="server"  FacilityAutoPostBack="true" />
+   
+    
+    <IP:DateRange ID="_DateRange"  runat="server" />
+
+    
+     <IP:IncidentType ID="_IncidentType"  runat="server" DisplayMode="Search"  SearchMode="ORStatement" />   
+  
+    <asp:Table ID="_tblRCFAStatus" runat="server"  CellPadding="2"
+        CellSpacing="2" BackColor="white" Style="width: 98%" EnableViewState="true">
+        <asp:TableHeaderRow   CssClass="Header" >
+            <asp:TableHeaderCell  Width="60%"  HorizontalAlign="left">
+                <asp:Label ID="_lblRCFAStatus" runat="server" EnableViewState="false" Text="<%$ Resources:Shared,lblRCFAStatus %>"
+                  SkinID="LabelWhite"  ></asp:Label>
+            </asp:TableHeaderCell>
+            <asp:TableHeaderCell Width="40%"  HorizontalAlign="left">
+                <asp:Label ID="_lblActionDue"  runat="server" EnableViewState="false" Text="Action Due"
+               SkinID="LabelWhite" ></asp:Label>
+            </asp:TableHeaderCell>
+        </asp:TableHeaderRow>
+        <asp:TableRow CssClass="Border">
+            <asp:TableCell CssClass="Border">
+                <asp:CheckBoxList ID="_cblRCFAStatus" runat="server" RepeatDirection="Vertical" RepeatColumns="3"  >
+                <asp:ListItem Text="All" Value="All">
+                    </asp:ListItem>
+                    <asp:ListItem Text="Unassigned" Value="Unassigned" >
+                    </asp:ListItem>
+                    <asp:ListItem Text="Open" Value="Open" >
+                    </asp:ListItem>
+                    <asp:ListItem Text="Analysis in Progress" Value="Analysis in Progress" >
+                    </asp:ListItem>
+                    <asp:ListItem Text="Analysis Complete" Value="Analysis Complete" >
+                    </asp:ListItem>
+                    <asp:ListItem Text="Analysis & Actions Complete" Value="Analysis & Actions Complete" >
+                    </asp:ListItem>
+                </asp:CheckBoxList>
+            </asp:TableCell>
+            
+            <asp:TableCell CssClass="Border">
+                <asp:CheckBoxList ID="_cblActionDue" runat="server" RepeatDirection="Vertical" RepeatColumns="3">
+                    <asp:ListItem Text="All" Value="All" >
+                    </asp:ListItem>
+                    <asp:ListItem Text="Overdue" Value="Overdue" >
+                    </asp:ListItem>
+                    <asp:ListItem Text="Next 7 Days" Value="Next 7 Days" >
+                    </asp:ListItem>
+                    <asp:ListItem Text="Next 14 Days" Value="Next 14 Days" >
+                    </asp:ListItem>
+                    <asp:ListItem Text="Next 30 Days" Value="Next 30 Days" >
+                    </asp:ListItem>
+                </asp:CheckBoxList>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+    
+    <IP:IncidentClassification runat="server" ID="_IncidentClassification" AutoPostBack="false" />
+    
+ 
+        <asp:Table ID="_tblRootCauses" runat="server" CellPadding="2" CellSpacing="2"
+        BackColor="white" Style="width: 98%" EnableViewState="true">
+        <%--<asp:TableHeaderRow CssClass="Header">
+            <asp:TableHeaderCell ColumnSpan="3" HorizontalAlign="left">
+                <asp:Label ID="_lblRootCauses" runat="server" EnableViewState="false" Text="<%$ Resources:Shared,lblRootCauses %>"
+                    SkinID="LabelWhite"></asp:Label>
+            </asp:TableHeaderCell>
+        </asp:TableHeaderRow>--%>
+        <asp:TableRow CssClass="Border">
+            <asp:TableCell Width="30%" >
+                <asp:Label ID="_lblPhysicalCauses" runat="server" Text="<%$ Resources:Shared,lblPhysicalCauses %>">
+                </asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:DropDownList ID="_ddlPhysicalCauses" runat="server"   Width="215">
+                    </asp:DropDownList>
+            </asp:TableCell>
+            <asp:TableCell Width="30%">
+                <asp:Label ID="_lblLatentCauses" runat="server" Text="<%$ Resources:Shared,lblLatentCauses %>"
+                    EnableViewState="false"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:DropDownList ID="_ddlLatentCauses" runat="server"  Width="225" >
+                    </asp:DropDownList>
+            </asp:TableCell>
+            <asp:TableCell Width="40%">
+                <asp:Label ID="_lblHumanCauses" runat="server" Text="<%$ Resources:Shared,lblHumanCauses %>"
+                    EnableViewState="false"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:DropDownList ID="_ddlHumanCauses" runat="server"  Width="275">
+                    </asp:DropDownList>
+            </asp:TableCell>
+        </asp:TableRow>
+        <%--<asp:TableRow CssClass="Border">
+            <asp:TableCell  Width="33%">
+                <asp:Panel ID="_pnlPhysicalCauses" runat="server" >
+                    <asp:DropDownList ID="_ddlPhysicalCauses" runat="server" >
+                    </asp:DropDownList>
+                </asp:Panel>
+            </asp:TableCell>
+            <asp:TableCell Width="33%">
+                <asp:Panel ID="_pnlLatentCauses" runat="server"  >                
+                  <asp:DropDownList ID="_ddlLatentCauses" runat="server" >
+                    </asp:DropDownList>
+                </asp:Panel>
+            </asp:TableCell>
+            <asp:TableCell Width="33%">
+                <asp:Panel ID="_pnlHumanCauses" runat="server"  >                
+                  <asp:DropDownList ID="_ddlHumanCauses" runat="server" >
+                    </asp:DropDownList>
+                </asp:Panel>
+            </asp:TableCell>
+        </asp:TableRow>--%>
+    </asp:Table>
+        
+    <asp:Table ID="_tblMiscellaneous" runat="server"  CellPadding="2"
+        CellSpacing="2" BackColor="white" Style="width: 98%" EnableViewState="true">
+        <%--<asp:TableHeaderRow CssClass="Header">
+            <asp:TableHeaderCell ColumnSpan="3" HorizontalAlign="left">
+                <asp:Label ID="_lblOther" runat="server" EnableViewState="false" Text="<%$ Resources:Shared,lblOther %>"
+                    SkinID="LabelWhite"></asp:Label>
+            </asp:TableHeaderCell>
+        </asp:TableHeaderRow>--%>
+        <asp:TableRow CssClass="Border">
+            <asp:TableCell Width="30%">
+                <asp:Label ID="_lblRINumber" runat="server" Text="<%$ Resources:Shared,lblRINumber %>">
+                </asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:TextBox runat="server" ID="_txtRINumber" ></asp:TextBox>
+             </asp:TableCell>
+            <asp:TableCell Width="30%">
+                <asp:Label ID="_lblCrew" runat="server" Text="<%$ Resources:Shared,lblCrew %>"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:DropDownList runat="server" ID="_ddlCrew" Width="100">
+                </asp:DropDownList>
+            </asp:TableCell>
+            <asp:TableCell Width="40%" >
+                <asp:Label ID="_lblRCFAActionLeader" runat="server" Text="<%$ Resources:Shared,lblRCFAActionLeader %>"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList runat="server" ID="_ddlRCFALeader">
+                </asp:DropDownList></asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow CssClass="Border" >
+            <asp:TableCell Width="30%">
+            <asp:Label ID="_lblTitleSearch" runat="server" Text="<%$ Resources:Shared,lblTitleSearch %>"></asp:Label>
+                &nbsp;&nbsp;<asp:TextBox runat="server" ID="_txtTitleSearch"></asp:TextBox>
+                
+            </asp:TableCell>
+            <asp:TableCell Width="30%">
+                <asp:Label ID="_lblShift" runat="server" Text="<%$ Resources:Shared,lblShift %>"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList runat="server" ID="_ddlShift" Width="100">
+                </asp:DropDownList></asp:TableCell>
+            <asp:TableCell Width="40%">
+                <asp:Label ID="_lblFinancialImpact" runat="server" Text="<%$ Resources:Shared,lblFinancialImpact %>"></asp:Label>
+              &nbsp;&nbsp;<asp:TextBox runat="server" ID="_txtFinancialImpact"></asp:TextBox>
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
+     
+   <asp:Table  runat="server">
+   <asp:TableRow>
+   <asp:TableCell Width="40%" >
+    <asp:Label ID="_lblRecordCount" runat="server" Text="Record Count: "  BackColor="Black"  ForeColor="White" ></asp:Label>
+   
+    <asp:Label ID="_lblRecCount" runat="server"  Text="0"  BackColor="Black"  ForeColor="White" ></asp:Label>
+    </asp:TableCell>
+<%--    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+--%>    
+    <asp:TableCell Width="60%">
+    <asp:Button ID="_btnViewUpdate" Text="View/Update"  runat="server"  />
+    <asp:Button ID="_btnExcel" Text="Excel" runat="server" />
+    
+   </asp:TableCell></asp:TableRow></asp:Table>
+    <Asp:UpdatePanel ID="_upView" runat="server" EnableViewState="true" updateMode="always">
+    <ContentTemplate>  
+    <asp:GridView   Width="100%"  CssClass="Border"  BorderColor="Black"  BorderWidth="2" ID="_gvIncidentListing" runat="server" AutoGenerateColumns="False" DataKeyNames="RINUMBER" EnableViewState="false"  AllowSorting="true"  ShowFooter="true">
+        <Columns>
+            <asp:BoundField DataField="EVENTDATE"  HeaderText="Event Date" SortExpression="EVENTDATE"  DataFormatString="{0:d}" HtmlEncode="false"  />
+            <asp:BoundField DataField="SITENAME" HeaderText="Site" SortExpression="SITENAME" />
+            <asp:BoundField DataField="RISUPERAREA" HeaderText="Business Unit" SortExpression="RISUPERAREA" />
+            <asp:BoundField DataField="SUBAREA" HeaderText="Area" SortExpression="SUBAREA" />
+            <asp:BoundField DataField="AREA" HeaderText="Line/System" SortExpression="AREA" />
+            <asp:BoundField DataField="RINUMBER" HeaderText="RI Number" SortExpression="RINUMBER" />
+            <asp:HyperLinkField DataTextField="INCIDENT" HeaderText="Incident Title" SortExpression="INCIDENT" DataNavigateUrlFields="RINUMBER"   DataNavigateUrlFormatString="~/RI/EnterNewRI.aspx?RINumber={0}"  Target="_self" />
+            <asp:HyperLinkField DataTextField="RCFA_TYPE" HeaderText="Type" SortExpression="RCFA_TYPE" DataNavigateUrlFields="RINUMBER"   DataNavigateUrlFormatString="../../CEReporting/frmCrystalReport.aspx?Report=ExecutiveSummary&RINumber={0}"  Target="_blank" />
+<%--            <asp:HyperLinkField DataTextField="RCFA_TYPE" HeaderText="Type" SortExpression="RCFA_TYPE" DataNavigateUrlFields="RINUMBER"   DataNavigateUrlFormatString="../../CEReporting/frmCrystalReport.aspx?Report=ExecutiveSummary?RINumber={0}"  Target="_blank" />
+--%><%--            <asp:BoundField DataField="RCFA_TYPE" HeaderText="Type" SortExpression="RCFA_TYPE" HtmlEncode="true"  />
+--%>            <asp:BoundField DataField="COST" HeaderText="Cost" SortExpression="COST"  ItemStyle-HorizontalAlign="Right" DataFormatString="{0:c0}" HtmlEncode="false" />
+            <asp:BoundField DataField="TOTCOST" HeaderText="Financial Impact" SortExpression="TOTCOST" ItemStyle-HorizontalAlign="Right" DataFormatString="{0:c0}" HtmlEncode="false"  />
+        </Columns>       
+         <footerstyle  HorizontalAlign="Right"  Font-Bold="true" />
+       </asp:GridView>
+    </ContentTemplate>
+    </Asp:UpdatePanel>
+   
+    
+    <%--<Asp:UpdatePanel ID="UpdatePanel1" runat="server" EnableViewState="true" updateMode="always">
+    <ContentTemplate> --%> 
+    <ajaxToolkit:ModalPopupExtender ID="_mpeExcelSelect" runat="server" TargetControlID="_btnExcel"
+            PopupControlID="_pnlExcelSelect" BackgroundCssClass="modalBackground" DropShadow="true"
+            OkControlID="_btnCancel" CancelControlID="_btnCancel">
+        </ajaxToolkit:ModalPopupExtender>
+        
+       <asp:table  runat="server">
+           <asp:TableRow >
+                <asp:TableCell >
+    
+        <asp:Panel ID="_pnlExcelSelect" runat="server" CssClass="modalPopup" Width="800" Height="200"
+                        Style="display: none;">
+       
+        <IP:SwapListBox ID="_sblSelectColumns"  runat="server" />
+
+         <p style="text-align: center;">
+         
+          <asp:Button ID="_btnOK"   runat="server" Text="View Excel"></asp:Button>
+          <asp:Button ID="_btnCancel" runat="server" Text="Cancel"></asp:Button>
+        </p>
+          </asp:Panel>
+          </asp:TableCell></asp:TableRow></asp:table>  
+          </ContentTemplate>
+          </Asp:UpdatePanel>           
+</asp:Content>

@@ -1,0 +1,587 @@
+Imports RI
+Imports RI.SharedFunctions
+Imports Devart.Data.Oracle
+Partial Class RI_ViewUpdate
+    Inherits RIBasePage
+
+    Dim ViewUpdate As clsViewUpdate
+    Dim ExcelSelect As clsExcelSelect
+    Dim HoldSortExpression As String
+
+    Public Property SearchSortDirection() As String
+        Get
+            Return Session("SearchSortDirection")
+        End Get
+        Set(ByVal value As String)
+            Session("SearchSortDirection") = value
+        End Set
+    End Property
+    Public Property RCFAStatus() As String
+        Get
+            Return RI.SharedFunctions.GetCheckBoxValues(_cblRCFAStatus)
+        End Get
+        Set(ByVal value As String)
+            RI.SharedFunctions.SetCheckBoxValues(_cblRCFAStatus, value)
+        End Set
+    End Property
+    Public Property ActionDue() As String
+        Get
+            Return RI.SharedFunctions.GetCheckBoxValues(_cblActionDue)
+        End Get
+        Set(ByVal value As String)
+            RI.SharedFunctions.SetCheckBoxValues(_cblActionDue, value)
+        End Set
+    End Property
+
+    Protected Sub Page_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Init
+        'Response.Redirect("../../riview.asp", True)
+        Master.SetBanner("View Reliability Incidents")
+
+    End Sub
+    Function GetUserid() As String
+        Dim userProfile As RI.CurrentUserProfile = Nothing
+        userProfile = RI.SharedFunctions.GetUserProfile
+        Return userProfile.Username
+    End Function
+
+
+    Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim userProfile As RI.CurrentUserProfile = RI.SharedFunctions.GetUserProfile
+        Dim clsSearch As clsViewSearch = Session("clsSearch")
+
+        If Page.IsPostBack Then
+            ViewUpdate = New clsViewUpdate(_SiteLocation.FacilityValue, userProfile.InActiveFlag, _SiteLocation.DivisionValue)
+            Me._lblRecCount.Text = "No Records Found"
+            'Me._SiteLocation.DivisionValue = 
+        Else
+            Me._lblRecCount.Visible = False
+            Me._lblRecordCount.Visible = False
+            'ViewUpdate = New clsViewUpdate("TI", "N", "P&C Papers")
+            If clsSearch IsNot Nothing Then
+                ViewUpdate = New clsViewUpdate(clsSearch.Facility, userProfile.InActiveFlag, clsSearch.Division)
+            Else
+                ViewUpdate = New clsViewUpdate(userProfile.DefaultFacility, userProfile.InActiveFlag, userProfile.DefaultDivision)
+            End If
+        End If
+        'Me._cblRCFAStatus.Attributes.Add(")
+
+
+        'Me._DateRange.EndDate = Now
+        If ViewUpdate IsNot Nothing Then
+            Me._SiteLocation.Facility = ViewUpdate.Facility
+            Me._SiteLocation.BusinessUnit = ViewUpdate.BusinessUnit
+            Me._SiteLocation.Area = ViewUpdate.Area
+            Me._SiteLocation.Line = ViewUpdate.Line
+            Me._SiteLocation.LineBreak = ViewUpdate.LineBreak
+            Me._SiteLocation.Division = ViewUpdate.Division
+            Me._SiteLocation.DataBind()
+            Me._IncidentClassification.TypeData = ViewUpdate.Type
+            Me._IncidentClassification.CauseData = ViewUpdate.Cause
+            Me._IncidentClassification.ProcessData = ViewUpdate.Process
+            Me._IncidentClassification.ComponentData = ViewUpdate.Component
+            Me._IncidentClassification.PreventionData = ViewUpdate.Prevention
+            Me._IncidentClassification.TriggerData = ViewUpdate.Trigger
+            Me._IncidentClassification.DataBind()
+            BindList(Me._ddlRCFALeader, ViewUpdate.Person, False, True)
+            BindList(Me._ddlCrew, ViewUpdate.Crew, False, True)
+            BindList(Me._ddlShift, ViewUpdate.Shift, False, True)
+            BindList(Me._ddlPhysicalCauses, ViewUpdate.PhysicalCauses, False, True)
+            BindList(Me._ddlLatentCauses, ViewUpdate.LatentCauses, False, True)
+            BindList(Me._ddlHumanCauses, ViewUpdate.HumanCauses, False, True)
+        End If
+
+        'RCFA Status
+
+
+        If Not Page.IsPostBack Then
+            _cblRCFAStatus.Attributes.Add("onClick", "checkAll(this,6);")
+            _cblActionDue.Attributes.Add("onClick", "checkAll(this,5);")
+            Me._btnExcel1.OnClientClick = "document.getElementById('" & Me._btnExcel.ClientID & "').click();return false;"
+            If userProfile IsNot Nothing Then
+                _SiteLocation.FacilityValue = userProfile.DefaultFacility
+                _SiteLocation.DivisionValue = userProfile.DefaultDivision
+            End If
+            'SetSelectedValue()
+        Else
+            Dim dr As Data.DataTableReader
+            dr = ViewUpdate.FacilityDivision.DataSource
+            Do While dr.Read
+                If dr.Item("Siteid") = _SiteLocation.FacilityValue Then
+                    _SiteLocation.DivisionValue = dr.Item("Division")
+                End If
+            Loop
+        End If
+        _btnViewUpdate1.OnClientClick = "Javascript:ScrollControlInView('" & _btnViewUpdate.ClientID & "');"
+        _btnViewUpdate.OnClientClick = "Javascript:ScrollControlInView('" & _btnViewUpdate.ClientID & "');"
+
+    End Sub
+
+
+    Protected Sub _btnViewUpdate_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles _btnViewUpdate.Click
+        Dim clsSearch As New clsViewSearch
+        Dim CallSource As String = String.Empty
+        Try
+
+       
+            SearchSortDirection = "Asc"
+            clsSearch.SelectStatement = " * "
+            CallSource = "View"
+            CallDatabase("Facility,Event Date,", CallSource)
+            clsSearch = Session.Item("clsSearch")
+            Me._gvIncidentListing.DataSource = clsSearch.Search
+            Me._gvIncidentListing.DataBind()
+            Me._lblRecCount.Visible = True
+            Me._lblRecordCount.Visible = True
+
+        Catch ex As Exception
+            Throw
+        End Try
+        'Web.UI.ScriptManager.RegisterClientScriptBlock(Me, Page.GetType, "scrollcontrolview", "ScrollControlInView('" & _btnViewUpdate.ClientID & "');", True)
+        'Page.MaintainScrollPositionOnPostBack = False
+    End Sub
+    Private Sub CallDatabase(ByVal Orderby As String, ByVal CallSource As String)
+
+        Dim sqlString As String
+        Dim sqlWhere As String = String.Empty
+        Dim sqlOrderby As String = String.Empty
+        Dim AndOr As String = String.Empty
+        Dim clsSearch As New clsViewSearch
+
+        With Me._SiteLocation
+            If Orderby.Length = 0 Then
+                Orderby = "Facility,Event Date,"
+            Else
+                If CallSource = "View" Or CallSource = "Sort" Then
+                    clsSearch.SelectStatement = ""
+                Else
+                    clsSearch.SelectStatement = Me._sblSelectColumns.SelectedValue & ","
+                End If
+            End If
+            If Not (.DivisionValue = "") Then
+                clsSearch.Division = .DivisionValue
+            End If
+            If Not (.FacilityValue = "" Or .FacilityValue = "AL") Then
+                clsSearch.Facility = .FacilityValue
+                _gvIncidentListing.Columns(1).Visible = False
+            Else
+                _gvIncidentListing.Columns(1).Visible = True
+            End If
+            If Not (.BusinessUnitValue = "") Then
+                clsSearch.BusinessUnit = .BusinessUnitValue
+            End If
+            If Not (.AreaValue = "") Then
+                clsSearch.Area = .AreaValue
+            End If
+            If Not (.LineValue = "") Then
+                clsSearch.Line = .LineValue
+            End If
+            If Not (.LineBreakValue = "") Then
+                clsSearch.LineBreak = .LineBreakValue
+            End If
+        End With
+        If Me._DateRange.StartDate.Length > 0 Then
+            clsSearch.StartDate = _DateRange.StartDate
+            clsSearch.EndDate = _DateRange.EndDate
+        End If
+
+        If Not (Me._cblRCFAStatus.SelectedValue = "") Then
+            clsSearch.RCFAStatus = RI.SharedFunctions.GetCheckBoxValues(_cblRCFAStatus)
+            'clsSearch.RCFAStatus = _cblRCFAStatus.SelectedValue
+        End If
+
+        If Not (Me._cblActionDue.SelectedValue = "") Then
+            clsSearch.ActionDue = RI.SharedFunctions.GetCheckBoxValues(_cblActionDue)
+        End If
+
+        If Not (Me._txtRINumber.Text = "") Then
+            clsSearch.RINumber = _txtRINumber.Text
+        End If
+
+        If Not (Me._ddlRCFALeader.SelectedValue = "") Then
+            clsSearch.RCFALeader = _ddlRCFALeader.SelectedValue
+        End If
+
+        If Not (Me._ddlCrew.SelectedValue = "") Then
+            clsSearch.Crew = _ddlCrew.SelectedValue
+        End If
+
+        If Not (Me._ddlShift.SelectedValue = "") Then
+            clsSearch.Shift = _ddlShift.SelectedValue
+        End If
+
+        If Not (Me._txtTitleSearch.Text = "") Then
+            clsSearch.Title = UCase(Trim(Me._txtTitleSearch.Text))
+        End If
+
+        If Not (Me._txtFinancialImpact.Text = "") Then
+            clsSearch.FinancialImpact = Me._txtFinancialImpact.Text
+        End If
+
+        If Not (Me._IncidentType.RTS = "") Then
+            clsSearch.RTS = Me._IncidentType.RTS
+        End If
+
+        If Not (Me._IncidentType.Recordable = "") Then
+            clsSearch.Recordable = Me._IncidentType.Recordable
+        End If
+
+        If Not (Me._IncidentType.RCFA = "") Then
+            clsSearch.RCFA = Me._IncidentType.RCFA
+        End If
+
+        If Not (Me._IncidentType.Quality = "") Then
+            clsSearch.Quality = Me._IncidentType.Quality
+        End If
+
+        If Not (Me._IncidentType.Safety = "") Then
+            clsSearch.Safety = Me._IncidentType.Safety
+        End If
+
+        If Not (Me._IncidentType.Chronic = "") Then
+            clsSearch.Chronic = Me._IncidentType.Chronic
+        End If
+
+        If Not (Me._IncidentType.CertifiedKill = "") Then
+            clsSearch.CertifiedKill = Me._IncidentType.CertifiedKill
+        End If
+
+        If Not (Me._IncidentClassification.TriggerValue = "") Then
+            clsSearch.Trigger = Me._IncidentClassification.TriggerValue
+        End If
+
+        If Not (Me._IncidentClassification.TypeValue = "") Then
+            clsSearch.Type = Me._IncidentClassification.TypeValue
+        End If
+
+        If Not (Me._IncidentClassification.CauseValue = "") Then
+            clsSearch.Cause = Me._IncidentClassification.CauseValue
+        End If
+        If Not (Me._IncidentClassification.ProcessValue = "") Then
+            clsSearch.Process = Me._IncidentClassification.ProcessValue
+        End If
+        If Not (Me._IncidentClassification.ComponentValue = "") Then
+            clsSearch.Component = Me._IncidentClassification.ComponentValue
+        End If
+        If Not (Me._IncidentClassification.PreventionValue = "") Then
+            clsSearch.Prevention = Me._IncidentClassification.PreventionValue
+        End If
+        If Not (Me._ddlPhysicalCauses.SelectedValue = "") Then
+            clsSearch.PhysicalCauses = _ddlPhysicalCauses.SelectedValue
+        End If
+        If Not (Me._ddlLatentCauses.SelectedValue = "") Then
+            clsSearch.LatentCauses = _ddlLatentCauses.SelectedValue
+        End If
+        If Not (Me._ddlHumanCauses.SelectedValue = "") Then
+            clsSearch.HumanCauses = _ddlHumanCauses.SelectedValue
+        End If
+
+        clsSearch.AndOr = Me._IncidentType.SearchMode
+        clsSearch.OrderBy = Orderby
+
+
+        Session.Remove("clsSearch")
+        Session.Add("clsSearch", clsSearch)
+
+
+
+    End Sub
+
+    Protected Sub _gvIncidentListing_DataBound(ByVal sender As Object, ByVal e As System.EventArgs) Handles _gvIncidentListing.DataBound
+
+        If _gvIncidentListing.Rows.Count > 0 Then
+            Dim footerRow As GridViewRow = Me._gvIncidentListing.FooterRow()
+            Dim MyTotCost As Double = Session("totCost")
+            Dim MyTotCostString As String = MyTotCost.ToString("$#,##0;($#,##0);$0")
+            Dim MyTotFinclImpact As Double = Session("totFinclImpact")
+            Dim MyTotFinclImpactString As String = MyTotFinclImpact.ToString("$#,##0;($#,##0);$0")
+
+            footerRow.Cells(7).Text = "Totals"
+            footerRow.Cells(8).Text = MyTotCostString
+            footerRow.Cells(9).Text = MyTotFinclImpactString
+        End If
+
+    End Sub
+
+    Private Sub _gvIncidentListing_RowCreated(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles _gvIncidentListing.RowCreated
+        Dim totCost As Double = 0
+        Dim totFinclImpact As Double = 0
+        Dim row As GridViewRow
+
+
+        If e.Row.RowType = DataControlRowType.Footer Then
+
+            ' Get the number of items in the Rows collection.
+            Dim RecordCount As Integer = _gvIncidentListing.Rows.Count
+            If RecordCount = 0 Then
+                Me._lblRecCount.Text = "No Records Found"
+            Else
+                Me._lblRecCount.Text = RecordCount
+            End If
+            Me._lblRecCount.Visible = True
+            Me._lblRecordCount.Visible = True
+
+
+            If _gvIncidentListing.Rows.Count > 0 Then
+                For Each row In _gvIncidentListing.Rows
+                    totCost = totCost + row.Cells(8).Text
+                    totFinclImpact = totFinclImpact + row.Cells(9).Text
+                Next
+            End If
+            ' If the GridView control contains any records, display 
+            ' the last name of each author in the GridView control.
+            '    If count = 0 Then
+
+            '        .Text = "No Data Found"
+
+            '        Dim row As GridViewRow
+            '        For Each row In AuthorsGridView.Rows
+
+            '            Message.Text &= row.Cells(0).Text & "<br />"
+
+            '        Next
+
+            '    End If
+
+        End If
+        Session.Remove("totCost")
+        Session.Add("totCost", totCost)
+        Session.Remove("totFinclImpact")
+        Session.Add("totFinclImpact", totFinclImpact)
+
+
+
+
+    End Sub
+
+
+
+
+    Private Sub _gvIncidentListing_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles _gvIncidentListing.Sorting
+        Dim Orderby As String = String.Empty
+        Dim CallSource As String = String.Empty
+        Dim sortDir As SortDirection = SortDirection.Ascending
+        Dim clsSearch As clsViewSearch
+        Dim SortExpPrev As String = CType(Session.Item("SortExpPrev"), String)
+
+        If (e.SortExpression = "COST" Or e.SortExpression = "TOTCOST") And e.SortExpression <> SortExpPrev Then
+            Orderby = e.SortExpression & " DESC"
+            Me.SearchSortDirection = "ASC"
+            sortDir = SortDirection.Descending
+        Else
+            If Me.SearchSortDirection = "DESC" And (e.SortExpression Is Nothing Or e.SortExpression = SortExpPrev) Then
+                Orderby = e.SortExpression & " DESC"
+                Me.SearchSortDirection = "ASC"
+                sortDir = SortDirection.Descending
+            Else
+                Orderby = e.SortExpression & " ASC"
+                Me.SearchSortDirection = "DESC"
+                sortDir = SortDirection.Ascending
+            End If
+        End If
+
+        SortExpPrev = e.SortExpression
+
+        Session.Remove("SortExpPrev")
+        Session.Add("SortExpPrev", SortExpPrev)
+
+        CallSource = "Sort"
+        CallDatabase(Orderby, CallSource)
+        clsSearch = Session.Item("clsSearch")
+        Me._gvIncidentListing.DataSource = clsSearch.Search
+        Me._gvIncidentListing.DataBind()
+        RI.SharedFunctions.AddGlyph(_gvIncidentListing, _gvIncidentListing.HeaderRow, e.SortExpression, sortDir)
+
+
+    End Sub
+
+    'Protected Sub _btnExcel_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles _btnExcel.Click
+    ' Dim clsSearch As New clsViewSearch
+    ''clsSearch.SelectStatement = " siteid,eventdate, sitename,business_unit, area, line, linebreak, rinumber, title, cost, financial_impact, division, recordable, rcfa, rcfalevel, rcfatriggerdesc, rcfasafety, rcfaquality, chronic, certifiedkill,crew,shift, type,cause,process,component,prevention,leader,analysiscompdate,actioncompdate,description,safety,quality, rcfa_type, originatingapplication"
+    '   CallDatabase("EVENTDATE")
+
+    '  Web.UI.ScriptManager.RegisterStartupScript(Me, Page.GetType, "pop", "PopupWindow('excel.aspx?id=4','Excel',800,600,'yes','no','yes');", True)
+
+    'End Sub
+
+    Private Sub _pnlExcelSelect_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles _pnlExcelSelect.Load
+        'Dim UserName As RI.CurrentUserProfile
+        Dim clsExcel As New clsExcelSelect(GetUserid())
+        If clsExcel IsNot Nothing Then
+            Dim dr As Data.DataTableReader = clsExcel.ColumnList.DataSource
+            With Me._sblSelectColumns
+                .DataSource = clsExcel.ColumnName.DataSource
+                .DataTextField = clsExcel.ColumnName.DataTextField
+                .DataValueField = clsExcel.ColumnName.DataValueField
+                '.SelectedValue() = "Business_Unit, Area, Line"
+                '.SelectedDataSource = clsExcel.ColumnList.DataSource
+                '.SelectedDataTextField = clsExcel.ColumnList.DataTextField
+                '.SelectedDataValueField = clsExcel.ColumnList.DataValueField
+                .DataBind()
+                dr.Read()
+                If dr.HasRows Then
+                    .SelectedValue() = dr.Item(clsExcel.ColumnList.DataValueField)
+                Else
+                    .SelectedValue() = "RINumber,Event Date,Division,Business_Unit,Area,Line,Line Break,Title,Functional Location,Equip_Description,Recordable,RCFA,Chronic,Certified Kill,Type,Cause,Equip/Process,Prevention,Component,Mill_Equp,Downtime,Repair Cost,Fincl_Impact "
+                    'RINumber "RINumber", DIVISION "Division",SITENAME "Facility",
+                End If
+            End With
+        End If
+    End Sub
+
+    Protected Sub _btnOK_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles _btnOK.Click
+        Dim clsSearch As New clsViewSearch
+        Dim CallSource As String = String.Empty
+        Dim userProfile As RI.CurrentUserProfile = RI.SharedFunctions.GetUserProfile
+
+        ' This code is to repopulate the grid after the excel spreadsheet is displayed.
+        CallSource = "View"
+        CallDatabase("Facility,Event Date,", CallSource)
+        clsSearch = Session.Item("clsSearch")
+        Me._gvIncidentListing.DataSource = clsSearch.Search
+        Me._gvIncidentListing.DataBind()
+
+        clsSearch.AndOr = Me._IncidentType.SearchMode
+        clsSearch.OrderBy = Me._sblSelectColumns.SelectedValue
+        clsSearch.SelectStatement = Me._sblSelectColumns.SelectedValue
+        CallSource = "Excel"
+        CallDatabase(clsSearch.OrderBy, CallSource)
+        UpdateExcelList(userProfile.Username, clsSearch.SelectStatement)
+        Web.UI.ScriptManager.RegisterStartupScript(Me, Page.GetType, "pop", "PopupWindow('excel.aspx?id=4','Excel',800,600,'yes','yes','yes');", True)
+
+
+    End Sub
+
+    Private Sub UpdateExcelList(ByVal User As String, ByVal InSelect As String)
+        Dim paramCollection As New OracleParameterCollection
+        Dim param As New OracleParameter
+        'Dim ds As System.Data.DataSet = Nothing
+        Dim status As String
+        Dim dr As OracleDataReader = Nothing
+        'Check input paramaters
+
+        Try
+
+            param = New OracleParameter
+            param.ParameterName = "in_username"
+            param.OracleDbType = OracleDbType.VarChar
+            param.Direction = Data.ParameterDirection.Input
+            param.Value = User
+            paramCollection.Add(param)
+
+            param = New OracleParameter
+            param.ParameterName = "in_selectlist"
+            param.OracleDbType = OracleDbType.VarChar
+            param.Direction = Data.ParameterDirection.Input
+            param.Value = InSelect
+            paramCollection.Add(param)
+
+            param = New OracleParameter
+            param.ParameterName = "out_status"
+            param.OracleDbType = OracleDbType.Number
+            param.Direction = Data.ParameterDirection.Output
+            paramCollection.Add(param)
+
+            status = RI.SharedFunctions.CallDROraclePackage(paramCollection, "reladmin.riview.excelupdatelist")
+            If status <> "0" Then
+                Throw New Data.DataException("UpdateExcelList")
+            End If
+
+        Catch ex As Exception
+            Throw New Data.DataException("UpdateExcelList", ex)
+        Finally
+            If Not dr Is Nothing Then dr = Nothing
+        End Try
+    End Sub
+
+    Protected Sub Page_PreRender(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.PreRender
+        If Not Page.IsPostBack Then
+            SetSelectedValue()
+        End If
+    End Sub
+    Private Sub SetSelectedValue()
+        Dim clsSearch As clsViewSearch = Session("clsSearch")
+        Dim dr As Data.DataTableReader = Nothing
+        Try
+            RI.SharedFunctions.DisablePageCache(Response)
+            If clsSearch IsNot Nothing Then
+                dr = clsSearch.Search
+                If dr IsNot Nothing Then
+                    If dr.HasRows Then
+                        'Reselect Controls
+                        Me._SiteLocation.FacilityValue = clsSearch.Facility
+                        Me._SiteLocation.BusinessUnitValue = clsSearch.BusinessUnit
+                        Me._SiteLocation.AreaValue = clsSearch.Area
+                        Me._SiteLocation.LineValue = clsSearch.Line
+                        Me._SiteLocation.LineBreakValue = clsSearch.LineBreak
+                        Me._SiteLocation.DivisionValue = clsSearch.Division
+                        Me._IncidentClassification.TypeValue = clsSearch.Type
+                        Me._IncidentClassification.CauseValue = clsSearch.Cause
+                        Me._IncidentClassification.ProcessValue = clsSearch.Process
+                        Me._IncidentClassification.ComponentValue = clsSearch.Component
+                        Me._IncidentClassification.PreventionValue = clsSearch.Prevention
+                        Me._IncidentClassification.TriggerValue = clsSearch.Trigger
+
+                        Me._DateRange.SelectedDateRange = -1
+                        Me._DateRange.StartDate = clsSearch.StartDate
+                        Me._DateRange.EndDate = clsSearch.EndDate
+                        'List remaining controls here
+
+                        Me._ddlRCFALeader.SelectedValue = clsSearch.RCFALeader
+                        Me._ddlCrew.SelectedValue = clsSearch.Crew
+                        Me._ddlShift.SelectedValue = clsSearch.Shift
+                        Me._ddlPhysicalCauses.SelectedValue = clsSearch.PhysicalCauses
+                        Me._ddlLatentCauses.SelectedValue = clsSearch.LatentCauses
+                        Me._ddlHumanCauses.SelectedValue = clsSearch.HumanCauses
+                        Me._txtRINumber.Text = clsSearch.RINumber
+                        Me._txtFinancialImpact.Text = clsSearch.FinancialImpact
+                        Me._txtTitleSearch.Text = clsSearch.Title
+
+                        Me._IncidentType.DisplayMode = ucIncidentTypes.IncidentMode.Search
+                        'Me._IncidentType.SearchMode = clsSearch.AndOr
+
+                        If clsSearch.Chronic IsNot Nothing Then
+                            Me._IncidentType.Chronic = clsSearch.Chronic
+                        End If
+                        If clsSearch.CertifiedKill IsNot Nothing Then
+                            Me._IncidentType.CertifiedKill = clsSearch.CertifiedKill
+                        End If
+                        If clsSearch.RCFA IsNot Nothing Then
+                            Me._IncidentType.RCFA = clsSearch.RCFA
+                        End If
+                        If clsSearch.Recordable IsNot Nothing Then
+                            Me._IncidentType.Recordable = clsSearch.Recordable
+                        End If
+                        If clsSearch.Safety IsNot Nothing Then
+                            Me._IncidentType.Safety = clsSearch.Safety
+                        End If
+                        If clsSearch.Quality IsNot Nothing Then
+                            Me._IncidentType.Quality = clsSearch.Quality
+                        End If
+                        If clsSearch.RTS IsNot Nothing Then
+                            Me._IncidentType.RTS = clsSearch.RTS
+                        End If
+
+                        If clsSearch.RCFAStatus IsNot Nothing Then
+                            Me.RCFAStatus = clsSearch.RCFAStatus
+                        End If
+                        If clsSearch.ActionDue IsNot Nothing Then
+                            Me.ActionDue = clsSearch.ActionDue
+                        End If
+
+
+                        'Display the Search results
+                        Me._gvIncidentListing.DataSource = clsSearch.Search
+                        Me._gvIncidentListing.DataBind()
+                    End If
+                End If
+            Else
+                Me._DateRange.SelectedDateRange = RI_User_Controls_Common_ucDateRange.range.YearToDate
+            End If
+        Catch ex As Exception
+            Throw
+        Finally
+            If dr IsNot Nothing Then dr = Nothing
+            '  If Not dr.IsClosed Then dr.Close()
+        End Try
+    End Sub
+End Class

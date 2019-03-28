@@ -1,0 +1,131 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RIUserDefaults
+</name>
+</assembly>
+<members>
+<member name="T:RIUserDefaults.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:RIUserDefaults.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:RIUserDefaults.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.UserDefaultsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.SiteIdDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.REFPROFILETYPEDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.UserDefaultsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.SiteIdRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.REFPROFILETYPERow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.UserDefaultsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.SiteIdRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaults.REFPROFILETYPERowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaultsTableAdapters.SiteIdTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaultsTableAdapters.UserDefaultsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaultsTableAdapters.REFPROFILETYPETableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaultsTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:RIUserDefaults.UserDefaultsTableAdapters.TableAdapterManager.UpdateUpdatedRows(RIUserDefaults.UserDefaults,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:RIUserDefaults.UserDefaultsTableAdapters.TableAdapterManager.UpdateInsertedRows(RIUserDefaults.UserDefaults,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:RIUserDefaults.UserDefaultsTableAdapters.TableAdapterManager.UpdateDeletedRows(RIUserDefaults.UserDefaults,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:RIUserDefaults.UserDefaultsTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:RIUserDefaults.UserDefaultsTableAdapters.TableAdapterManager.UpdateAll(RIUserDefaults.UserDefaults)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaultsTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:RIUserDefaults.UserDefaultsTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>

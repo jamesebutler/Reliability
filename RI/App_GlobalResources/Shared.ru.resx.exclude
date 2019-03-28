@@ -1,0 +1,886 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnClose" xml:space="preserve">
+    <value>Закрыть</value>
+    <comment>Close</comment>
+  </data>
+  <data name="btnDisplayFunctionalLocation" xml:space="preserve">
+    <value>Дисплей функциональных Расположение</value>
+    <comment>Display Functional Location</comment>
+  </data>
+  <data name="btnReset" xml:space="preserve">
+    <value>Сбросить</value>
+    <comment>Reset</comment>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Поиск</value>
+    <comment>Search</comment>
+  </data>
+  <data name="DefLatentRootCauses" xml:space="preserve">
+    <value>&lt;ul&gt;
+  &lt;li&gt;&lt;u&gt;Training Deficiencies&lt;/u&gt;- Training not adequate to perform task or 
+  duty&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Procedural Deficiencies&lt;/u&gt;- Procedures not adequate to perform task or 
+  duty&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;MWS Deficiencies&lt;/u&gt;- MWS systems not adequate to protect equipment or 
+  process. For example lack of PM, Vibration analysis or other equipment care&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Specification Deficiencies&lt;/u&gt;- Specifications for equipment or process 
+  not adequate for purpose&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Communication Deficiencies&lt;/u&gt;- Poor communication contributed to 
+  problem&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Enforcement of Policy&lt;/u&gt;- Policies/procedures exist, but have not been 
+  enforced, so they were not used&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Practice/Hands on Experience&lt;/u&gt;- Individual was trained, but lacks 
+  recent hands on experience or practice to perform task&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Management of Change&lt;/u&gt;- A change was made to process, training or 
+  equipment that led to unintended problems&lt;br&gt;
+&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;</value>
+    <comment>&lt;ul&gt;
+  &lt;li&gt;&lt;u&gt;Training Deficiencies&lt;/u&gt;- Training not adequate to perform task or 
+  duty&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Procedural Deficiencies&lt;/u&gt;- Procedures not adequate to perform task or 
+  duty&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;MWS Deficiencies&lt;/u&gt;- MWS systems not adequate to protect equipment or 
+  process. For example lack of PM, Vibration analysis or other equipment care&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Specification Deficiencies&lt;/u&gt;- Specifications for equipment or process 
+  not adequate for purpose&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Communication Deficiencies&lt;/u&gt;- Poor communication contributed to 
+  problem&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Enforcement of Policy&lt;/u&gt;- Policies/procedures exist, but have not been 
+  enforced, so they were not used&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Practice/Hands on Experience&lt;/u&gt;- Individual was trained, but lacks 
+  recent hands on experience or practice to perform task&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Management of Change&lt;/u&gt;- A change was made to process, training or 
+  equipment that led to unintended problems&lt;br&gt;
+&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;</comment>
+  </data>
+  <data name="DefPhysicalRootCauses" xml:space="preserve">
+    <value>&lt;ul&gt;
+  &lt;li&gt;&lt;u&gt;Defect in MFg &lt;/u&gt;– Materials or Fabrication Flaw from manufacturer / 
+  vendor &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Damaged in Shipping&lt;/u&gt; – Shipping to / from vendor &amp;amp; storeroom; 
+  to/from storeroom &amp;amp; jobsite Computer Software error &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Weather / Ambient Condition&lt;/u&gt; – &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Material Selection Incorrect&lt;/u&gt; – Chemical incompatibility, hardness, 
+  finish, operating temperature &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Equipment Size / Specification&lt;/u&gt; – Equipment and components 
+  originally sized above or below nominal design capacity. &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Contamination&lt;/u&gt; – External influence on components from process flow 
+  or surrounding conditions &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Power Failure Outside Area&lt;/u&gt; – failure of electrical or steam power 
+  components from outside the area &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Unintended Operation&lt;/u&gt; – Equipment or process not operated within 
+  standard procedures or expectations. Cockpit error would fit here &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Maintenance oversight&lt;/u&gt; – Planning &amp;amp; Scheduling errors, improper 
+  assessment of equipment condition from Predictive Maintenance or Preventive 
+  Maintenance inspection, improper or no repair procedure used on equipment, 
+  equipment not returned to original tolerances or specifications &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Startup Failure&lt;/u&gt; – Improper start-up, shutdown of equipment &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Process Changes&lt;/u&gt; – Design of process has changed without 
+  consideration for effect on equipment &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Measurement / Calibration Error&lt;/u&gt; – Instrumentation readings not 
+  accurate, impacted operation &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Incorrect Parts&lt;/u&gt; – Parts supplied from manufacturer / vendor 
+  incorrect; materials supplied from storeroom incorrect&lt;/li&gt;
+&lt;/ul&gt;</value>
+    <comment>&lt;ul&gt;
+  &lt;li&gt;&lt;u&gt;Defect in MFg &lt;/u&gt;– Materials or Fabrication Flaw from manufacturer / 
+  vendor &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Damaged in Shipping&lt;/u&gt; – Shipping to / from vendor &amp;amp; storeroom; 
+  to/from storeroom &amp;amp; jobsite Computer Software error &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Weather / Ambient Condition&lt;/u&gt; – &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Material Selection Incorrect&lt;/u&gt; – Chemical incompatibility, hardness, 
+  finish, operating temperature &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Equipment Size / Specification&lt;/u&gt; – Equipment and components 
+  originally sized above or below nominal design capacity. &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Contamination&lt;/u&gt; – External influence on components from process flow 
+  or surrounding conditions &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Power Failure Outside Area&lt;/u&gt; – failure of electrical or steam power 
+  components from outside the area &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Unintended Operation&lt;/u&gt; – Equipment or process not operated within 
+  standard procedures or expectations. Cockpit error would fit here &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Maintenance oversight&lt;/u&gt; – Planning &amp;amp; Scheduling errors, improper 
+  assessment of equipment condition from Predictive Maintenance or Preventive 
+  Maintenance inspection, improper or no repair procedure used on equipment, 
+  equipment not returned to original tolerances or specifications &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Startup Failure&lt;/u&gt; – Improper start-up, shutdown of equipment &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Process Changes&lt;/u&gt; – Design of process has changed without 
+  consideration for effect on equipment &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Measurement / Calibration Error&lt;/u&gt; – Instrumentation readings not 
+  accurate, impacted operation &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Incorrect Parts&lt;/u&gt; – Parts supplied from manufacturer / vendor 
+  incorrect; materials supplied from storeroom incorrect&lt;/li&gt;
+&lt;/ul&gt;</comment>
+  </data>
+  <data name="incidenttypeAll" xml:space="preserve">
+    <value>Все</value>
+    <comment>All</comment>
+  </data>
+  <data name="incidenttypeAreaTop" xml:space="preserve">
+    <value>Площадь Наверх</value>
+    <comment>Area Top</comment>
+  </data>
+  <data name="incidenttypeAudit" xml:space="preserve">
+    <value>Аудит</value>
+    <comment>Audit</comment>
+  </data>
+  <data name="incidenttypeFullRCFA" xml:space="preserve">
+    <value>Полный RCFA</value>
+    <comment>Full RCFA</comment>
+  </data>
+  <data name="incidenttypeIIR" xml:space="preserve">
+    <value>МИХ</value>
+    <comment>IIR</comment>
+  </data>
+  <data name="incidenttypeMillTop" xml:space="preserve">
+    <value>Мельница Наверх</value>
+    <comment>Mill Top</comment>
+  </data>
+  <data name="incidenttypeMiniRCFA" xml:space="preserve">
+    <value>Мини RCFA</value>
+    <comment>Mini RCFA</comment>
+  </data>
+  <data name="incidenttypeNo" xml:space="preserve">
+    <value>нет</value>
+    <comment>No</comment>
+  </data>
+  <data name="incidenttypeOther" xml:space="preserve">
+    <value>Другие</value>
+    <comment>Other</comment>
+  </data>
+  <data name="incidenttypeQuality" xml:space="preserve">
+    <value>Качество</value>
+    <comment>Quality</comment>
+  </data>
+  <data name="incidenttypeRegular" xml:space="preserve">
+    <value>Регулярный</value>
+    <comment>Regular</comment>
+  </data>
+  <data name="incidenttypeYes" xml:space="preserve">
+    <value>Да</value>
+    <comment>Yes</comment>
+  </data>
+  <data name="lbFileUploadNoFiles" xml:space="preserve">
+    <value>Нет файлы были загружены в этом инциденте.</value>
+    <comment>No files have been uploaded for this Incident.</comment>
+  </data>
+  <data name="lblActionItems" xml:space="preserve">
+    <value>Ухищрения</value>
+    <comment>Action Items</comment>
+  </data>
+  <data name="lblAddAI" xml:space="preserve">
+    <value>Добавить действий пункта</value>
+    <comment>Add Action Item</comment>
+  </data>
+  <data name="lblAddMode" xml:space="preserve">
+    <value>Добавить Режим</value>
+    <comment>Add Mode</comment>
+  </data>
+  <data name="lblAll" xml:space="preserve">
+    <value>Все</value>
+    <comment>All</comment>
+  </data>
+  <data name="lblAnalysisCompleted" xml:space="preserve">
+    <value>Анализ Завершен</value>
+    <comment>Analysis Completed</comment>
+  </data>
+  <data name="lblAnalysisLead" xml:space="preserve">
+    <value>Анализ Лидер</value>
+    <comment>Analysis Leader</comment>
+  </data>
+  <data name="lblAnalysisState" xml:space="preserve">
+    <value>Государство</value>
+    <comment>State</comment>
+  </data>
+  <data name="lblAnnualizedSavings" xml:space="preserve">
+    <value>В расчете на год экономия</value>
+    <comment>Annualized Savings</comment>
+  </data>
+  <data name="lblApplySelection" xml:space="preserve">
+    <value>Применить отбора и закрыть</value>
+    <comment>Apply Selection and Close</comment>
+  </data>
+  <data name="lblArea" xml:space="preserve">
+    <value>Области</value>
+    <comment>Area</comment>
+  </data>
+  <data name="lblAttachments" xml:space="preserve">
+    <value>Вложения</value>
+    <comment>Attachments</comment>
+  </data>
+  <data name="lblAvgClass" xml:space="preserve">
+    <value>Средняя критерии классификации</value>
+    <comment>Average Classification Criteria</comment>
+  </data>
+  <data name="lblAWEvent" xml:space="preserve">
+    <value>Что безопасности, надежности, или другая неисправность событие произошло в результате этого анализа RCFA? &lt;br /&gt; Этот раздел служит, как проблема определения для RCFA.</value>
+    <comment>What safety, reliability, or other failure event occurred resulting in this RCFA analysis?&lt;br /&gt;This section serves as the problem definition for the RCFA.	</comment>
+  </data>
+  <data name="lblAWExample" xml:space="preserve">
+    <value>Нажмите сюда, чтобы посмотреть пример того, как логика дерева могут быть использованы для заполнения поля ниже.</value>
+    <comment>Click here to view an example of how a logic tree can be used to populate the fields below.</comment>
+  </data>
+  <data name="lblAWFailureCause" xml:space="preserve">
+    <value>Какая причина (ы) для наиболее вероятным Несоблюдение режима (ов), перечисленные выше было доказано, являются причиной этой неудачи мероприятие? См. пример выше логики дерева для дальнейшего разъяснения этой области.</value>
+    <comment>Which cause(s) for the most likely Failure Mode(s) listed above has been proven to be the cause of this failure event?  Refer to the example logic tree above for further explanation of this field.</comment>
+  </data>
+  <data name="lblAWInstructions" xml:space="preserve">
+    <value>Использование структурированного решения проблем методом для точного определения коренных причин (ы) для отказа от этого мероприятия. Документ о своих изысканиях в как можно более подробную информацию в соответствующие поля ниже. Используйте "Вложения" на инцидент въезда / обновить страницу придают дополнительную подробную информацию (фотографии, Excel таблиц, Word документы, PDF документы и т.д.).</value>
+    <comment>Use a structured problem solving method to accurately determine the root cause(s) for the failure modes of this event.  Document your findings in as much detail as possible in the appropriate fields below.  Use the "Attachments" button on the Incident entry/update page to attach additional detailed information (photographs, Excel spreadsheets, Word documents, PDF documents, etc.).</comment>
+  </data>
+  <data name="lblAWModes" xml:space="preserve">
+    <value>Список путей, в которых этот вид неисправности случае может иметь место или имело место в прошлом.</value>
+    <comment>List the ways in which this type of failure event can occur or has occurred in the past.</comment>
+  </data>
+  <data name="lblAWTitle" xml:space="preserve">
+    <value>Анализ рабочую</value>
+    <comment>Analysis Workspace</comment>
+  </data>
+  <data name="lblAWVerification" xml:space="preserve">
+    <value>Опишите результаты расследования, которые поддерживают выбор из проверенного Если причина (ы) для этой неудачи мероприятия.</value>
+    <comment>Describe the investigation results that support the selection of the Proven Failure Cause(s) for this failure event.</comment>
+  </data>
+  <data name="lblbCorrectiveActionsCompleted" xml:space="preserve">
+    <value>Действия Завершен</value>
+    <comment>Actions Completed</comment>
+  </data>
+  <data name="lblBusArea" xml:space="preserve">
+    <value>Бизнес / Область</value>
+    <comment>Bus / Area</comment>
+  </data>
+  <data name="lblBusinessUnit" xml:space="preserve">
+    <value>Бизнес-единица</value>
+    <comment>Business Unit</comment>
+  </data>
+  <data name="lblBusinessUnitArea" xml:space="preserve">
+    <value>Бизнес-единица / район</value>
+    <comment>Business Unit/Area</comment>
+  </data>
+  <data name="lblCalculate" xml:space="preserve">
+    <value>Рассчитать</value>
+    <comment>Calculate</comment>
+  </data>
+  <data name="lblCalendar" xml:space="preserve">
+    <value>Календарь</value>
+    <comment>Calendar</comment>
+  </data>
+  <data name="lblCapital" xml:space="preserve">
+    <value>Капитала</value>
+    <comment>Capital</comment>
+  </data>
+  <data name="lblCategory" xml:space="preserve">
+    <value>Категория</value>
+    <comment>Category</comment>
+  </data>
+  <data name="lblCause" xml:space="preserve">
+    <value>Тип</value>
+    <comment>Type</comment>
+  </data>
+  <data name="lblCertifiedKill" xml:space="preserve">
+    <value>Сертифицированные Убил</value>
+    <comment>Certified Kill</comment>
+  </data>
+  <data name="lblChangeAnalysis" xml:space="preserve">
+    <value>Изменения Анализ</value>
+    <comment>Change Analysis</comment>
+  </data>
+  <data name="lblChronic" xml:space="preserve">
+    <value>Хронических</value>
+    <comment>Chronic</comment>
+  </data>
+  <data name="lblComments" xml:space="preserve">
+    <value>Комментарии</value>
+    <comment>Comments</comment>
+  </data>
+  <data name="lblCommentsForEmail" xml:space="preserve">
+    <value>Комментарии по почте</value>
+    <comment>Comments for Email</comment>
+  </data>
+  <data name="lblCompDate" xml:space="preserve">
+    <value>Дата завершения</value>
+    <comment>Completion Date</comment>
+  </data>
+  <data name="lblComponent" xml:space="preserve">
+    <value>Компонент</value>
+    <comment>Component</comment>
+  </data>
+  <data name="lblConditionsInfluencingFailure" xml:space="preserve">
+    <value>Условия, влияющие провал</value>
+    <comment>Conditions Influencing Failure</comment>
+  </data>
+  <data name="lblConfirmationSave" xml:space="preserve">
+    <value>Хотите ли вы сохранить изменения, прежде чем покинуть эту страницу? \ N \ n Нажмите кнопку [OK], чтобы сохранить изменения или [Отменить] для Игнорировать изменения</value>
+    <comment>Would you like to save your changes before leaving this page?\n\n Click [OK] to Save Changes or [Cancel] to Ignore Changes</comment>
+  </data>
+  <data name="lblCopyRight" xml:space="preserve">
+    <value>© 2006 Компания International Paper. Все права защищены.</value>
+    <comment>© 2018 Graphic Packaging International. All rights reserved.</comment>
+  </data>
+  <data name="lblCost" xml:space="preserve">
+    <value>Стоимость ремонта</value>
+    <comment>Repair Cost</comment>
+  </data>
+  <data name="lblCostofSolution" xml:space="preserve">
+    <value>Стоимость Решение</value>
+    <comment>Cost of Solution</comment>
+  </data>
+  <data name="lblCreatedBy" xml:space="preserve">
+    <value>Автор: (0)</value>
+    <comment>Created By: {0}</comment>
+  </data>
+  <data name="lblCreationDate" xml:space="preserve">
+    <value>Дата создания: (0)</value>
+    <comment>Creation Date: {0}</comment>
+  </data>
+  <data name="lblCrew" xml:space="preserve">
+    <value>Экипаж</value>
+    <comment>Crew</comment>
+  </data>
+  <data name="lblCriticality" xml:space="preserve">
+    <value>Критичности</value>
+    <comment>Criticality</comment>
+  </data>
+  <data name="lblDate" xml:space="preserve">
+    <value>Дата</value>
+    <comment>Date</comment>
+  </data>
+  <data name="lblDateRange" xml:space="preserve">
+    <value>Диапазон дат</value>
+    <comment>Date Range</comment>
+  </data>
+  <data name="lblDefinition" xml:space="preserve">
+    <value>Определение</value>
+    <comment>Definition</comment>
+  </data>
+  <data name="lblDelete" xml:space="preserve">
+    <value>Исключить</value>
+    <comment>Delete</comment>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Описание</value>
+    <comment>Description</comment>
+  </data>
+  <data name="lblDivision" xml:space="preserve">
+    <value>Отдел</value>
+    <comment>Division</comment>
+  </data>
+  <data name="lblDocumentCauses" xml:space="preserve">
+    <value>Причины</value>
+    <comment>Causes</comment>
+  </data>
+  <data name="lblDowntime" xml:space="preserve">
+    <value>Простоя (часов)</value>
+    <comment>Downtime(hrs)</comment>
+  </data>
+  <data name="lblEHS" xml:space="preserve">
+    <value>ГЭП</value>
+    <comment>EHS</comment>
+  </data>
+  <data name="lblEnd" xml:space="preserve">
+    <value>Конец</value>
+    <comment>End</comment>
+  </data>
+  <data name="lblEquipmentClass" xml:space="preserve">
+    <value>Оборудование класса</value>
+    <comment>Equipment Class</comment>
+  </data>
+  <data name="lblEquipmentDesc" xml:space="preserve">
+    <value>Оборудование описания</value>
+    <comment>Equipment Desc</comment>
+  </data>
+  <data name="lblEquipmentProcess" xml:space="preserve">
+    <value>Оборудование процесса</value>
+    <comment>Equipment Process</comment>
+  </data>
+  <data name="lblEquipmentType" xml:space="preserve">
+    <value>Оборудование Тип</value>
+    <comment>EquipmentType</comment>
+  </data>
+  <data name="lblEstDueDate" xml:space="preserve">
+    <value>Ориентировочные даты</value>
+    <comment>Estimated Due Date</comment>
+  </data>
+  <data name="lblEvent" xml:space="preserve">
+    <value>СОБЫТИЕ</value>
+    <comment>EVENT</comment>
+  </data>
+  <data name="lblExcel" xml:space="preserve">
+    <value>Ессел</value>
+    <comment>Excel</comment>
+  </data>
+  <data name="lblExecutiveSummary" xml:space="preserve">
+    <value>Резюме</value>
+    <comment>Executive Summary</comment>
+  </data>
+  <data name="lblFacility" xml:space="preserve">
+    <value>Фонда</value>
+    <comment>Facility</comment>
+  </data>
+  <data name="lblFailureCause" xml:space="preserve">
+    <value>Доказанные Если причина (ы)</value>
+    <comment>Proven Failure Cause(s)</comment>
+  </data>
+  <data name="lblFilename" xml:space="preserve">
+    <value>Имя файла</value>
+    <comment>Filename</comment>
+  </data>
+  <data name="lblFiletoUpload" xml:space="preserve">
+    <value>Файл для загрузки</value>
+    <comment>File to Upload</comment>
+  </data>
+  <data name="lblFileUploadCurrentFiles" xml:space="preserve">
+    <value>Эти файлы в настоящее время придается Инцидент</value>
+    <comment>These files are currently attached to Incident </comment>
+  </data>
+  <data name="lblFileUploadInstructions" xml:space="preserve">
+    <value>Чтобы вложить файл в этот инцидент. Выберите файл, введите описание и нажмите кнопку "Загрузить файл.</value>
+    <comment>To attach a file to this incident. Select a file, enter a description and click Upload File.</comment>
+  </data>
+  <data name="lblFileUploadTitle" xml:space="preserve">
+    <value>  Инцидент Вложения </value>
+    <comment>Incident Attachments</comment>
+  </data>
+  <data name="lblFinancialImpact" xml:space="preserve">
+    <value>Общий объем финансовых последствий</value>
+    <comment>Total Financial Impact</comment>
+  </data>
+  <data name="lblFunctionalLocation" xml:space="preserve">
+    <value>Функциональное расположение деревьев</value>
+    <comment>Functional Location Tree</comment>
+  </data>
+  <data name="lblFunctionalLocationInstructions" xml:space="preserve">
+    <value>Инструкции искать здесь</value>
+    <comment>Instructions go here</comment>
+  </data>
+  <data name="lblHelp" xml:space="preserve">
+    <value>Помощь</value>
+    <comment>Help</comment>
+  </data>
+  <data name="lblHideEHS" xml:space="preserve">
+    <value>- Скрыть ГЭП</value>
+    <comment>- Hide EHS</comment>
+  </data>
+  <data name="lblHideFailureClass" xml:space="preserve">
+    <value>- скрыть провал классификации</value>
+    <comment>- Hide Failure Classification</comment>
+  </data>
+  <data name="lblHowOften" xml:space="preserve">
+    <value>Как часто?</value>
+    <comment>How Often?</comment>
+  </data>
+  <data name="lblHumanCauses" xml:space="preserve">
+    <value>Права Причины</value>
+    <comment>Human Causes</comment>
+  </data>
+  <data name="lblIncident" xml:space="preserve">
+    <value>Инцидент</value>
+    <comment>Incident</comment>
+  </data>
+  <data name="lblIncidentClassification" xml:space="preserve">
+    <value>Инцидент классификации</value>
+    <comment>Incident Classification</comment>
+  </data>
+  <data name="lblIncidentEnd" xml:space="preserve">
+    <value>Конец</value>
+    <comment>End</comment>
+  </data>
+  <data name="lblIncidentStart" xml:space="preserve">
+    <value>Пуск</value>
+    <comment>Start</comment>
+  </data>
+  <data name="lblIncidentTitle" xml:space="preserve">
+    <value>Инцидент Название</value>
+    <comment>Incident Title</comment>
+  </data>
+  <data name="lblIncidentType" xml:space="preserve">
+    <value>Инцидент Тип</value>
+    <comment>Incident Type</comment>
+  </data>
+  <data name="lblIRISNumber" xml:space="preserve">
+    <value>ИРИС Количество</value>
+    <comment>IRIS Number</comment>
+  </data>
+  <data name="lblItem" xml:space="preserve">
+    <value>Пункт</value>
+    <comment>Item</comment>
+  </data>
+  <data name="lblLastUpdateDate" xml:space="preserve">
+    <value>Последнее обновление Дата: (0)</value>
+    <comment>Last Update Date: {0}</comment>
+  </data>
+  <data name="lblLastUpdatedBy" xml:space="preserve">
+    <value>Последнее обновление сайта: (0)</value>
+    <comment>Last Updated By: {0}</comment>
+  </data>
+  <data name="lblLatentCauses" xml:space="preserve">
+    <value>Скрытая Причины</value>
+    <comment>Latent Causes</comment>
+  </data>
+  <data name="lblLimit" xml:space="preserve">
+    <value>Ограничение результатов поиска</value>
+    <comment>Limit Search Results</comment>
+  </data>
+  <data name="lblLine" xml:space="preserve">
+    <value>Строка</value>
+    <comment>Line</comment>
+  </data>
+  <data name="lblLineBreak" xml:space="preserve">
+    <value>Линия Перерыв</value>
+    <comment>Line Break</comment>
+  </data>
+  <data name="lblLineLineBreak" xml:space="preserve">
+    <value>Строка / Перерыв</value>
+    <comment>Line/Line Break</comment>
+  </data>
+  <data name="lblLocation" xml:space="preserve">
+    <value>Местонахождение</value>
+    <comment>Location</comment>
+  </data>
+  <data name="lblLocationOfFailedMaterial" xml:space="preserve">
+    <value>Расположение материала не удалось</value>
+    <comment>Location of Failed Material</comment>
+  </data>
+  <data name="lblLossOpportunity" xml:space="preserve">
+    <value>Упущенная возможность</value>
+    <comment>Loss Opportunity</comment>
+  </data>
+  <data name="lblManaging" xml:space="preserve">
+    <value>Управляющий</value>
+    <comment>Managing</comment>
+  </data>
+  <data name="lblMarkComplete" xml:space="preserve">
+    <value>Марк анализа полной</value>
+    <comment>Mark Analysis Complete</comment>
+  </data>
+  <data name="lblModes" xml:space="preserve">
+    <value>Режим (ы)</value>
+    <comment>Mode(s)</comment>
+  </data>
+  <data name="lblNone" xml:space="preserve">
+    <value>Никто</value>
+    <comment>None</comment>
+  </data>
+  <data name="lblNoRecordsFound" xml:space="preserve">
+    <value>Не найдено записей</value>
+    <comment>No records found</comment>
+  </data>
+  <data name="lblOther" xml:space="preserve">
+    <value>Другие</value>
+    <comment>Other</comment>
+  </data>
+  <data name="lblPeopleToInterview" xml:space="preserve">
+    <value>Люди к Интервью</value>
+    <comment>People to Interview</comment>
+  </data>
+  <data name="lblPhysicalCauses" xml:space="preserve">
+    <value>Физические причины</value>
+    <comment>Physical Causes</comment>
+  </data>
+  <data name="lblPrevention" xml:space="preserve">
+    <value>Предупреждение</value>
+    <comment>Prevention</comment>
+  </data>
+  <data name="lblPriority" xml:space="preserve">
+    <value>Приоритет</value>
+    <comment>Priority</comment>
+  </data>
+  <data name="lblQuality" xml:space="preserve">
+    <value>Качество</value>
+    <comment>Quality</comment>
+  </data>
+  <data name="lblRCFA" xml:space="preserve">
+    <value>RCFA</value>
+    <comment>RCFA</comment>
+  </data>
+  <data name="lblRCFAActionLeader" xml:space="preserve">
+    <value>RCFA / действий лидера</value>
+    <comment>RCFA/Action Leader</comment>
+  </data>
+  <data name="lblRCFAStatus" xml:space="preserve">
+    <value>RCFA Статус</value>
+    <comment>RCFA Status</comment>
+  </data>
+  <data name="lblReason" xml:space="preserve">
+    <value>Причина</value>
+    <comment>Cause</comment>
+  </data>
+  <data name="lblReliabilityRecordable" xml:space="preserve">
+    <value>Надежность записи</value>
+    <comment>Reliability Recordable</comment>
+  </data>
+  <data name="lblReliabilityReporting" xml:space="preserve">
+    <value>Достоверность отчетности</value>
+    <comment>Reliability Reporting</comment>
+  </data>
+  <data name="lblRepeatAction" xml:space="preserve">
+    <value>Повтор действий</value>
+    <comment>Repeat Action</comment>
+  </data>
+  <data name="lblReport" xml:space="preserve">
+    <value>Доклад</value>
+    <comment>Report</comment>
+  </data>
+  <data name="lblReportSortValue" xml:space="preserve">
+    <value>Сортировать по порядку</value>
+    <comment>Sort Order</comment>
+  </data>
+  <data name="lblResource" xml:space="preserve">
+    <value>Ресурсный</value>
+    <comment>Resource</comment>
+  </data>
+  <data name="lblRINumber" xml:space="preserve">
+    <value>RI#</value>
+    <comment>RI#</comment>
+  </data>
+  <data name="lblRootCauses" xml:space="preserve">
+    <value>Корневым причинам</value>
+    <comment>Root Causes</comment>
+  </data>
+  <data name="lblSafety" xml:space="preserve">
+    <value>Безопасность</value>
+    <comment>Safety</comment>
+  </data>
+  <data name="lblSave" xml:space="preserve">
+    <value>Сохранить</value>
+    <comment>Save</comment>
+  </data>
+  <data name="lblSaveCloseAI" xml:space="preserve">
+    <value>Сохранить и закрыть ухищрения</value>
+    <comment>Save &amp; Close Action Items</comment>
+  </data>
+  <data name="lblSaveCloseAW" xml:space="preserve">
+    <value>Сохранить и закрыть анализ рабочего пространства</value>
+    <comment>Save &amp; Close Analysis Workspace</comment>
+  </data>
+  <data name="lblSearch" xml:space="preserve">
+    <value>Поиск</value>
+    <comment>Search</comment>
+  </data>
+  <data name="lblShift" xml:space="preserve">
+    <value>Сдвиг</value>
+    <comment>Shift</comment>
+  </data>
+  <data name="lblShowEHS" xml:space="preserve">
+    <value>+ Показать ГЭП</value>
+    <comment>+ Show EHS</comment>
+  </data>
+  <data name="lblShowFailureClass" xml:space="preserve">
+    <value>+ показать неспособность классификации</value>
+    <comment>+ Show Failure Classification</comment>
+  </data>
+  <data name="lblSort" xml:space="preserve">
+    <value>Заказ</value>
+    <comment>Order</comment>
+  </data>
+  <data name="lblSpellCheck" xml:space="preserve">
+    <value>Проверка орфографии</value>
+    <comment>Spell Check</comment>
+  </data>
+  <data name="lblStart" xml:space="preserve">
+    <value>Пуск</value>
+    <comment>Start</comment>
+  </data>
+  <data name="lblSwitchRI" xml:space="preserve">
+    <value>RI Список из Посмотреть / Обновить</value>
+    <comment>RI List from View/Update</comment>
+  </data>
+  <data name="lblTaskDesc" xml:space="preserve">
+    <value>Целевая Описание</value>
+    <comment>Task Description</comment>
+  </data>
+  <data name="lblTeamMembers" xml:space="preserve">
+    <value>Члены команды</value>
+    <comment>Team Members</comment>
+  </data>
+  <data name="lblTime" xml:space="preserve">
+    <value>Время</value>
+    <comment>Time</comment>
+  </data>
+  <data name="lblTitleDescription" xml:space="preserve">
+    <value>Название / Описание</value>
+    <comment>Title / Description</comment>
+  </data>
+  <data name="lblTitleSearch" xml:space="preserve">
+    <value>Название / описание поиск</value>
+    <comment>Title/Desc Search</comment>
+  </data>
+  <data name="lblTrigger" xml:space="preserve">
+    <value>Триггер</value>
+    <comment>Trigger</comment>
+  </data>
+  <data name="lblUpload" xml:space="preserve">
+    <value>Загрузка</value>
+    <comment>Upload</comment>
+  </data>
+  <data name="lblVerification" xml:space="preserve">
+    <value>Проверка</value>
+    <comment>Verification</comment>
+  </data>
+  <data name="lblViewUpdate" xml:space="preserve">
+    <value>Посмотреть / Обновить</value>
+    <comment>View/Update</comment>
+  </data>
+  <data name="lblWorkOrder" xml:space="preserve">
+    <value>Работа по порядку</value>
+    <comment>Work Order</comment>
+  </data>
+  <data name="mnuCacheViewer" xml:space="preserve">
+    <value>Кэш просмотра</value>
+    <comment>Cache Viewer</comment>
+  </data>
+  <data name="mnuDataMaintenance" xml:space="preserve">
+    <value>Данные обслуживание</value>
+    <comment>Data Maintenance</comment>
+  </data>
+  <data name="mnuEnhancements" xml:space="preserve">
+    <value>Аксессуары</value>
+    <comment>Enhancements</comment>
+  </data>
+  <data name="mnuEnterNewRI" xml:space="preserve">
+    <value>Введите новые РИ</value>
+    <comment>Enter New RI</comment>
+  </data>
+  <data name="mnuHelp" xml:space="preserve">
+    <value>Помощь</value>
+    <comment>Help</comment>
+  </data>
+  <data name="mnuImpersonateUser" xml:space="preserve">
+    <value>IВыдавать пользователя</value>
+    <comment>mpersonate User</comment>
+  </data>
+  <data name="mnuOnlineTraining" xml:space="preserve">
+    <value>Обучение онлайн</value>
+    <comment>Online Training</comment>
+  </data>
+  <data name="mnuReports" xml:space="preserve">
+    <value>Доклады</value>
+    <comment>Reports</comment>
+  </data>
+  <data name="mnuUsingMyHelp" xml:space="preserve">
+    <value>Использование моей Помощь</value>
+    <comment>Using My Help</comment>
+  </data>
+  <data name="mnuViewUpdate" xml:space="preserve">
+    <value>Посмотреть update / формате excel</value>
+    <comment>View Update/Excel</comment>
+  </data>
+</root>

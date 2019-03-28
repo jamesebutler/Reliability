@@ -1,0 +1,108 @@
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+ 
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<asp:Image skinid="Logo" runat="server" ImageUrl="~/App_Themes/RIBlackGold/images/iplogo_black.gif"/>
+<asp:Image skinid="LogoAni" runat="server" ImageUrl="~/App_Themes/RIBlackGold/images/iplogo_Black_ani.gif"/>
+<asp:Label runat="server" cssClass="Label"/>
+<asp:Label skinid="LabelWhite" runat="server" cssClass="LabelWhite"/>
+<asp:Label skinid="LabelButton" runat="server" cssClass="Button"  BorderStyle=Outset BorderWidth=2 style="cursor:Pointer;padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px;" onmouseover="this.className='Buttonhover';" onmouseout="this.className='Button';"/>
+<asp:Label skinid="Link" runat="Server" cssClass="LabelLink"/>
+<asp:Label skinid="data" runat="Server" cssClass="LabelData"/>
+<asp:DropDownList runat="server" cssClass="dropdwn"/>
+<asp:DropDownList skinid="SiteDropdown" runat="server" cssClass="SiteDropdown"/>
+<asp:Gridview runat=server HeaderStyle-CssClass="LockHeader" CssClass="Header" skinid="ScrollGrid"/>
+<asp:LinkButton runat=server cssClass="link"/>
+ <asp:CheckBoxList Font-Bold=true style="white-space: nowrap;" runat="server" CssClass="CheckBoxList"/>
+ <asp:CheckBox Font-Bold=true  runat="server"/>
+ <asp:RadioButtonList Font-Bold=true runat="server"/>
+ <asp:Button runat="server" CssClass="Button" style="cursor:Pointer;" onmouseover="this.className='Buttonhover';" onmouseout="this.className='Button';"/>  
+ <asp:Button runat="server" skinid="ButtonBlack" CssClass="ButtonBlack" style="cursor:Pointer;" onmouseover="this.className='Button';" onmouseout="this.className='ButtonBlack';"/>  
+ <asp:Table runat="server" CellPadding="2" Style="width: 100%" CellSpacing="1"/>
+ <%--<IP:AdvancedTextBox runat="server" ExpandHeight="true" ShowTextLink="false"/>
+ <IP:AdvancedTextBox skinid="Translate" runat="server" ExpandHeight="true" ShowTextLink="true" TextLinkScript="displayTranslationWindow(this);"/>
+ --%>
+ 
+<asp:Menu Width="100%" SKINID="mainMenu" runat="server" Orientation="Horizontal"
+    StaticEnableDefaultPopOutImage="true" StaticPopOutImageTextFormatString="" StaticPopOutImageUrl="~/Images/ArrowRight.gif"
+    DynamicMenuItemStyle-ItemSpacing="1" StaticMenuItemStyle-ItemSpacing="2px" StaticMenuItemStyle-BackColor="Black" StaticHoverStyle-BackColor="#CCCC99">
+    <StaticMenuStyle CssClass="mainMenuBack" />
+    <StaticHoverStyle CssClass="mainMenuBackHover" />
+    <StaticMenuItemStyle BorderStyle="solid" BorderWidth="0" BorderColor="white" />
+    <DynamicMenuStyle CssClass="mainSubMenuBack" />
+    <DynamicHoverStyle CssClass="mainSubMenuBackHover" />
+    <DynamicMenuItemStyle CssClass="mainSubMenu"/>
+    <DynamicSelectedStyle />
+</asp:Menu>
+                                        
+
+
+<%--<StaticSelectedStyle CssClass="selectedlink" />  
+
+
+
+   
+
+
+<asp:Menu skinid="subMenu" runat="server"  
+DynamicMenuStyle-BorderStyle="solid"
+DynamicMenuStyle-BorderWidth="1"
+DynamicMenuItemStyle-HorizontalPadding="10"
+DynamicMenuItemStyle-VerticalPadding="2"
+DynamicHoverStyle-BackColor="#000000"
+DynamicMenuItemStyle-BackColor="#8A2020" 
+DynamicHoverStyle-ForeColor="#FFFFFF"
+DynamicMenuItemStyle-ForeColor="#000000" 
+DynamicHoverStyle-Font-Bold=true
+DynamicMenuItemStyle-Font-Bold=true
+Orientation="Horizontal" ItemSpacing="10px" CssClass="submenu" >	
+<StaticMenuStyle CssClass="normallink" />    
+<StaticHoverStyle CssClass="selectedlink" />	 
+<StaticMenuItemStyle CssClass="normallink"/> 
+<StaticSelectedStyle CssClass="normallink" />   
+<DynamicMenuStyle CssClass="normallink" />    
+<DynamicHoverStyle CssClass="selectedlink" />	 
+<DynamicMenuItemStyle CssClass="normallink"/> 
+<DynamicSelectedStyle CssClass="normallink" />   
+   
+</asp:Menu>
+
+<asp:Menu SkinID="MainNav" runat="server" CssClass="mainmenu"
+  StaticEnableDefaultPopOutImage="false"
+  ForeColor="#124500"
+  StaticHoverStyle-ForeColor="#FFFFFF"
+  StaticHoverStyle-BackColor="#FF0000"
+  StaticMenuItemStyle-HorizontalPadding="10"
+  StaticMenuItemStyle-VerticalPadding="2"
+  DynamicMenuStyle-BackColor="#FF0000"
+  DynamicMenuStyle-BorderColor="#165EA9"
+  DynamicMenuStyle-BorderStyle="solid"
+  DynamicMenuStyle-BorderWidth="2"
+  DynamicMenuItemStyle-HorizontalPadding="10"
+  DynamicMenuItemStyle-VerticalPadding="2"
+  DynamicHoverStyle-ForeColor="#FFFFFF"
+  DynamicHoverStyle-BackColor="#00FFFF">
+  <StaticHoverStyle ForeColor="#FFFFFF" CssClass="selectedlink" />
+  <DynamicMenuItemStyle HorizontalPadding="10px" VerticalPadding="3px" />
+  <DynamicHoverStyle ForeColor="#FFFFFF" CssClass="selectedlink" />
+</asp:Menu>
+ --%>
+ <asp:TreeView runat="server" SkinID="Tree">
+            <ParentNodeStyle Font-Bold="False" />
+            <HoverNodeStyle Font-Underline="True" BackColor=Aqua ForeColor="#5555DD" />
+            <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px"
+                VerticalPadding="0px" />
+            <NodeStyle Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" HorizontalPadding="0px"
+                NodeSpacing="0px" VerticalPadding="0px" />
+        </asp:TreeView>

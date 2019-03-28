@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="btnDisplayFunctionalLocation" xml:space="preserve">
+    <value>Display Functional Location</value>
+  </data>
+  <data name="btnReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="DefLatentRootCauses" xml:space="preserve">
+    <value>&lt;ul&gt;
+  &lt;li&gt;&lt;u&gt;Training Deficiencies&lt;/u&gt;- Training not adequate to perform task or 
+  duty&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Procedural Deficiencies&lt;/u&gt;- Procedures not adequate to perform task or 
+  duty&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;MWS Deficiencies&lt;/u&gt;- MWS systems not adequate to protect equipment or 
+  process. For example lack of PM, Vibration analysis or other equipment care&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Specification Deficiencies&lt;/u&gt;- Specifications for equipment or process 
+  not adequate for purpose&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Communication Deficiencies&lt;/u&gt;- Poor communication contributed to 
+  problem&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Enforcement of Policy&lt;/u&gt;- Policies/procedures exist, but have not been 
+  enforced, so they were not used&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Practice/Hands on Experience&lt;/u&gt;- Individual was trained, but lacks 
+  recent hands on experience or practice to perform task&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Management of Change&lt;/u&gt;- A change was made to process, training or 
+  equipment that led to unintended problems&lt;br&gt;
+&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="DefPhysicalRootCauses" xml:space="preserve">
+    <value>&lt;ul&gt;
+  &lt;li&gt;&lt;u&gt;Defect in MFg &lt;/u&gt;– Materials or Fabrication Flaw from manufacturer / 
+  vendor &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Damaged in Shipping&lt;/u&gt; – Shipping to / from vendor &amp;amp; storeroom; 
+  to/from storeroom &amp;amp; jobsite Computer Software error &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Weather / Ambient Condition&lt;/u&gt; – &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Material Selection Incorrect&lt;/u&gt; – Chemical incompatibility, hardness, 
+  finish, operating temperature &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Equipment Size / Specification&lt;/u&gt; – Equipment and components 
+  originally sized above or below nominal design capacity. &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Contamination&lt;/u&gt; – External influence on components from process flow 
+  or surrounding conditions &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Power Failure Outside Area&lt;/u&gt; – failure of electrical or steam power 
+  components from outside the area &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Unintended Operation&lt;/u&gt; – Equipment or process not operated within 
+  standard procedures or expectations. Cockpit error would fit here &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Maintenance oversight&lt;/u&gt; – Planning &amp;amp; Scheduling errors, improper 
+  assessment of equipment condition from Predictive Maintenance or Preventive 
+  Maintenance inspection, improper or no repair procedure used on equipment, 
+  equipment not returned to original tolerances or specifications &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Startup Failure&lt;/u&gt; – Improper start-up, shutdown of equipment &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Process Changes&lt;/u&gt; – Design of process has changed without 
+  consideration for effect on equipment &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Measurement / Calibration Error&lt;/u&gt; – Instrumentation readings not 
+  accurate, impacted operation &lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Incorrect Parts&lt;/u&gt; – Parts supplied from manufacturer / vendor 
+  incorrect; materials supplied from storeroom incorrect&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="incidenttypeAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="incidenttypeAreaTop" xml:space="preserve">
+    <value>Area Top</value>
+  </data>
+  <data name="incidenttypeAudit" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="incidenttypeFullRCFA" xml:space="preserve">
+    <value>Full RCFA</value>
+  </data>
+  <data name="incidenttypeIIR" xml:space="preserve">
+    <value>IIR</value>
+  </data>
+  <data name="incidenttypeMillTop" xml:space="preserve">
+    <value>Mill Top</value>
+  </data>
+  <data name="incidenttypeMiniRCFA" xml:space="preserve">
+    <value>Mini RCFA</value>
+  </data>
+  <data name="incidenttypeNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="incidenttypeOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="incidenttypeQuality" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="incidenttypeRegular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="incidenttypeYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="lbFileUploadNoFiles" xml:space="preserve">
+    <value>No files have been uploaded for this Incident.</value>
+  </data>
+  <data name="lblActionItems" xml:space="preserve">
+    <value>Action Items</value>
+  </data>
+  <data name="lblAddAI" xml:space="preserve">
+    <value>Add Action Item</value>
+  </data>
+  <data name="lblAddMode" xml:space="preserve">
+    <value>Add Mode</value>
+  </data>
+  <data name="lblAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="lblAnalysisCompleted" xml:space="preserve">
+    <value>Analysis Completed</value>
+  </data>
+  <data name="lblAnalysisLead" xml:space="preserve">
+    <value>Analysis Leader</value>
+  </data>
+  <data name="lblAnalysisState" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="lblAnnualizedSavings" xml:space="preserve">
+    <value>Annualized Savings</value>
+  </data>
+  <data name="lblApplySelection" xml:space="preserve">
+    <value>Apply Selection and Close</value>
+  </data>
+  <data name="lblArea" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="lblAttachments" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="lblAvgClass" xml:space="preserve">
+    <value>Average Classification Criteria</value>
+  </data>
+  <data name="lblAWEvent" xml:space="preserve">
+    <value>What safety, reliability, or other failure event occurred resulting in this RCFA analysis?&lt;br /&gt;This section serves as the problem definition for the RCFA.	</value>
+  </data>
+  <data name="lblAWExample" xml:space="preserve">
+    <value>Click here to view an example of how a logic tree can be used to populate the fields below.</value>
+  </data>
+  <data name="lblAWFailureCause" xml:space="preserve">
+    <value>Which cause(s) for the most likely Failure Mode(s) listed above has been proven to be the cause of this failure event?  Refer to the example logic tree above for further explanation of this field.</value>
+  </data>
+  <data name="lblAWInstructions" xml:space="preserve">
+    <value>Use a structured problem solving method to accurately determine the root cause(s) for the failure modes of this event.  Document your findings in as much detail as possible in the appropriate fields below.  Use the "Attachments" button on the Incident entry/update page to attach additional detailed information (photographs, Excel spreadsheets, Word documents, PDF documents, etc.).</value>
+  </data>
+  <data name="lblAWModes" xml:space="preserve">
+    <value>List the ways in which this type of failure event can occur or has occurred in the past.</value>
+  </data>
+  <data name="lblAWTitle" xml:space="preserve">
+    <value>Analysis Workspace</value>
+  </data>
+  <data name="lblAWVerification" xml:space="preserve">
+    <value>Describe the investigation results that support the selection of the Proven Failure Cause(s) for this failure event.</value>
+  </data>
+  <data name="lblbCorrectiveActionsCompleted" xml:space="preserve">
+    <value>Actions Completed</value>
+  </data>
+  <data name="lblBusArea" xml:space="preserve">
+    <value>Bus/Area</value>
+  </data>
+  <data name="lblBusinessUnit" xml:space="preserve">
+    <value>Business Unit</value>
+  </data>
+  <data name="lblBusinessUnitArea" xml:space="preserve">
+    <value>Business Unit/Area</value>
+  </data>
+  <data name="lblCalculate" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="lblCalendar" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="lblCapital" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="lblCategory" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="lblCause" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="lblCertifiedKill" xml:space="preserve">
+    <value>Certified Kill</value>
+  </data>
+  <data name="lblChangeAnalysis" xml:space="preserve">
+    <value>Change Analysis</value>
+  </data>
+  <data name="lblChronic" xml:space="preserve">
+    <value>Chronic</value>
+  </data>
+  <data name="lblClassification" xml:space="preserve">
+    <value>Classification</value>
+  </data>
+  <data name="lblComments" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="lblCommentsForEmail" xml:space="preserve">
+    <value>Comments for Email</value>
+  </data>
+  <data name="lblCompDate" xml:space="preserve">
+    <value>Date Completed</value>
+  </data>
+  <data name="lblComponent" xml:space="preserve">
+    <value>Component</value>
+  </data>
+  <data name="lblConditionsInfluencingFailure" xml:space="preserve">
+    <value>Conditions Influencing Failure</value>
+  </data>
+  <data name="lblConfirmationSave" xml:space="preserve">
+    <value>Would you like to save your changes before leaving this page?\n\n Click [OK] to Save Changes or [Cancel] to Ignore Changes</value>
+  </data>
+  <data name="lblCopyRight" xml:space="preserve">
+    <value>© 2018 Graphic Packaging International. All rights reserved.</value>
+  </data>
+  <data name="lblCost" xml:space="preserve">
+    <value>Cost</value>
+  </data>
+  <data name="lblCostofSolution" xml:space="preserve">
+    <value>Cost of Solution</value>
+  </data>
+  <data name="lblCreatedBy" xml:space="preserve">
+    <value>Created By: {0}</value>
+  </data>
+  <data name="lblCreationDate" xml:space="preserve">
+    <value>Creation Date: {0}</value>
+  </data>
+  <data name="lblCrew" xml:space="preserve">
+    <value>Crew</value>
+  </data>
+  <data name="lblCriticality" xml:space="preserve">
+    <value>Criticality</value>
+  </data>
+  <data name="lblDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="lblDateRange" xml:space="preserve">
+    <value>Date Range</value>
+  </data>
+  <data name="lblDefinition" xml:space="preserve">
+    <value>Definition</value>
+  </data>
+  <data name="lblDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblDetailReport" xml:space="preserve">
+    <value>Detail Report</value>
+  </data>
+  <data name="lblDivision" xml:space="preserve">
+    <value>Division</value>
+  </data>
+  <data name="lblDocumentCauses" xml:space="preserve">
+    <value>Causes</value>
+  </data>
+  <data name="lblDowntime" xml:space="preserve">
+    <value>Downtime(hrs)</value>
+  </data>
+  <data name="lblEHS" xml:space="preserve">
+    <value>EHS</value>
+  </data>
+  <data name="lblEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="lblEndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="lblEquipmentClass" xml:space="preserve">
+    <value>Equipment Class</value>
+  </data>
+  <data name="lblEquipmentDesc" xml:space="preserve">
+    <value>Equipment Desc</value>
+  </data>
+  <data name="lblEquipmentProcess" xml:space="preserve">
+    <value>Equipment Process</value>
+  </data>
+  <data name="lblEquipmentType" xml:space="preserve">
+    <value>EquipmentType</value>
+  </data>
+  <data name="lblEstDueDate" xml:space="preserve">
+    <value>Estimated Due Date</value>
+  </data>
+  <data name="lblEvent" xml:space="preserve">
+    <value>EVENT</value>
+  </data>
+  <data name="lblExcel" xml:space="preserve">
+    <value>Excel</value>
+  </data>
+  <data name="lblExecutiveSummary" xml:space="preserve">
+    <value>Executive Summary</value>
+  </data>
+  <data name="lblFacility" xml:space="preserve">
+    <value>Facility</value>
+  </data>
+  <data name="lblFailureCause" xml:space="preserve">
+    <value>Proven Failure Cause(s)</value>
+  </data>
+  <data name="lblFilename" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="lblFiletoUpload" xml:space="preserve">
+    <value>File to Upload</value>
+  </data>
+  <data name="lblFileUploadCurrentFiles" xml:space="preserve">
+    <value>These files are currently attached to Incident </value>
+  </data>
+  <data name="lblFileUploadInstructions" xml:space="preserve">
+    <value>To attach a file to this incident. Select a file, enter a description and click Upload File.</value>
+  </data>
+  <data name="lblFileUploadTitle" xml:space="preserve">
+    <value>Incident Attachments</value>
+  </data>
+  <data name="lblFinancialImpact" xml:space="preserve">
+    <value>Total Financial Impact</value>
+  </data>
+  <data name="lblFunctionalLocation" xml:space="preserve">
+    <value>Functional Location Tree</value>
+  </data>
+  <data name="lblFunctionalLocationInstructions" xml:space="preserve">
+    <value>Instructions go here</value>
+  </data>
+  <data name="lblHelp" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="lblHideEHS" xml:space="preserve">
+    <value>- Hide EHS</value>
+  </data>
+  <data name="lblHideFailureClass" xml:space="preserve">
+    <value>- Hide Failure Classification</value>
+  </data>
+  <data name="lblHowOften" xml:space="preserve">
+    <value>How Often?</value>
+  </data>
+  <data name="lblHumanCauses" xml:space="preserve">
+    <value>Human Causes</value>
+  </data>
+  <data name="lblIncident" xml:space="preserve">
+    <value>Incident</value>
+  </data>
+  <data name="lblIncidentClassification" xml:space="preserve">
+    <value>Incident Classification</value>
+  </data>
+  <data name="lblIncidentEnd" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="lblIncidentStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="lblIncidentTitle" xml:space="preserve">
+    <value>Incident Title</value>
+  </data>
+  <data name="lblIncidentType" xml:space="preserve">
+    <value>Incident Type</value>
+  </data>
+  <data name="lblInitiator" xml:space="preserve">
+    <value>Initiator</value>
+  </data>
+  <data name="lblIRISNumber" xml:space="preserve">
+    <value>IRIS Number</value>
+  </data>
+  <data name="lblItem" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="lblLastUpdateDate" xml:space="preserve">
+    <value>Last Update Date: {0}</value>
+  </data>
+  <data name="lblLastUpdatedBy" xml:space="preserve">
+    <value>Last Updated By: {0}</value>
+  </data>
+  <data name="lblLatentCauses" xml:space="preserve">
+    <value>Latent Causes</value>
+  </data>
+  <data name="lblLimit" xml:space="preserve">
+    <value>Limit Search Results</value>
+  </data>
+  <data name="lblLine" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="lblLineBreak" xml:space="preserve">
+    <value>Line Break</value>
+  </data>
+  <data name="lblLineLineBreak" xml:space="preserve">
+    <value>Line/Line Break</value>
+  </data>
+  <data name="lblLocation" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="lblLocationOfFailedMaterial" xml:space="preserve">
+    <value>Location of Failed Material</value>
+  </data>
+  <data name="lblLossOpportunity" xml:space="preserve">
+    <value>Loss Opportunity</value>
+  </data>
+  <data name="lblManaging" xml:space="preserve">
+    <value>Managing</value>
+  </data>
+  <data name="lblMarkComplete" xml:space="preserve">
+    <value>Mark Analysis Complete</value>
+  </data>
+  <data name="lblModes" xml:space="preserve">
+    <value>Mode(s)</value>
+  </data>
+  <data name="lblNone" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="lblNoRecordsFound" xml:space="preserve">
+    <value>No records found</value>
+  </data>
+  <data name="lblOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="lblPCF" xml:space="preserve">
+    <value>Prev Chronic Failure (PCF)</value>
+  </data>
+  <data name="lblPeopleToInterview" xml:space="preserve">
+    <value>People to Interview</value>
+  </data>
+  <data name="lblPhysicalCauses" xml:space="preserve">
+    <value>Physical Causes</value>
+  </data>
+  <data name="lblPrevention" xml:space="preserve">
+    <value>Prevention</value>
+  </data>
+  <data name="lblPriority" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="lblQuality" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="lblRCFA" xml:space="preserve">
+    <value>RCFA</value>
+  </data>
+  <data name="lblRCFAActionLeader" xml:space="preserve">
+    <value>RCFA/Action Leader</value>
+  </data>
+  <data name="lblRCFAStatus" xml:space="preserve">
+    <value>RCFA Status</value>
+  </data>
+  <data name="lblReason" xml:space="preserve">
+    <value>Cause</value>
+  </data>
+  <data name="lblRecordCount" xml:space="preserve">
+    <value>Record Count:</value>
+  </data>
+  <data name="lblReliabilityRecordable" xml:space="preserve">
+    <value>Reliability Recordable</value>
+  </data>
+  <data name="lblReliabilityReporting" xml:space="preserve">
+    <value>Reliability Reporting</value>
+  </data>
+  <data name="lblRepeatAction" xml:space="preserve">
+    <value>Repeat Action</value>
+  </data>
+  <data name="lblReport" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="lblReportSortValue" xml:space="preserve">
+    <value>Sort Order</value>
+  </data>
+  <data name="lblResource" xml:space="preserve">
+    <value>Resource</value>
+  </data>
+  <data name="lblRINumber" xml:space="preserve">
+    <value>RI#</value>
+  </data>
+  <data name="lblRootCauses" xml:space="preserve">
+    <value>Root Causes</value>
+  </data>
+  <data name="lblSafety" xml:space="preserve">
+    <value>Safety</value>
+  </data>
+  <data name="lblSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="lblSaveCloseAI" xml:space="preserve">
+    <value>Save &amp; Close Action Items</value>
+  </data>
+  <data name="lblSaveCloseAW" xml:space="preserve">
+    <value>Save &amp; Close Analysis Workspace</value>
+  </data>
+  <data name="lblSavings" xml:space="preserve">
+    <value>Savings</value>
+  </data>
+  <data name="lblSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lblShift" xml:space="preserve">
+    <value>Shift</value>
+  </data>
+  <data name="lblShowEHS" xml:space="preserve">
+    <value>+ Show EHS</value>
+  </data>
+  <data name="lblShowFailureClass" xml:space="preserve">
+    <value>+ Show Failure Classification</value>
+  </data>
+  <data name="lblSort" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="lblSpellCheck" xml:space="preserve">
+    <value>Spell Check</value>
+  </data>
+  <data name="lblStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="lblStartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="lblSwitchRI" xml:space="preserve">
+    <value>RI List from View/Update</value>
+  </data>
+  <data name="lblTaskDesc" xml:space="preserve">
+    <value>Task Description</value>
+  </data>
+  <data name="lblTeamMembers" xml:space="preserve">
+    <value>Team Members</value>
+  </data>
+  <data name="lblTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="lblTitle" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="lblTitleDescription" xml:space="preserve">
+    <value>Title / Description</value>
+  </data>
+  <data name="lblTitleSearch" xml:space="preserve">
+    <value>Title/Desc Search</value>
+  </data>
+  <data name="lblTrigger" xml:space="preserve">
+    <value>Trigger</value>
+  </data>
+  <data name="lblType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="lblUpload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="lblVerification" xml:space="preserve">
+    <value>Verification</value>
+  </data>
+  <data name="lblViewUpdate" xml:space="preserve">
+    <value>View/Update</value>
+  </data>
+  <data name="lblWorkOrder" xml:space="preserve">
+    <value>Work Order</value>
+  </data>
+  <data name="mnuCacheViewer" xml:space="preserve">
+    <value>Cache Viewer</value>
+  </data>
+  <data name="mnuDataMaintenance" xml:space="preserve">
+    <value>Data Maintenance</value>
+  </data>
+  <data name="mnuEnhancements" xml:space="preserve">
+    <value>Enhancements</value>
+  </data>
+  <data name="mnuEnterNewRI" xml:space="preserve">
+    <value>Enter New RI</value>
+  </data>
+  <data name="mnuHelp" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="mnuImpersonateUser" xml:space="preserve">
+    <value>Impersonate User</value>
+  </data>
+  <data name="mnuOnlineTraining" xml:space="preserve">
+    <value>Online Training</value>
+  </data>
+  <data name="mnuReports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="mnuUsingMyHelp" xml:space="preserve">
+    <value>Using My Help</value>
+  </data>
+  <data name="mnuViewUpdate" xml:space="preserve">
+    <value>View Update/Excel</value>
+  </data>
+</root>

@@ -1,0 +1,152 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>
+ANEMA R vs R rev Jan 4 2008
+</title>
+<script type="text/javascript" language="javascript">
+function UpdateTooltip(){};
+function OnShapeClick(){};
+</script>
+<SCRIPT type="text/javascript" language="javascript">
+<!--
+pic1= new Image(100,25); 
+pic1.src="gif_1.gif"; 
+//-->
+</SCRIPT>
+
+
+
+<script src="gif_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+	if(parent.isUpLevel)
+	{
+		location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+	}
+</script>
+
+
+
+<script type="text/jscript" language="jscript">
+
+var pageID = 0;
+
+var isUpLevel = parent.isUpLevel;
+var OnShapeClick = null;
+if (!parent.isMac)
+{
+	OnShapeClick = parent.OnShapeClick;
+}
+
+var OnShapeKey = parent.OnShapeKey;
+var UpdateTooltip = parent.UpdateTooltip;
+var clickMenu = parent.clickMenu;
+var toggleMenuDiv = parent.toggleMenuDiv;
+var toggleMenuLink = parent.toggleMenuLink;
+var GoToPage = parent.GoToPage;
+
+
+if (parent.isUpLevel)
+{
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			var fileEntry = parent.g_FileList[parent.g_CurPageIndex];
+			var fileToLoad = fileToLoad = fileEntry.PriImage;
+			if (fileEntry.SecImage.length > 0)
+			{
+				fileToLoad = fileEntry.SecImage;
+			}
+
+			location.replace(fileToLoad);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+
+	var viewMgr = new parent.CViewMgr();
+	parent.viewMgr = viewMgr;
+
+	viewMgr.SupportsDetails = true;
+	viewMgr.SupportsSearch = true;
+
+	viewMgr.put_Location = ViewMgrSetRasterLocation;
+	viewMgr.visBBoxLeft = 0.123333;
+	viewMgr.visBBoxRight = 10.630000;
+	viewMgr.visBBoxBottom = 1.120000;
+	viewMgr.visBBoxTop = 13.641354;
+	viewMgr.highlightDiv = null;
+}
+
+function load ()
+{
+	if(isUpLevel)
+	{
+		arrowdiv.innerHTML = '<img id="arrowgif" alt="Shows the location of the selected shape" src="arrow.gif"/>';
+
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.CurPageUpdate (pageIndex);
+	}
+}
+
+function unload()
+{
+	if(isUpLevel)
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+}
+
+window.onload = load;
+window.onunload = unload;
+document.onclick = clickMenu;
+
+</script>
+</head>
+
+<body class="pageView" bgcolor="#FFFFFF">
+
+<div id=arrowdiv style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+<DIV id=RasterDiv>
+
+
+<center>
+  <IMG id="ConvertedImage" SRC="gif_1.gif" ALT="Page-1" name=RasterImage BORDER="0" USEMAP="#visImageMap">
+</center>
+
+<MAP NAME="visImageMap">
+  <AREA shape="POLYGON" tabindex="1" ALT="Replace Motor" origTitle="Replace Motor" TITLE="Replace Motor"  target="_top" COORDS=" 116,454 164,454 164,442 116,442 116,454" onmouseover="UpdateTooltip(this,0,10)" onfocus="UpdateTooltip(this,0,10)" onclick="return OnShapeClick(0,10);" onkeyup="OnShapeKey(0,10);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Does motor repair per IP spec 3692 (latest version) meet repair..." origTitle="Does motor repair per IP spec 3692 (latest version) meet repair..." TITLE="Does motor repair per IP spec 3692 (latest version) meet repair..."  target="_top" COORDS=" 176,375 140,348 94,382 140,417 186,382 177,376 177,375 176,375" onmouseover="UpdateTooltip(this,0,3)" onfocus="UpdateTooltip(this,0,3)" onclick="return OnShapeClick(0,3);" onkeyup="OnShapeKey(0,3);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Is repair cost more than 70% of new motor cost?" origTitle="Is repair cost more than 70% of new motor cost?" TITLE="Is repair cost more than 70% of new motor cost?"  target="_top" COORDS=" 269,375 246,357 213,382 246,407 279,382 269,375 269,375 269,375" onmouseover="UpdateTooltip(this,0,50)" onfocus="UpdateTooltip(this,0,50)" onclick="return OnShapeClick(0,50);" onkeyup="OnShapeKey(0,50);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Replace Motor" origTitle="Replace Motor" TITLE="Replace Motor"  target="_top" COORDS=" 398,448 446,448 446,436 398,436 398,448" onmouseover="UpdateTooltip(this,0,48)" onfocus="UpdateTooltip(this,0,48)" onclick="return OnShapeClick(0,48);" onkeyup="OnShapeKey(0,48);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Are there other extenuating circumstances(2) that would prevent..." origTitle="Are there other extenuating circumstances(2) that would prevent..." TITLE="Are there other extenuating circumstances(2) that would prevent..."  target="_top" COORDS=" 466,332 481,321 465,309 465,308 463,308 456,302 456,301 454,301 422,277 381,308 380,308 380,308 363,321 379,333 379,334 380,334 422,365 464,334 466,334 466,332" onmouseover="UpdateTooltip(this,0,40)" onfocus="UpdateTooltip(this,0,40)" onclick="return OnShapeClick(0,40);" onkeyup="OnShapeKey(0,40);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Repair Motor to IP spec 3692 (latest version)" origTitle="Repair Motor to IP spec 3692 (latest version)" TITLE="Repair Motor to IP spec 3692 (latest version)"  target="_top" COORDS=" 12,394 60,394 60,370 12,370 12,394" onmouseover="UpdateTooltip(this,0,46)" onfocus="UpdateTooltip(this,0,46)" onclick="return OnShapeClick(0,46);" onkeyup="OnShapeKey(0,46);">
+  <AREA shape="POLYGON" tabindex="1" ALT="" origTitle="" TITLE=""  target="_top" COORDS=" 307,16 320,16 326,16 406,16 406,0 326,0 320,0 122,0 122,16 221,16 221,24 249,24 252,24 281,24 288,24 292,24 307,24 307,16" onmouseover="UpdateTooltip(this,0,52)" onfocus="UpdateTooltip(this,0,52)" onclick="return OnShapeClick(0,52);" onkeyup="OnShapeKey(0,52);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Replace Motor" origTitle="Replace Motor" TITLE="Replace Motor"  target="_top" COORDS=" 0,276 48,276 48,264 0,264 0,276" onmouseover="UpdateTooltip(this,0,8)" onfocus="UpdateTooltip(this,0,8)" onclick="return OnShapeClick(0,8);" onkeyup="OnShapeKey(0,8);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Repair Motor to IP spec 3692 (latest version)" origTitle="Repair Motor to IP spec 3692 (latest version)" TITLE="Repair Motor to IP spec 3692 (latest version)"  target="_top" COORDS=" 240,178 288,178 288,154 240,154 240,178" onmouseover="UpdateTooltip(this,0,28)" onfocus="UpdateTooltip(this,0,28)" onclick="return OnShapeClick(0,28);" onkeyup="OnShapeKey(0,28);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Can the motor be rewound (with good laminations that have no..." origTitle="Can the motor be rewound (with good laminations that have no..." TITLE="Can the motor be rewound (with good laminations that have no..."  target="_top" COORDS=" 211,259 155,217 98,259 98,259 98,260 84,270 155,323 225,270 213,261 213,259 211,259" onmouseover="UpdateTooltip(this,0,36)" onfocus="UpdateTooltip(this,0,36)" onclick="return OnShapeClick(0,36);" onkeyup="OnShapeKey(0,36);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Are there any extenuating circumstances such as delivery,..." origTitle="Are there any extenuating circumstances such as delivery,..." TITLE="Are there any extenuating circumstances such as delivery,..."  target="_top" COORDS=" 304,96 313,90 296,77 296,76 295,76 264,53 215,90 264,126 304,96 304,96 304,96" onmouseover="UpdateTooltip(this,0,29)" onfocus="UpdateTooltip(this,0,29)" onclick="return OnShapeClick(0,29);" onkeyup="OnShapeKey(0,29);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Motor must be rewound" origTitle="Motor must be rewound" TITLE="Motor must be rewound"  target="_top" COORDS=" 336,223 336,187 335,187 335,223" onmouseover="UpdateTooltip(this,0,21)" onfocus="UpdateTooltip(this,0,21)" onclick="return OnShapeClick(0,21);" onkeyup="OnShapeKey(0,21);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Motor must be rewound" origTitle="Motor must be rewound" TITLE="Motor must be rewound"  target="_top" COORDS=" 300,223 300,187 299,187 299,223" onmouseover="UpdateTooltip(this,0,21)" onfocus="UpdateTooltip(this,0,21)" onclick="return OnShapeClick(0,21);" onkeyup="OnShapeKey(0,21);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Motor must be rewound" origTitle="Motor must be rewound" TITLE="Motor must be rewound"  target="_top" COORDS=" 332,205 333,205 333,198 305,198 305,204 304,204 304,211 332,211 332,205" onmouseover="UpdateTooltip(this,0,21)" onfocus="UpdateTooltip(this,0,21)" onclick="return OnShapeClick(0,21);" onkeyup="OnShapeKey(0,21);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Is the existing winding integrity good for minimum 20 year..." origTitle="Is the existing winding integrity good for minimum 20 year..." TITLE="Is the existing winding integrity good for minimum 20 year..."  target="_top" COORDS=" 460,97 470,90 460,81 460,79 457,79 422,53 387,79 386,79 386,80 374,90 385,98 385,99 386,99 422,127 458,99 460,99 460,97" onmouseover="UpdateTooltip(this,0,12)" onfocus="UpdateTooltip(this,0,12)" onclick="return OnShapeClick(0,12);" onkeyup="OnShapeKey(0,12);">
+</MAP>
+
+
+
+</DIV>
+
+</body>
+</html>
+

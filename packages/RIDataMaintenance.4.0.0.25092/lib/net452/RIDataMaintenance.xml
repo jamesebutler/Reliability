@@ -1,0 +1,156 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RIDataMaintenance
+</name>
+</assembly>
+<members>
+<member name="T:RIDataMaintenance.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:RIDataMaintenance.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:RIDataMaintenance.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.Applications">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.Applications.MaintenanceFunctionsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.Applications.MaintenanceFunctionsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.Applications.MaintenanceFunctionsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RIDataMaintenance.ApplicationsTableAdapters.MaintenanceFunctionsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.ApplicationsTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:RIDataMaintenance.ApplicationsTableAdapters.TableAdapterManager.UpdateUpdatedRows(RIDataMaintenance.Applications,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:RIDataMaintenance.ApplicationsTableAdapters.TableAdapterManager.UpdateInsertedRows(RIDataMaintenance.Applications,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:RIDataMaintenance.ApplicationsTableAdapters.TableAdapterManager.UpdateDeletedRows(RIDataMaintenance.Applications,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:RIDataMaintenance.ApplicationsTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:RIDataMaintenance.ApplicationsTableAdapters.TableAdapterManager.UpdateAll(RIDataMaintenance.Applications)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.ApplicationsTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:RIDataMaintenance.ApplicationsTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:RIDataMaintenance.Sites">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.Sites.RIMAINTENANCESITEDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.Sites.RIMAINTENANCESITERow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.Sites.RIMAINTENANCESITERowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:RIDataMaintenance.SitesTableAdapters.RIMAINTENANCESITETableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.SitesTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:RIDataMaintenance.SitesTableAdapters.TableAdapterManager.UpdateUpdatedRows(RIDataMaintenance.Sites,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:RIDataMaintenance.SitesTableAdapters.TableAdapterManager.UpdateInsertedRows(RIDataMaintenance.Sites,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:RIDataMaintenance.SitesTableAdapters.TableAdapterManager.UpdateDeletedRows(RIDataMaintenance.Sites,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:RIDataMaintenance.SitesTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:RIDataMaintenance.SitesTableAdapters.TableAdapterManager.UpdateAll(RIDataMaintenance.Sites)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:RIDataMaintenance.SitesTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:RIDataMaintenance.SitesTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+</members>
+</doc>

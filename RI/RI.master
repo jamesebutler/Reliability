@@ -1,0 +1,269 @@
+<%@ Master Language="VB" CodeFile="RI.master.vb" Inherits="RIMaster" %>
+
+<%@ Register Src="~/RI/User Controls/Common/ucDownTimeMessage.ascx" TagName="ucDownTimeMessage"
+    TagPrefix="IP" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" id="Head">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="~/App_Themes/Print.css" rel="stylesheet" media="print" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="JQueryTimePicker/jquery-ui-timepicker-addon.css" />
+    <link href="JQueryTimePicker/jquery-ui-1.8.5.custom.css?v=1" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="../JQueryTimePicker/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../JQueryTimePicker/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../JQueryTimePicker/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="../JQueryTimePicker/jquery-ui-timepicker-addon-i18n.min.js"></script>
+    <script type="text/javascript" src="../JQueryTimePicker/jquery-ui-sliderAccess.js"></script>
+    <script type="text/javascript" src="../JQueryTableSorter/jquery.tablesorter.min.js"></script>
+
+    <title>International Paper</title>
+    <%-- <script type="text/javascript" src="http://www.google.com/jsapi"></script>--%>
+</head>
+<body style="margin-left: 0px; margin-top: 2px;" onload="LoadEvents();" onhelp="disableDefault();">
+    <form id="_frmMaster" runat="server">
+        <%--<Asp:ScriptManager ID="_scriptManager" AsyncPostBackTimeout="2000" LoadScriptsBeforeUI="true"
+        ScriptMode="release" runat="server" EnablePartialRendering="true" EnableScriptGlobalization="true"
+        EnableScriptLocalization="true" EnablePageMethods="true">
+    </Asp:ScriptManager>--%>
+
+        <asp:ScriptManager ID="_scriptManager" AsyncPostBackTimeout="2000"
+            LoadScriptsBeforeUI="true" ScriptMode="release" runat="server" EnablePartialRendering="true"
+            EnableScriptGlobalization="true" EnableScriptLocalization="true"
+            EnablePageMethods="true">
+        </asp:ScriptManager>
+
+        <div id="dhtmlwindowholder">
+            <span style="display: none">.</span>
+        </div>
+        <div id="interVeil">
+            <span style="display: none">.</span>
+        </div>
+        <input type="hidden" id="_hdfScrollPos" name="_hdfScrollPos" />
+        <div>
+            <table id="_tblMaster" runat="server" border="0" cellpadding="0" class="Main" cellspacing="0"
+                style="width: 100%;">
+                <tr>
+                    <td class="Border" colspan="3" style="width: 100%; height: 1px"></td>
+                </tr>
+                <tr>
+                    <td class="Banner" colspan="3">
+                        <IP:Banner ID="_banner" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Border" colspan="3" style="width: 100%; height: 10px"></td>
+                </tr>
+                <tr>
+                    <td class="Border"></td>
+                    <td align="left">
+                        <div class="noprint">
+                            <asp:UpdatePanel ID="_udpMenuTop" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
+                                <ContentTemplate>
+                                    <%--   <asp:Menu EnableViewState="false" ID="_mainMenu" EnableTheming="true" SkinID="mainMenu"
+                                        StaticDisplayLevels="1" Width="100%" runat="server" Orientation="Horizontal"
+                                        BackColor="#FFFFFF" DynamicHorizontalOffset="2" Font-Names="Verdana" ForeColor="#990000"
+                                        StaticSubMenuIndent="10px" DynamicMenuItemStyle-ItemSpacing="1" DataSourceID="sitemapdatasource1"
+                                        StaticEnableDefaultPopOutImage="true" StaticPopOutImageTextFormatString="" StaticPopOutImageUrl="~/Images/ArrowRight.gif">
+                                    </asp:Menu>--%>
+                                    <asp:Menu EnableViewState="False" Width="100%" ID="_mainMenu" runat="server" SkinID="mainMenu" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </td>
+                    <td class="Border"></td>
+                </tr>
+                <tr>
+                    <td class="Border"></td>
+                    <td align="left">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center" width="100%">
+                                    <%--<asp:Menu EnableViewState="false" ID="_menuSub" EnableTheming="true" SkinID="subMenu"
+										StaticDisplayLevels="1" StaticMenuItemStyle-BorderStyle="Outset" StaticMenuItemStyle-BorderWidth="2"
+										StaticMenuItemStyle-Width="150" runat="server" Orientation="Horizontal" BackColor="#FFFFFF"
+										DynamicHorizontalOffset="2" Font-Names="Verdana" ForeColor="#990000" StaticSubMenuIndent="10px"
+										DynamicMenuItemStyle-ItemSpacing="10" StaticEnableDefaultPopOutImage="true" StaticPopOutImageTextFormatString=""
+										StaticPopOutImageUrl="~/Images/ArrowRight.gif">
+									</asp:Menu>	--%>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="Border"></td>
+                </tr>
+                <tr>
+                    <td class="Border" style="width: 1px; height: 100%">
+                        <img id="_imgBlank2" src="~/images/blank.gif" width="1" height="300" runat="server"
+                            alt="" />
+                    </td>
+                    <td class="Content" style="height: 400px" id="_Content" runat="server">
+                        <div id="contentstart">
+                            <asp:ContentPlaceHolder ID="_cphMain" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </td>
+                    <td class="Border" style="width: 1px; height: 100%">
+                        <img id="_imgBlank3" src="~/images/blank.gif" width="1" height="300" runat="server"
+                            alt="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Border" colspan="3" style="width: 100%; height: 1px"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <div class="noprint">
+                            <asp:UpdatePanel ID="_udpMenuBottom" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
+                                <ContentTemplate>
+                                    <asp:Menu EnableViewState="False" Width="100%" ID="_mainMenuBottom" runat="server"
+                                        SkinID="mainMenu" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </td>
+                </tr>
+                <tr id="_footer" runat="server">
+                    <td class="Border" style="width: 1px; height: 100%">
+                        <img id="_imgBlank4" src="~/images/blank.gif" width="1" height="1" runat="server"
+                            alt="" />
+                    </td>
+                    <td style="width: 100%">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td align="left" style="width: 50%">
+                                    <IP:SelectLanguage ID="_selectLanguage" runat="server" />
+                                </td>
+                                <td class="Footer">
+                                    <%--<asp:Literal ID="_lblCopyRight" runat="server" Text='<%$RIResources:Global,CopyRight %>'></asp:Literal><br />--%>
+                                    <asp:Literal ID="Literal2" runat="server" Text='<%$Resources:Shared, lblCopyRight %>'></asp:Literal><br />
+                                    <%--  <asp:Label ID="_lblCurrentUser" runat="server" Font-Names="Verdana" Font-Size="0.8em"></asp:Label>--%>
+                                    <div class="labellogin">
+                                        <IP:LdapLogin ID="_login" runat="server" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="Border" style="width: 1px; height: 100%">
+                        <img id="_imgBlank5" src="~/images/blank.gif" width="1" height="1" runat="server"
+                            alt="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="Border" colspan="3" style="width: 100%; height: 1px"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <ajaxToolkit:ModalPopupExtender id="_mpeHelp" runat="server" targetcontrolid="_imbHelp"
+            popupcontrolid="_pnlHelp" backgroundcssclass="modalBackground" dropshadow="true"
+            okcontrolid="_btnClose" cancelcontrolid="_btnClose">
+        </ajaxToolkit:modalpopupextender>
+        <ajaxToolkit:modalpopupextender id="_mpeBusy" runat="server" targetcontrolid="_imbBusy"
+            popupcontrolid="_pnlBusy" backgroundcssclass="modalBackground" dropshadow="false"
+            okcontrolid="_btnCloseBusy" cancelcontrolid="_btnCloseBusy">
+        </ajaxToolkit:modalpopupextender>
+        <asp:Button Visible="false" ID="_btnBusy" runat="server" />
+        <asp:Panel ID="_pnlBusy" runat="server" Width="0" Height="0" Style="display: none;">
+            <div visible="false" style="display: none; visibility: hidden">
+                <asp:Button ID="_btnCloseBusy" runat="server" Text="Cancel" />
+            </div>
+        </asp:Panel>
+        <asp:Panel ID="_pnlHelp" runat="server" CssClass="modalPopup" Width="800" Height="200"
+            Style="display: none;">
+            <table border="1" class="help" cellpadding="2" cellspacing="0" style="width: 100%; height: 100%"
+                align="center">
+                <tr>
+                    <th>
+                        <IP:Banner ID="_bannerHelp" runat="server" BannerMessage="Help" DisplayPopupBanner="true" />
+                    </th>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <asp:HyperLink ID="_imgMyHelp" runat="server" NavigateUrl="http://MyHelp" Target="_blank"
+                            ImageUrl="~/Images/MyHelpSm.gif" /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%" valign="top">
+                        <br />
+                        All problem calls directed to ITCS by either calling 1-800-526-1017 or logging calls
+                    online with MYHELP.
+                    <br />
+                        <br />
+                        Select Application - Reliability (RI/RCFA)
+                    <br />
+                        <br />
+                        If you experience any problems that are not handled in timely manner or routed correctly,
+                    please contact &nbsp;<asp:HyperLink ID="HyperLink1" NavigateUrl="Mailto:Shanda.Bittick@ipaper.com"
+                        runat="server">Shanda.Bittick@ipaper.com</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="text-align: right;">
+                            <asp:Button ID="_btnClose" runat="server" Text="Close"></asp:Button>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+        <asp:Panel ID="_pnlError" runat="server" CssClass="modalPopup" Width="800" Height="200"
+            Style="display: none;">
+            <table border="1" class="help" cellpadding="2" cellspacing="0" style="width: 100%; height: 100%"
+                align="center">
+                <tr>
+                    <th>Error
+                    </th>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="http://MyHelp" Target="_blank"
+                            ImageUrl="~/Images/MyHelpSm.gif" /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td width="100%" valign="top">
+                        <br />
+                        All problem calls directed to ITCS by either calling 1-800-526-1017 or logging calls
+                    online with MYHELP.
+                    <br />
+                        <br />
+                        Select Application - Reliability (RI/RCFA)
+                    <br />
+                        <br />
+                        If you experience any problems that are not handled in timely manner or routed correctly,
+                    please contact &nbsp;<asp:HyperLink ID="HyperLink3" NavigateUrl="Mailto:Shanda.Bittick@ipaper.com"
+                        runat="server">Shanda.Bittick@ipaper.com</asp:HyperLink>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p style="text-align: right;">
+                            <asp:Button ID="_btnCloseError" runat="server" Text="Close"></asp:Button>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </asp:Panel>
+        <div visible="false" style="display: none; visibility: hidden">
+            <asp:ImageButton ImageUrl="~/Images/question.gif" runat="server" ID="_imbHelp" Visible="true" />
+        </div>
+        <div visible="false" style="display: none; visibility: hidden">
+            <asp:ImageButton ImageUrl="~/Images/blank.gif" runat="server" ID="_imbBusy" Visible="true" />
+        </div>
+        <IP:MessageBox ID="_ValidationSummaryMessage" Width="400" runat="server" ButtonType="OK" />
+        <IP:MessageBox ID="_ConfirmMessage" Title="<%$RIResources:Shared,PleaseConfirm %>"
+            runat="server" Width="400" AllowPostback="false" ButtonType="YesNo" />
+        <IP:MessageBox ID="_AlertMessage" Title="International Paper" runat="server" Width="400"
+            AllowPostback="false" ButtonType="OK" />
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+        <iframe title="KeepPageAlive" src="<%=page.ResolveClientUrl ("~/KeepSessionAlive.aspx") %>"
+            id="_ifrSessionAlive" width="400" frameborder="no" height="40" scrolling="no"
+            visible="false"></iframe>
+        <IP:ucDownTimeMessage ID="_downTimeMessage" runat="server" DowntimeMode="Automatic" />
+        <IP:DisplayExcel ID="_displayExcel" runat="server" />
+    </form>
+</body>
+</html>

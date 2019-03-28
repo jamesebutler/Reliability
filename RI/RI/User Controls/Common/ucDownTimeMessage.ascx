@@ -1,0 +1,2 @@
+<%@ Control Language="VB" AutoEventWireup="false" CodeFile="ucDownTimeMessage.ascx.vb" Inherits="ucDownTimeMessage" %>
+ <div class="noprint"><div id="dropinboxv2cover"><div id="dropinboxv2"></div></div></div> 

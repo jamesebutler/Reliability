@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisioDocument>
+	<DocumentProperties>
+		<Title></Title>
+		<HyperlinkBase href=""></HyperlinkBase>
+	</DocumentProperties>
+	<Pages>
+		<Page ID="0" Name="Page-1" NameU="Page-1">
+			<Layer IX="0">
+				<Name>Flowchart</Name>
+				<NameUniv>Flowchart</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Layer IX="1">
+				<Name>Connector</Name>
+				<NameUniv>Connector</NameUniv>
+				<Visible>1</Visible>
+			</Layer>
+			<Shapes>
+				<Shape ID="4" UniqueID="{9B9D0406-801D-43D1-96C4-EEEEF1F21752}" Name="Dynamic connector.4" NameU="Dynamic connector.4" Master="2">
+					<XForm>
+						<PinX Unit="IN_F">4.565833333333336</PinX>
+						<PinY Unit="IN_F">11.780677083333334</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="12" UniqueID="{1640880B-21CB-4313-8757-AACEE85E7258}" Name="Decision.12" NameU="Decision.12" Master="7">
+					<Text>
+Is the existing winding integrity good for minimum 20 year life?  Note:  Exceptions can be made as appropriate.</Text>
+					<XForm>
+						<PinX Unit="IN_F">8.919397415611819</PinX>
+						<PinY Unit="IN_F">11.772864583333336</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value Unit="STR">Step3RR</Value>
+						<Label>Step</Label>
+					</Prop>
+					<Prop ID="2" Name="Duration" NameU="Duration">
+						<Value></Value>
+						<Label>Duration</Label>
+					</Prop>
+					<Prop ID="3" Name="Resources" NameU="Resources">
+						<Value></Value>
+						<Label>Resources</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="16" UniqueID="{944BEB00-740F-4690-AFB8-D870CC058B8B}" Name="Dynamic connector.16" NameU="Dynamic connector.16" Master="8">
+					<Text>Yes</Text>
+					<XForm>
+						<PinX Unit="IN_F">8.919397415611819</PinX>
+						<PinY Unit="IN_F">9.440397135416667</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="21" UniqueID="{FF3AD9B4-80FE-4942-B89D-E4CB66C40572}" Name="Predefined process" NameU="Predefined process" Master="9">
+					<Text>Motor must be rewound</Text>
+					<XForm>
+						<PinX Unit="IN_F">6.750000000000000</PinX>
+						<PinY Unit="IN_F">9.375000000000000</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value Unit="STR">Step4RR</Value>
+						<Label>Step</Label>
+					</Prop>
+					<Prop ID="2" Name="Duration" NameU="Duration">
+						<Value></Value>
+						<Label>Duration</Label>
+					</Prop>
+					<Prop ID="3" Name="Resources" NameU="Resources">
+						<Value></Value>
+						<Label>Resources</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="22" UniqueID="{4C2E5065-749F-4F7F-B12B-397EF34265E3}" Name="Dynamic connector.22" NameU="Dynamic connector.22" Master="8">
+					<Text>No</Text>
+					<XForm>
+						<PinX Unit="IN">7.579791666666668</PinX>
+						<PinY Unit="IN">10.573932291666669</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="23" UniqueID="{23751252-8963-4E3E-9D5A-6193015519F0}" Name="Dynamic connector.23" NameU="Dynamic connector.23" Master="8">
+					<XForm>
+						<PinX Unit="IN_F">4.797708333333334</PinX>
+						<PinY Unit="IN">9.250000000000000</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="29" UniqueID="{7C0BF589-B955-4074-BE2F-9651EEE1A634}" Name="Decision.29" NameU="Decision.29" Master="7">
+					<Text>Are there any extenuating circumstances such as delivery, special frame, etc. which prevent new motor purchase?</Text>
+					<XForm>
+						<PinX Unit="IN_F">5.625000000000000</PinX>
+						<PinY Unit="IN_F">11.772864583333336</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value Unit="STR">Step1RR</Value>
+						<Label>Step</Label>
+					</Prop>
+					<Prop ID="2" Name="Duration" NameU="Duration">
+						<Value></Value>
+						<Label>Duration</Label>
+					</Prop>
+					<Prop ID="3" Name="Resources" NameU="Resources">
+						<Value></Value>
+						<Label>Resources</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="36" UniqueID="{124E6FCC-11DE-4862-8E94-A0ABC2DD6321}" Name="Decision.36" NameU="Decision.36" Master="7">
+					<Text>
+Can the motor be rewound (with good laminations that have no significant damage and core loss tests good) and repaired per IP spec 3692 (latest version) and still meet repair and energy cost hurdle(1)?
+</Text>
+					<XForm>
+						<PinX Unit="IN_F">3.345416666666667</PinX>
+						<PinY Unit="IN_F">8.022187500000001</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value Unit="STR">Step5RR</Value>
+						<Label>Step</Label>
+					</Prop>
+					<Prop ID="2" Name="Duration" NameU="Duration">
+						<Value></Value>
+						<Label>Duration</Label>
+					</Prop>
+					<Prop ID="3" Name="Resources" NameU="Resources">
+						<Value></Value>
+						<Label>Resources</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="1" UniqueID="{C0B9A058-9554-4A02-B882-B873F217BFF5}" Name="Dynamic connector.8" NameU="Dynamic connector.8" Master="8">
+					<Text>No</Text>
+					<XForm>
+						<PinX Unit="IN_F">7.780011207805909</PinX>
+						<PinY Unit="IN_F">12.156399739583335</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="5" UniqueID="{C7097FD0-FFBA-4A3D-9B37-CB1E5FECF576}" Name="Dynamic connector.5" NameU="Dynamic connector.5" Master="8">
+					<Text>Yes</Text>
+					<XForm>
+						<PinX Unit="IN">5.625000000000000</PinX>
+						<PinY Unit="IN">10.718177083333336</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="28" UniqueID="{7AD8506C-994D-4E63-9DA0-ABF50FEBA8CA}" Name="Auto-height box" NameU="Auto-height box" Master="3">
+					<Text>Repair Motor to IP spec 3692 (latest version)</Text>
+					<XForm>
+						<PinX Unit="IN_F">5.625000000000000</PinX>
+						<PinY Unit="IN_F">10.175208333333336</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Row_1" NameU="Row_1">
+						<Value Unit="STR">Step2RR</Value>
+						<Label>Step</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="8" UniqueID="{1DE9D1CD-34E6-4BE2-96B3-F09872BD092D}" Name="Auto-height box.8" NameU="Auto-height box.8" Master="3">
+					<Text>Replace Motor</Text>
+					<XForm>
+						<PinX Unit="IN_F">0.625000000000000</PinX>
+						<PinY Unit="IN_F">8.022187500000001</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Row_1" NameU="Row_1">
+						<Value Unit="STR">Step6RR</Value>
+						<Label>Step</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="20" UniqueID="{CB7F2D75-E782-4E1B-9755-83DA1F8E7513}" Name="Dynamic connector.20" NameU="Dynamic connector.20" Master="8">
+					<Text>No</Text>
+					<XForm>
+						<PinX Unit="IN">1.500000000000000</PinX>
+						<PinY Unit="IN">8.022187500000001</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="9" UniqueID="{53629605-2E1F-44BE-B7C5-7F2F64A9E20B}" Name="Dynamic connector.9" NameU="Dynamic connector.9" Master="8">
+					<XForm>
+						<PinX Unit="IN_F">5.625000000000000</PinX>
+						<PinY Unit="IN_F">12.767291666666669</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="51" UniqueID="{52A0DAC8-D8A4-423A-9112-78D924D73609}" Name="Sheet.51" NameU="Sheet.51">
+					<XForm>
+						<PinX Unit="IN_F">3.052083333333332</PinX>
+						<PinY Unit="IN_F">11.829861111111111</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="52" UniqueID="{3BAB460F-5F9F-45FD-983B-7104BF3FDD67}" Name="Title block classic" NameU="Title block classic" Master="14">
+					<Text>Above NEMA Frame Motor Repair vs. Replace Model
+Thursday, February 07, 2008</Text>
+					<XForm>
+						<PinX Unit="IN_F">5.625000000000000</PinX>
+						<PinY Unit="IN_F">13.370520833333330</PinY>
+					</XForm>
+					<Prop ID="1" Name="Theme" NameU="Theme">
+						<Value Unit="STR">Classic</Value>
+						<Label>Theme</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="46" UniqueID="{62A3BD44-2C65-4503-BA1C-20DE4EABDE25}" Name="Auto-height box.46" NameU="Auto-height box.46" Master="3">
+					<Text>Repair Motor to IP spec 3692 (latest version)</Text>
+					<XForm>
+						<PinX Unit="IN_F">0.875000000000000</PinX>
+						<PinY Unit="IN_F">5.677864583333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Row_1" NameU="Row_1">
+						<Value Unit="STR">Step12RR</Value>
+						<Label>Step</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="40" UniqueID="{E3CED1B5-3E3B-4886-B7B3-0E5BAC50BD88}" Name="Decision.40" NameU="Decision.40" Master="7">
+					<Text>Are there other extenuating circumstances(2) that would prevent proper repair of the motor or is the proper repair cost of these items prohibitive per the repair and energy cost hurdle(1)?</Text>
+					<XForm>
+						<PinX Unit="IN_F">8.919397415611819</PinX>
+						<PinY Unit="IN_F">6.951210937499999</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value Unit="STR">Step7RR</Value>
+						<Label>Step</Label>
+					</Prop>
+					<Prop ID="2" Name="Duration" NameU="Duration">
+						<Value></Value>
+						<Label>Duration</Label>
+					</Prop>
+					<Prop ID="3" Name="Resources" NameU="Resources">
+						<Value></Value>
+						<Label>Resources</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="47" UniqueID="{DC32A6A3-93AD-44E4-8064-793EE33DD32A}" Name="Dynamic connector.47" NameU="Dynamic connector.47" Master="8">
+					<Text>No</Text>
+					<XForm>
+						<PinX Unit="IN_F">6.468839332805909</PinX>
+						<PinY Unit="IN_F">6.572350260416666</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="48" UniqueID="{D484786F-9C77-4AF9-8143-EADB0B5A0732}" Name="Auto-height box.48" NameU="Auto-height box.48" Master="3">
+					<Text>Replace Motor</Text>
+					<XForm>
+						<PinX Unit="IN_F">8.919397415611819</PinX>
+						<PinY Unit="IN_F">4.437500000000000</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Row_1" NameU="Row_1">
+						<Value Unit="STR">Step8RR</Value>
+						<Label>Step</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="49" UniqueID="{EFF9C07B-4451-466D-BC7F-D077BAFB0964}" Name="Dynamic connector.49" NameU="Dynamic connector.49" Master="8">
+					<Text>Yes</Text>
+					<XForm>
+						<PinX Unit="IN">8.919397415611819</PinX>
+						<PinY Unit="IN">5.294960937499999</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="50" UniqueID="{A7881C37-B259-4181-A9F2-FE2350FB5238}" Name="Decision.50" NameU="Decision.50" Master="7">
+					<Text>
+Is repair cost more than 70% of new motor cost?</Text>
+					<XForm>
+						<PinX Unit="IN_F">5.250000000000000</PinX>
+						<PinY Unit="IN_F">5.677864583333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value Unit="STR">Step9RR</Value>
+						<Label>Step</Label>
+					</Prop>
+					<Prop ID="2" Name="Duration" NameU="Duration">
+						<Value></Value>
+						<Label>Duration</Label>
+					</Prop>
+					<Prop ID="3" Name="Resources" NameU="Resources">
+						<Value></Value>
+						<Label>Resources</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="54" UniqueID="{61065885-BA88-4F62-B6CC-CC6B31F14B0D}" Name="Dynamic connector.54" NameU="Dynamic connector.54" Master="8">
+					<Text>No</Text>
+					<XForm>
+						<PinX Unit="IN_F">4.281250000000000</PinX>
+						<PinY Unit="IN_F">5.677864583333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="55" UniqueID="{9135370C-9C5B-49C4-B2AD-DC920DC8595D}" Name="Dynamic connector.55" NameU="Dynamic connector.55" Master="8">
+					<Text>Yes</Text>
+					<XForm>
+						<PinX Unit="IN_F">7.084698707805909</PinX>
+						<PinY Unit="IN_F">4.956119791666666</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="56" UniqueID="{D318F602-2328-49A3-98EE-E6219990B4ED}" Name="Note box classic" NameU="Note box classic" Master="15">
+					<Text>(1) repair and energy cost hurdle = [(new motor cost - repair cost) – (2 x annual energy savings)] &gt; 0
+	
+	annual energy savings = [new motor efficiency (%) – old motor efficiency (%)] x motor hp x $340
+
+	Note:  Use OEM motor vendor supplied efficiency estimation data to estimate old motor efficiency if
+	           not available from nameplate.
+
+	example:  100 hp motor - - new motor efficiency = 95.1%  old motor efficiency = 93.2%
+	annual savings = [0.951 – 0.932] x 100 x 340 = $646 /year energy savings
+
+(2)  extenuating circumstances include:
+	- - frame casting is broken and needs repair or has been welded in past
+	- - other major mechanical issues including damaged shaft, bad rabbet fits, excessive rust, rotor
+	     damage/issues, etc.
+	- - motor has been rewound previously at least 2 times
+	- - motor has history of poor reliability
+	- - motor is misapplied for application and different motor should be used; old motor 
+	     can be considered for service as a spare for other applications</Text>
+					<XForm>
+						<PinX Unit="IN_F">7.625000000000000</PinX>
+						<PinY Unit="IN_F">2.562500000000000</PinY>
+					</XForm>
+				</Shape>
+				<Shape ID="2" UniqueID="{8EBD17F0-9722-43BE-8AE1-A96784E5F3FD}" Name="Dynamic connector.2" NameU="Dynamic connector.2" Master="8">
+					<Text>Yes</Text>
+					<XForm>
+						<PinX Unit="IN_F">6.132407041139243</PinX>
+						<PinY Unit="IN_F">7.522187500000000</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="3" UniqueID="{2F219BF7-24B5-49C6-BF09-05E9A4BC92EB}" Name="Decision.3" NameU="Decision.3" Master="7">
+					<Text>
+
+Does motor repair per IP spec 3692 (latest version) meet repair and energy cost hurdle(1)?</Text>
+					<XForm>
+						<PinX Unit="IN_F">3.044010416666668</PinX>
+						<PinY Unit="IN_F">5.677864583333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Cost" NameU="Cost">
+						<Value Unit="STR">Step10RR</Value>
+						<Label>Step</Label>
+					</Prop>
+					<Prop ID="2" Name="Duration" NameU="Duration">
+						<Value></Value>
+						<Label>Duration</Label>
+					</Prop>
+					<Prop ID="3" Name="Resources" NameU="Resources">
+						<Value></Value>
+						<Label>Resources</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="6" UniqueID="{DDA41D83-36B4-4DF9-BFDE-1C0F69AEC010}" Name="Dynamic connector.6" NameU="Dynamic connector.6" Master="8">
+					<Text>Yes</Text>
+					<XForm>
+						<PinX Unit="IN_F">1.731510416666668</PinX>
+						<PinY Unit="IN">5.677864583333332</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+				<Shape ID="10" UniqueID="{EA4C5424-922D-4C0C-9C81-BA1B93C9C2B5}" Name="Auto-height box.10" NameU="Auto-height box.10" Master="3">
+					<Text>Replace Motor</Text>
+					<XForm>
+						<PinX Unit="IN_F">3.044010416666668</PinX>
+						<PinY Unit="IN_F">4.312500000000000</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>0</LayerMember>
+					</LayerMem>
+					<Prop ID="1" Name="Row_1" NameU="Row_1">
+						<Value Unit="STR">String11</Value>
+						<Label>Step</Label>
+					</Prop>
+				</Shape>
+				<Shape ID="11" UniqueID="{2068BBE7-34C7-4FB6-B7C4-5D84013CC708}" Name="Dynamic connector.11" NameU="Dynamic connector.11" Master="8">
+					<Text>No</Text>
+					<XForm>
+						<PinX Unit="IN_F">3.044010416666668</PinX>
+						<PinY Unit="IN">4.699186197916667</PinY>
+					</XForm>
+					<LayerMem>
+						<LayerMember>1</LayerMember>
+					</LayerMem>
+				</Shape>
+			</Shapes>
+		</Page>
+	</Pages>
+</VisioDocument>

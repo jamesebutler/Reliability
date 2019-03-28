@@ -1,0 +1,247 @@
+﻿@media screen 
+{
+body {}
+.printOnly{display:none}
+.Border{background-color: #CCCC99;}
+.BorderSecondary{background-color:#cccccc;}
+.BorderWhite{background-color:White;}
+.TreeViewBackground{background-color:#cccccc;text-decoration:none;}
+.TreeViewHover{background-color:White;font-weight:bold;}
+.TreeView{text-decoration:none;font-size:medium;font-weight:bold;} 
+.TreeView A{color:Black;}
+.Disabled{background-color:#cccccc;color:Red;font-weight:bold;}     
+.mainmenu {	margin-left:0px;background-color:#CCCC99;color:#FFFFFF;}
+.mainmenu, .mainmenu tr {height:24px;}
+* html .mainmenu {margin-top:-1px;}
+.mainmenu a {text-decoration:none;color:#FFF;}
+.mainmenu a:Hover{text-decoration:none;color:#000;}
+.mainmenu a:Link{text-decoration:none;color:#FFF;}
+.mainmenu a:Active{text-decoration:none;color:#FFF;}
+.submenu a {text-decoration:none;color:#FFF;}
+.submenu a:Hover{text-decoration:none;color:#000;}
+.submenu a:Link{text-decoration:none;color:#FFF;}
+.submenu a:Active{text-decoration:none;color:#FFF;}
+
+.mainMenuBack, .mainMenuBack tr {height:24px; }
+
+.mainMenuBack
+{
+	
+	color:White;
+	text-align:center;
+	font-weight :bold ;
+	background-color:#ffffff;
+}
+
+.mainMenuBack a:Link, .mainMenuBack a:Visited
+{
+	text-decoration:none;
+	color:White;		 
+}
+
+.mainMenuBackHover{
+	background-color:#CCCC99;
+	text-decoration:none;
+	color:White
+}
+
+.mainMenuBack .normallink {padding:0px;font-weight:bold;text-align:center;color:#FFFFFF;background-color:#000000;}
+.mainMenuBack .selectedlink {padding:0px;text-align:center;background-color:#CCCC99;color:#000000;}
+
+.mainSubMenu
+{	
+	border-style:solid;
+	border-width:thin;	
+	border-color: #CCCC99;	
+	z-index:2;
+	font-weight:bold;
+	background-color:#CCCC99; 
+	
+} 
+
+.mainSubMenuBack
+{	
+	border-style:solid;
+	border-width:thin;	
+	border-color: #000000;	
+	z-index:1;
+	font-weight:bold;
+	background-color:#CCCC99; 		 
+} 
+
+.mainSubMenuBackHover{	
+	text-decoration:none;
+	background-color:#000000; 
+	color:#FFF;
+}
+.mainSubMenuBack a:Link, .mainSubMenuBack a:Visited{	
+	text-decoration:none;
+	color:#FFF;
+}
+
+
+A {text-decoration:underline;}
+A:Hover{text-decoration:underline;}
+A:Link{text-decoration:underline;}
+A:Active{text-decoration:underline;}
+.help{background-color:#ffffff;border-width:1;border-color:Black;border-collapse:collapse;}
+.help th{background-color:#000000;font-size:medium;font-family:Verdana;font-weight:bold;color:#ffffff;border-width:0;border-color:Black;}
+.help td{background-color:#ffffcc;font-size:medium;font-weight:bold;font-family:Verdana;padding-right:10px;padding-left:10px;border-width:0;border-color:#ffffcc;}
+.LinkButton{color:Black;}
+/* Adds a height to a button so that IE Win will allow it to be clickable across its full width. */
+/* Hide from IE5-Mac \*/
+* html .mainmenu a {height: 1%}
+/* end hiding */ 
+.Buttonhover{background-color:#CCCC99;color:Black;font-weight:bold;cursor:Pointer;}
+.ButtonBlack{background-color:#000000;color:White;font-weight:bold;cursor:Pointer;}
+.Button{background-color:#8A2020;color:White;font-weight:bold;cursor:Pointer;}
+.Button:Hover{background-color:#CCCC99;color:Black;font-weight:bold;cursor:Pointer;}    
+.mainmenu .normallink {padding:0px;font-weight:bold;text-align:center;color:#FFFFFF;background-color:#000000;}
+.mainmenu .selectedlink {padding:0px;text-align:center;background-color:#CCCC99;color:#000000;}
+.submenu .normallink {padding:0px;font-weight:bold;text-align:center;color:#FFFFFF;background-color:#8A2020;}
+.submenu .selectedlink {padding:0px;text-align:center;background-color:#CCCC99;color:#000000;	}
+.Content{background-color:White;padding-left:1px;padding-top:5px;padding-right:1px;padding-bottom:5px; vertical-align:top;width:100%;height:400px;font-family:Verdana;font-size:12px; }
+.ContentHeader{color:#800000;font-size:20px;font-family:Verdana;} 
+.Banner{background-color:Black;padding-left:0px;padding-top:0px;vertical-align:top;text-align:left;font-size:medium;width:100%;font-family:Verdana;}
+.Header{background-color:Black;padding-left:0px;padding-top:0px;vertical-align:top;text-align:center;font-family:Verdana;font-size:12px;}
+.Footer
+{background-color:White;padding-left:1px;padding-top:5px;vertical-align:top;text-align:right;width:100%;height:20px;font-size:11px;font-family:Verdana;}
+.Label
+{font-weight:bold;font-size:12px;color:Black;font-family:Verdana;}
+.LabelRINumber
+{border-style:inset;background-color:#cccccc;    padding-left:5px;padding-right:20px; font-size:12px;color:black;}   
+.LabelHeader
+{font-weight:bold;font-size:12px;color:White;vertical-align:bottom;font-family:Verdana;}
+.LabelWhite
+{font-weight:bold;font-size:11px;color:White;font-family:Verdana;}
+.LabelWhiteSmall
+{font-weight:normal;font-size:small;color:White;font-family:Verdana;}
+.LabelBlackSmall{font-weight:normal;font-size:11px;font-family:Verdana;color:Black;}
+.LabelLink{font-weight:normal;font-size:9px;font-family:Verdana;color:Blue;cursor:Pointer; text-decoration:none; }
+.dropdwn{font-size:12px;font-family:Verdana;}
+/*Popup Control*/
+.popupControl{background-color:White;position:absolute;visibility:hidden;z-index:99;}
+/*CollapsiblePanel*/
+.collapsePanel {background-color:white;overflow:hidden;}
+.collapsePanelHeader{width:100%;height:30px;background-image: url(images/bg-menu-main.png);background-repeat:repeat-x;color:#000;font-weight:bold;font-family:Verdana;}
+.CheckBoxList{white-space:nowrap;}  
+#fixedtipdiv{position:absolute;padding: 2px;border:1px solid black;font:normal 12px Verdana;line-height:18px;z-index:100;}
+/*Modal Popup*/
+.modalBackground {background-color:Gray;filter:alpha(opacity=70);opacity:0.7;}
+.modalPopup {background-color:#ffffdd;border-width:3px;border-style:solid;border-color:Gray;padding:3px;width:600px;}
+.dynamicPopulate_Updating{background-image:url(images/loading.gif);background-repeat:no-repeat;border:silver 1px inset;text-align:center;padding:2px;height:2em;margin:5px;width:200px;}
+/* Locks table header */
+/*.LockHeader  {font-weight:bold;font-family:Verdana;text-align: center;background-color: Black;color: White;border-right: 0px solid silver;position:relative;cursor:default;z-index:99;overflow:hidden;padding-left:0px;padding-top:0px;vertical-align:top;}
+.LockCell  {font-family:Verdana;position:relative;cursor:default;z-index:99;background-color:#CCCC99;overflow:hidden;padding-left:0px;padding-top:0px;vertical-align:top;}*/
+.ajax__calendar_prev {cursor:Pointer;width:15px;height:15px;float:left;background:url(images/arrow-left.gif) no-repeat;background-position:50% 50%;}
+.ajax__calendar_next {cursor:Pointer;width:15px;height:15px;float:right;background:url(images/arrow-right.gif) no-repeat;background-position:50% 50%;}
+.ajax__calendar_container {padding:4px;position:absolute;cursor:default;width:170px;font-size:8px;text-align:center;font-family:tahoma,verdana,helvetica;}
+.ajax__calendar_body {height:139px;width:170px;position:relative;overflow:hidden;margin:auto;}
+.ajax__calendar_days, .ajax__calendar_months, .ajax__calendar_years {top:0px;left:0px;height:139px;width:170px;position:absolute;text-align:center;margin:auto;}
+.ajax__calendar_container TABLE {font-size:11px;}
+.ajax__calendar_header {height:20px;width:100%;}
+.ajax__calendar_title {text-align:center;cursor:Pointer;font-weight:bold;}
+.ajax__calendar_footer {height:15px;}
+.ajax__calendar_today {cursor:pointer;padding-top:3px;}
+.ajax__calendar_dayname {height:17px;width:17px;text-align:right;padding:0 2px;}
+.ajax__calendar_day {height:17px;width:18px;text-align:right;padding:0 2px;cursor:Pointer;}
+.ajax__calendar_month {height:44px;width:40px;text-align:center;cursor:Pointer;overflow:hidden;}
+.ajax__calendar_year {height:44px;width:40px;text-align:center;cursor:Pointer;overflow:hidden;}
+.Calendar .ajax__calendar_container {border:1px solid #000000;background-color:#cccccc;color:#000000;font-size:11px;}
+.Calendar .ajax__calendar_body {height:139px;width:170px;position:relative;overflow:hidden;margin:auto;}
+.Calendar .ajax__calendar_footer {color:#ff0000;}
+.Calendar .ajax__calendar_dayname {border-bottom:1px solid #cccccc;}
+.Calendar .ajax__calendar_day {border:1px solid #999999; background-color:#ffffff;font-size:10px; }
+.Calendar .ajax__calendar_month {border:1px solid #ffffff;font-size:10px;}
+.Calendar .ajax__calendar_year {border:1px solid #ffffff;}
+.Calendar .ajax__calendar_active .ajax__calendar_day {background-color:Navy;border-color:#cccccc;color:#FFFFFF;font-weight:bold;}
+.Calendar .ajax__calendar_active .ajax__calendar_month {background-color:Navy;border-color:#cccccc;color:#FFFFFF; font-weight:bold;}
+.Calendar .ajax__calendar_active .ajax__calendar_year {background-color:Navy;border-color:#cccccc;color:#FFFFFF; font-weight:bold;}
+.Calendar .ajax__calendar_other .ajax__calendar_day {background-color:#CCCC99;border-color:#000000;color:#000000;}
+.Calendar .ajax__calendar_other .ajax__calendar_year {background-color:#CCCC99;border-color:#000000;color:#000000;}
+.Calendar .ajax__calendar_hover .ajax__calendar_day {background-color:Navy;border-color:#cccccc;color:#FFFFFF;}
+.Calendar .ajax__calendar_hover .ajax__calendar_month {background-color:Navy;border-color:#cccccc;color:#FFFFFF;}
+.Calendar .ajax__calendar_hover .ajax__calendar_year {background-color:Navy;border-color:#cccccc;color:#FFFFFF;}
+.Calendar .ajax__calendar_hover .ajax__calendar_title {color:#ff0000;}
+.Calendar .ajax__calendar_hover .ajax__calendar_today {color:#ff0000;}
+.TimeSelector{background-color:#CCCCCC;font-size:smaller;text-align:center;font-family:tahoma,verdana,helvetica;}
+.TimeSelector .HoverColor
+{background-color:Red;border-top:#000000;border-width:1px;font-size:x-small;}
+.TimeSelector .SelectedColor{background-color:Aqua;font-size:x-small;font-weight:bold;}
+.TimeSelector .TimeBackColor{background-color:White;font-size:x-small;}
+.TimeSelector .TimePopularItemColor{background-color:Yellow;font-size:x-small;}
+.TimeButtons{font-size:11px;text-decoration:none;margin-left:4px;margin-right:4px;color:Red;}
+.DateRange{font-size:10px;height:13px;width:70px;font-family:Verdana;}
+.Datetime{font-size:10px;height:13px;width:50px;font-family:Verdana;}
+.SiteDropdown{width:200px;font-size:12px;font-family:Verdana;}
+fieldset{padding-right: 2px;padding-left: 2px;padding-bottom: 2px; padding-top: 2px; border-color:White;border-style:ridge;}
+legend{color:Black;font-weight:bold;}
+/*div{z-index:100;max-width:800px;}
+td.locked{background-color:Red;}
+th.locked{z-index: 999;background-color:Yellow;}*/
+.sort {cursor:pointer; color:Blue; text-decoration:underline; }
+td{font-size:12px;font-family:Verdana;}
+th{font-size:12px;font-family:Verdana; font-weight:bold;}
+Table.Main{width:100%;}
+.iframe{width:100%;height:600px;}
+/* scrolling */
+.ajax__scroll_horiz {overflow-x:scroll;}
+.ajax__scroll_vert {overflow-y:scroll;}
+.ajax__scroll_both {overflow:scroll}
+.ajax__scroll_auto {overflow:auto}
+.autocompletelabel{background-color:White;border:2px;font-size:small;font-weight:normal;cursor:pointer;} 
+/*AutoComplete flyout */
+.autocomplete_completionListElement {visibility : hidden;margin : 0px!important;background-color :#FFFFFF;color : windowtext;border : buttonshadow;border-width : 1px;border-style : solid;cursor : 'default';overflow : auto;height : 200px;text-align : left; list-style-type :square;}
+/* AutoComplete highlighted item */
+.autocomplete_highlightedListItem{background-color: #ffff99;color: black;padding: 1px;}
+/* AutoComplete item */
+.autocomplete_listItem {background-color : window;color : windowtext;padding : 1px;border:2px;}
+.ValidationError{color:Red;}
+.drag-Pointerle{background-color: #03277C;}
+#interVeil{position: absolute;width: 10px;left: 0;top: 0;z-index: 5;visibility: hidden;background-color:Gray;filter:alpha(opacity=70);opacity:0.7;}
+.dhtmlwindow{position: absolute;border: 2px solid black;visibility: hidden;background-color: white;}
+.drag-Pointerle{padding: 1px;text-indent: 3px;font: bold 14px Arial;background-color: #CA0000;color: white;cursor: move;overflow: hidden;width: auto;}
+.drag-buttons{text-align:right;}
+.drag-Pointerle .drag-controls{position: absolute;right: 1px;top: 2px;cursor: Pointer;cursor: pointer;}
+.drag-contentarea{border-top: 1px solid brown;background-color: white;color: black;height: 150px;padding: 2px;overflow: auto;}
+.drag-statusarea{border-top: 1px solid gray;background-color: #F8F8F8;height: 13px;}
+.drag-resizearea{float: right;width: 13px;height: 13px;cursor: nw-resize;font-size: 0;}
+#dropinboxv2cover{
+	width: 620px; /*change width to desired */
+	/*height: 40px;  /*change height to desired. REMOVE if you wish box to be content's natural height */
+	position:absolute; /*Don't change below 4 rules*/
+	z-index: 10000000;
+	overflow:hidden;
+	visibility: hidden;
+	}
+
+	#dropinboxv2{
+	width: 600px; /*change width to above width-20. */
+	/*height: 20px; /*change height to above height-20. REMOVE if you wish box to be content's natural height*/
+	border: 1px solid 000000; /*Customize box appearance*/
+	background-color:#8A2020;	
+	position:absolute; /*Don't change below 3 rules */
+	padding: 4px;
+	left: 0;
+	font-size:14px;
+	color:White;
+	top: 0;}
+.progressModalWindow
+{
+    z-index:11000  !important;
+    position:absolute;
+    background-color:#ffffdd;border-width:3px;border-style:solid;border-color:Gray;padding:3px;width:600px;
+}
+
+.progressModalBackground 
+{
+    background-color:Gray;filter:alpha(opacity=70);opacity:0.7;
+    z-index:10999;
+    position:absolute;
+}
+input[readonly]{background-color:#F0F0F0 !important; 
+color:#303030 !important;} 
+}
+.dhtmlwindow {
+    z-index: 99999 !important;
+}

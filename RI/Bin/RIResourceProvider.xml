@@ -1,0 +1,49 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+RIResourceProvider
+</name>
+</assembly>
+<members>
+<member name="P:My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:RI.RIResourceProvider.GetOraclePackageDR(System.Data.OracleParameterCollection@,System.String,System.String)">
+	<summary>
+ This method executes an Oracle stored procedure and returns an OracleDataReader
+ </summary>
+	<param name="parms">OracleParameterCollection - A collection of paramaters for the specified package</param>
+	<param name="packageName">String - The name of the package and stored procedure that is to be executed</param>
+	<param name="connection">String - Valid Oracle connection string</param>
+	<returns>An OracleDataReader containing the requested data</returns>
+	<remarks></remarks>
+</member><member name="M:RI.RIResourceProvider.DataClean(System.Object)">
+	<summary>
+ This method is used to remove undesirable characters from the data that has been provided
+ </summary>
+	<param name="inputValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:RI.RIResourceProvider.DataClean(System.Object,System.String)">
+	<summary>
+ This method is used to remove undesirable characters from the data that has been provided.
+ If the input value is empty the default value will be returned.
+ </summary>
+	<param name="inputValue"></param>
+	<param name="defaultvalue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

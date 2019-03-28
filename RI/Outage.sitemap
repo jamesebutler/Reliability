@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap  xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="Home" description="">      
+      <siteMapNode url="~/Outage/EnterOutage.aspx" title="Enter New Outage"  description="" />
+      <siteMapNode url="~/Outage/Outage.aspx" title="View Update/Excel"  description="" />
+      <!--<siteMapNode url="~/Outage/project.aspx" title="View Enterprise Chart"  description="" />-->
+      <siteMapNode url="~/RI/Help/Default.aspx"  title="Help"  description="">
+        <siteMapNode url="~/RI/Help/UsingMyHelp.aspx" title="Using My Help"  description="" />
+        <siteMapNode url="~/Outage/outage_v1.html" title="Online Training"  description=""  />
+       <!-- <siteMapNode url="~/RI/Help/Enhancements.aspx" title="Enhancements"  description="" />-->
+        <siteMapNode url="~/RI/Admin/ImpersonateUser.aspx" title="Impersonate User"/>
+        <siteMapNode  url="~/RI/Admin/CacheViewer.aspx" title="Cache Viewer"/>
+        </siteMapNode>
+      </siteMapNode>  
+</siteMap>

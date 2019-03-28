@@ -1,0 +1,47 @@
+
+Partial Class RI_ViewList
+    Inherits System.Web.UI.Page
+
+    Private Sub DisplayViewSearch()
+        Dim dr As OracleDataReader = Nothing
+        Try
+            Dim clsSearch As clsViewSearch = CType(Session("clsSearch"), clsViewSearch)
+            If clsSearch IsNot Nothing And Not Page.IsPostBack Then
+                dr = clsSearch.Search
+                If dr IsNot Nothing Then
+                    If dr.HasRows Then
+                        _gvIncidentListing.DataSource = dr
+                        _gvIncidentListing.DataBind()
+                        clsSearch.SearchData = Nothing
+                        'If _gvIncidentListing.Rows.Count > 9 Then
+                        '    _pnlIncidentListing.Height = CType("300", Unit)
+                        'End If
+                        If _gvIncidentListing.Rows.Count > 0 Then
+                            Me._lblRecordCount.Text = "Record Count:"
+                            Me._lblRecCount.Text = _gvIncidentListing.Rows.Count
+                        Else
+                            Me._lblRecordCount.Text = "No Records Found"
+                            Me._lblRecCount.Text = ""
+                        End If
+                        _pnlIncidentListing.Visible = True
+                        Me._pnlViewSearch.Visible = True
+                        Response.Flush()
+                    End If
+                End If
+            End If
+        Catch ex As Exception
+
+        Finally
+            If dr IsNot Nothing Then
+                dr.Close()
+                dr = Nothing
+            End If
+        End Try
+    End Sub
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.DisplayViewSearch()
+        Master.SetBanner(Resources.Shared.lblSwitchRI)        
+        Master.HideMenu()
+    End Sub
+End Class

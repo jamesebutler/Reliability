@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://MTT/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://MTT/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://MTT/">
+      <s:element name="CreateMTTTaskHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="businessUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="activity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateMTTTaskHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateMTTTaskHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateIRISTaskHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="taskHeaderNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="extSource" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="businessUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="line" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="activity" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateIRISTaskHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateIRISTaskHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestIRISTaskHeader">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createdBy" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestIRISTaskHeaderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestIRISTaskHeaderResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAvailableRoles">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAvailableRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableRolesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateMTTTaskHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateMTTTaskHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateMTTTaskHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateMTTTaskHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateIRISTaskHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateIRISTaskHeader" />
+  </wsdl:message>
+  <wsdl:message name="CreateIRISTaskHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateIRISTaskHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestIRISTaskHeaderSoapIn">
+    <wsdl:part name="parameters" element="tns:TestIRISTaskHeader" />
+  </wsdl:message>
+  <wsdl:message name="TestIRISTaskHeaderSoapOut">
+    <wsdl:part name="parameters" element="tns:TestIRISTaskHeaderResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateMTTTaskHeaderHttpGetIn">
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="extRef" type="s:string" />
+    <wsdl:part name="extSource" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="siteID" type="s:string" />
+    <wsdl:part name="businessUnit" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="description" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="activity" type="s:string" />
+    <wsdl:part name="createdBy" type="s:string" />
+    <wsdl:part name="createdDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateMTTTaskHeaderHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateIRISTaskHeaderHttpGetIn">
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="taskHeaderNumber" type="s:string" />
+    <wsdl:part name="extRef" type="s:string" />
+    <wsdl:part name="extSource" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="siteID" type="s:string" />
+    <wsdl:part name="businessUnit" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="description" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="activity" type="s:string" />
+    <wsdl:part name="createdBy" type="s:string" />
+    <wsdl:part name="createdDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateIRISTaskHeaderHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestIRISTaskHeaderHttpGetIn">
+    <wsdl:part name="createdBy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestIRISTaskHeaderHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableRolesHttpGetIn" />
+  <wsdl:message name="GetAvailableRolesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="CreateMTTTaskHeaderHttpPostIn">
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="extRef" type="s:string" />
+    <wsdl:part name="extSource" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="siteID" type="s:string" />
+    <wsdl:part name="businessUnit" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="description" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="activity" type="s:string" />
+    <wsdl:part name="createdBy" type="s:string" />
+    <wsdl:part name="createdDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateMTTTaskHeaderHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateIRISTaskHeaderHttpPostIn">
+    <wsdl:part name="title" type="s:string" />
+    <wsdl:part name="taskHeaderNumber" type="s:string" />
+    <wsdl:part name="extRef" type="s:string" />
+    <wsdl:part name="extSource" type="s:string" />
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="siteID" type="s:string" />
+    <wsdl:part name="businessUnit" type="s:string" />
+    <wsdl:part name="line" type="s:string" />
+    <wsdl:part name="description" type="s:string" />
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="activity" type="s:string" />
+    <wsdl:part name="createdBy" type="s:string" />
+    <wsdl:part name="createdDate" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CreateIRISTaskHeaderHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TestIRISTaskHeaderHttpPostIn">
+    <wsdl:part name="createdBy" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TestIRISTaskHeaderHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableRolesHttpPostIn" />
+  <wsdl:message name="GetAvailableRolesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:portType name="TaskTrackerSoap">
+    <wsdl:operation name="CreateMTTTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new mtt task header record.</wsdl:documentation>
+      <wsdl:input message="tns:CreateMTTTaskHeaderSoapIn" />
+      <wsdl:output message="tns:CreateMTTTaskHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateIRISTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new mtt task header record.</wsdl:documentation>
+      <wsdl:input message="tns:CreateIRISTaskHeaderSoapIn" />
+      <wsdl:output message="tns:CreateIRISTaskHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestIRISTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates the default mtt task header for IRIS.</wsdl:documentation>
+      <wsdl:input message="tns:TestIRISTaskHeaderSoapIn" />
+      <wsdl:output message="tns:TestIRISTaskHeaderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRoles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates the default mtt task header for IRIS.</wsdl:documentation>
+      <wsdl:input message="tns:GetAvailableRolesSoapIn" />
+      <wsdl:output message="tns:GetAvailableRolesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TaskTrackerHttpGet">
+    <wsdl:operation name="CreateMTTTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new mtt task header record.</wsdl:documentation>
+      <wsdl:input message="tns:CreateMTTTaskHeaderHttpGetIn" />
+      <wsdl:output message="tns:CreateMTTTaskHeaderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateIRISTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new mtt task header record.</wsdl:documentation>
+      <wsdl:input message="tns:CreateIRISTaskHeaderHttpGetIn" />
+      <wsdl:output message="tns:CreateIRISTaskHeaderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestIRISTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates the default mtt task header for IRIS.</wsdl:documentation>
+      <wsdl:input message="tns:TestIRISTaskHeaderHttpGetIn" />
+      <wsdl:output message="tns:TestIRISTaskHeaderHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRoles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates the default mtt task header for IRIS.</wsdl:documentation>
+      <wsdl:input message="tns:GetAvailableRolesHttpGetIn" />
+      <wsdl:output message="tns:GetAvailableRolesHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TaskTrackerHttpPost">
+    <wsdl:operation name="CreateMTTTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new mtt task header record.</wsdl:documentation>
+      <wsdl:input message="tns:CreateMTTTaskHeaderHttpPostIn" />
+      <wsdl:output message="tns:CreateMTTTaskHeaderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateIRISTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a new mtt task header record.</wsdl:documentation>
+      <wsdl:input message="tns:CreateIRISTaskHeaderHttpPostIn" />
+      <wsdl:output message="tns:CreateIRISTaskHeaderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestIRISTaskHeader">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates the default mtt task header for IRIS.</wsdl:documentation>
+      <wsdl:input message="tns:TestIRISTaskHeaderHttpPostIn" />
+      <wsdl:output message="tns:TestIRISTaskHeaderHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRoles">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates the default mtt task header for IRIS.</wsdl:documentation>
+      <wsdl:input message="tns:GetAvailableRolesHttpPostIn" />
+      <wsdl:output message="tns:GetAvailableRolesHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TaskTrackerSoap" type="tns:TaskTrackerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateMTTTaskHeader">
+      <soap:operation soapAction="http://MTT/CreateMTTTaskHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateIRISTaskHeader">
+      <soap:operation soapAction="http://MTT/CreateIRISTaskHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestIRISTaskHeader">
+      <soap:operation soapAction="http://MTT/TestIRISTaskHeader" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRoles">
+      <soap:operation soapAction="http://MTT/GetAvailableRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskTrackerSoap12" type="tns:TaskTrackerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateMTTTaskHeader">
+      <soap12:operation soapAction="http://MTT/CreateMTTTaskHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateIRISTaskHeader">
+      <soap12:operation soapAction="http://MTT/CreateIRISTaskHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestIRISTaskHeader">
+      <soap12:operation soapAction="http://MTT/TestIRISTaskHeader" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRoles">
+      <soap12:operation soapAction="http://MTT/GetAvailableRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskTrackerHttpGet" type="tns:TaskTrackerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CreateMTTTaskHeader">
+      <http:operation location="/CreateMTTTaskHeader" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateIRISTaskHeader">
+      <http:operation location="/CreateIRISTaskHeader" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestIRISTaskHeader">
+      <http:operation location="/TestIRISTaskHeader" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRoles">
+      <http:operation location="/GetAvailableRoles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TaskTrackerHttpPost" type="tns:TaskTrackerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CreateMTTTaskHeader">
+      <http:operation location="/CreateMTTTaskHeader" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateIRISTaskHeader">
+      <http:operation location="/CreateIRISTaskHeader" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestIRISTaskHeader">
+      <http:operation location="/TestIRISTaskHeader" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableRoles">
+      <http:operation location="/GetAvailableRoles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TaskTracker">
+    <wsdl:port name="TaskTrackerSoap" binding="tns:TaskTrackerSoap">
+      <soap:address location="http://gpitasktracker.graphicpkg.com/webservices/tasktracker.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskTrackerSoap12" binding="tns:TaskTrackerSoap12">
+      <soap12:address location="http://gpitasktracker.graphicpkg.com/webservices/tasktracker.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskTrackerHttpGet" binding="tns:TaskTrackerHttpGet">
+      <http:address location="http://gpitasktracker.graphicpkg.com/webservices/tasktracker.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TaskTrackerHttpPost" binding="tns:TaskTrackerHttpPost">
+      <http:address location="http://gpitasktracker.graphicpkg.com/webservices/tasktracker.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

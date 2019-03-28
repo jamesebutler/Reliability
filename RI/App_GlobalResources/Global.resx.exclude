@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAddNew" xml:space="preserve">
+    <value>Add a New Template</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnCopySelected" xml:space="preserve">
+    <value>Copy Selected</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnExcel" xml:space="preserve">
+    <value>Export to Excel</value>
+    <comment>Export to Excel Button</comment>
+  </data>
+  <data name="btnFirst" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="btnlast" xml:space="preserve">
+    <value>Last</value>
+  </data>
+  <data name="btnNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="btnPrev" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="btnReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="btnUpdate" xml:space="preserve">
+    <value>View/Update</value>
+    <comment>View/Update Button</comment>
+  </data>
+  <data name="lblActionItemListing" xml:space="preserve">
+    <value>Action Item Listing</value>
+  </data>
+  <data name="lblActionItems" xml:space="preserve">
+    <value>Action Items</value>
+  </data>
+  <data name="lblArea" xml:space="preserve">
+    <value>Area</value>
+    <comment>Area Label</comment>
+  </data>
+  <data name="lblBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="lblBusinessUnit" xml:space="preserve">
+    <value>Business Unit</value>
+    <comment>Business Unit Label</comment>
+  </data>
+  <data name="lblCareRoute" xml:space="preserve">
+    <value>Care Route</value>
+  </data>
+  <data name="lblChartType" xml:space="preserve">
+    <value>Chart Type</value>
+  </data>
+  <data name="lblCopyRight" xml:space="preserve">
+    <value>© 2018 Graphic Packaging International. All rights reserved.</value>
+  </data>
+  <data name="lblCriticality" xml:space="preserve">
+    <value>Criticality</value>
+  </data>
+  <data name="lblCurrentInspectionList" xml:space="preserve">
+    <value>Current Inspection List</value>
+  </data>
+  <data name="lblDateRange" xml:space="preserve">
+    <value>Date range</value>
+  </data>
+  <data name="lblDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblDivision" xml:space="preserve">
+    <value>Division</value>
+  </data>
+  <data name="lblEquimentCareUpdateHeader" xml:space="preserve">
+    <value>Equipment Care Optimization Inspection Tasks</value>
+  </data>
+  <data name="lblEquipInfo" xml:space="preserve">
+    <value>Equipment Information</value>
+  </data>
+  <data name="lblEquipmentCareHeader" xml:space="preserve">
+    <value>Equipment Care Optimization  </value>
+  </data>
+  <data name="lblEquipmentClass" xml:space="preserve">
+    <value>Equipment Class</value>
+  </data>
+  <data name="lblEquipmentDesc" xml:space="preserve">
+    <value>Equipment Description</value>
+  </data>
+  <data name="lblEquipmentid" xml:space="preserve">
+    <value>FUNCTIONAL LOCATION</value>
+  </data>
+  <data name="lblEquipmentSize" xml:space="preserve">
+    <value>Equipment Size</value>
+  </data>
+  <data name="lblEquipmentSizesm" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="lblEquipmentType" xml:space="preserve">
+    <value>Equipment Type</value>
+  </data>
+  <data name="lblFacility" xml:space="preserve">
+    <value>Facility</value>
+    <comment>Facility Label</comment>
+  </data>
+  <data name="lblFunctionalLocation" xml:space="preserve">
+    <value>Functional Location</value>
+    <comment>Functional Location Label</comment>
+  </data>
+  <data name="lblFunctionalLocationEquipment" xml:space="preserve">
+    <value>Functional Location/Equipment</value>
+    <comment>Functional Location Label</comment>
+  </data>
+  <data name="lblGridTitleInstructions" xml:space="preserve">
+    <value>Click on Equipment to manage routine equipment care.  Click on Column Heading to Sort</value>
+  </data>
+  <data name="lblHeaderAction" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="lblHeaderFrequency" xml:space="preserve">
+    <value>Frequency Desc</value>
+  </data>
+  <data name="lblHeaderLowerLimit" xml:space="preserve">
+    <value>Lower Limit</value>
+  </data>
+  <data name="lblHeaderOpFlag" xml:space="preserve">
+    <value>Up?</value>
+  </data>
+  <data name="lblHeaderReferenceMaterial" xml:space="preserve">
+    <value>Reference Material</value>
+  </data>
+  <data name="lblHeaderResponse" xml:space="preserve">
+    <value>Response</value>
+  </data>
+  <data name="lblHeaderRouteDesc" xml:space="preserve">
+    <value>Route Desc</value>
+  </data>
+  <data name="lblHeaderTarget" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="lblHeaderTask" xml:space="preserve">
+    <value>Task</value>
+  </data>
+  <data name="lblHeaderTools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="lblHeaderUpperLimit" xml:space="preserve">
+    <value>Upper Limit</value>
+  </data>
+  <data name="lblIncidentStatus" xml:space="preserve">
+    <value>Incident Status</value>
+  </data>
+  <data name="lblIncidentType" xml:space="preserve">
+    <value>Incident Type</value>
+  </data>
+  <data name="lblLimits" xml:space="preserve">
+    <value>Limits</value>
+  </data>
+  <data name="lblLine" xml:space="preserve">
+    <value>Line</value>
+    <comment>Line Label</comment>
+  </data>
+  <data name="lblLineBreak" xml:space="preserve">
+    <value>Line Break</value>
+  </data>
+  <data name="lblLoading" xml:space="preserve">
+    <value>Now Loading...</value>
+  </data>
+  <data name="lblManufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="lblModel" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="lblNorecordsfound" xml:space="preserve">
+    <value>No Records Found!  Please modify your search criteria and try again.</value>
+  </data>
+  <data name="lblNoTemplates" xml:space="preserve">
+    <value>There are currently no templates available for the selected equipment.</value>
+  </data>
+  <data name="lblPageOf" xml:space="preserve">
+    <value>Page {0} of {1}</value>
+  </data>
+  <data name="lblPerson" xml:space="preserve">
+    <value>Person</value>
+  </data>
+  <data name="lblRCFAStatus" xml:space="preserve">
+    <value>RCFA Status</value>
+  </data>
+  <data name="lblReport" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="lblReportParameter" xml:space="preserve">
+    <value>Report Parameter</value>
+  </data>
+  <data name="lblReportParameterType" xml:space="preserve">
+    <value>Parameter Type</value>
+  </data>
+  <data name="lblReportSortValue" xml:space="preserve">
+    <value>Sort Order</value>
+  </data>
+  <data name="lblSessionTimeOut" xml:space="preserve">
+    <value>&lt;center&gt;&lt;h2&gt;Session Timed Out&lt;/h2&gt;&lt;/center&gt;  &lt;p&gt;Click &lt;a href='Default.aspx'&gt;here&lt;/a&gt; to start over.&lt;/p&gt;</value>
+  </data>
+  <data name="lblShowAllTemplates" xml:space="preserve">
+    <value>Show all tasks</value>
+  </data>
+  <data name="lblShowTemplates" xml:space="preserve">
+    <value>Show tasks for selected equipment</value>
+  </data>
+  <data name="lblSite" xml:space="preserve">
+    <value>SITE</value>
+  </data>
+  <data name="lblStandardInspectionTask" xml:space="preserve">
+    <value>Standard Inspection Task</value>
+  </data>
+  <data name="lblTitleDescription" xml:space="preserve">
+    <value>Title/Description Search</value>
+    <comment>Title/Description Search Label</comment>
+  </data>
+  <data name="lblTitleInstructions" xml:space="preserve">
+    <value>Select criteria in listed pull down menus and click on View button.</value>
+  </data>
+  <data name="lblTitleInstructionsHidden" xml:space="preserve">
+    <value>Select criteria in listed pull down menus and click on View button.  (Display Search)</value>
+  </data>
+  <data name="lblTooManyRecords" xml:space="preserve">
+    <value>Too Many Records Founds!  Please modify your search criteria and try again.</value>
+  </data>
+</root>

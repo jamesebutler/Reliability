@@ -1,0 +1,203 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" 
+ xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>ANEMA R vs R rev Jan 4 2008</title>
+<style type="text/css">
+	 v\:* { behavior: url(#default#VML); }
+</style>
+
+<script src="vml_1.js" type="text/jscript" language="jscript"></script>
+
+<script type="text/jscript" language="jscript">
+
+	var pageID = 0;
+	var viewMgr = null;
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+	function getPNZ()
+	{
+		var rawHTML = VMLDiv.innerHTML;
+		var strReturn = ""
+		
+		strReturn = rawHTML.slice( rawHTML.indexOf( '<v:group' ), rawHTML.indexOf( "</v:shape>" ) );
+		strReturn += "</v:shape></v:group>\n";
+				
+		return strReturn;
+	}
+	
+	function load()
+	{
+		viewMgr = new parent.CViewMgr("ConvertedImage", "arrowDiv");
+
+		viewMgr.put_Location = ViewMgrSetVMLLocation;
+
+
+		viewMgr.visBBoxLeft = 0.123333;
+		viewMgr.visBBoxRight = 10.630000;
+		viewMgr.visBBoxBottom = 1.120000;
+		viewMgr.visBBoxTop = 13.641354;
+
+		viewMgr.Zoom = VMLZoomChange;
+		viewMgr.setView= VMLSetView;
+
+		viewMgr.SupportsDetails = true;
+		viewMgr.SupportsSearch = true;
+
+		parent.viewMgr = viewMgr;
+
+		fit();
+	}
+
+	function unload()
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+
+	function fit()
+	{
+		if(parent.frmToolbar)
+		{
+			if (parent.g_WidgetsLoaded)
+			{
+				var zoom100 = parent.frmToolbar.document.all('a100');
+				if (zoom100)
+				{
+					parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+					zoom100.click();
+				}
+				else
+				{
+					parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+					viewMgr.Zoom(100);
+				}
+			}
+			else
+			{
+				window.setTimeout("fit()", 500);
+			}
+		}	
+		else
+		{
+			parent.viewMgr.PostZoomProcessing = PostZoomProcessing;
+			viewMgr.Zoom(100);
+		}
+	}
+
+	function PostZoomProcessing (newZoomLevel)
+	{
+		parent.viewMgr.PostZoomProcessing = null;
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.viewMgr.getPNZ = getPNZ;
+		parent.CurPageUpdate (pageIndex);
+	}
+
+
+	
+	var isUpLevel = parent.isUpLevel;
+	var OnShapeClick = parent.OnShapeClick;
+	var OnShapeKey = parent.OnShapeKey;
+	var UpdateTooltip = parent.UpdateTooltip;
+	var clickMenu = parent.clickMenu;
+	var toggleMenuDiv = parent.toggleMenuDiv;
+	var toggleMenuLink = parent.toggleMenuLink;
+	var GoToPage = parent.GoToPage;
+
+	window.onload = load;
+	window.onunload = unload;
+	document.onclick = clickMenu;
+
+
+
+
+</script>
+
+</head>
+
+<body style="MARGIN:10px" onresize="VMLOnResize();" onscroll="VMLOnScroll();">
+
+<div id="arrowdiv" style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+<img id="arrowgif" alt="Shows the location of the selected shape" src="arrow.gif"/>
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+
+
+
+
+<div id="VMLDiv" >
+
+
+<v:group  id="ConvertedImage" style="width:3.356399in;height:4.000000in;position:absolute;visibility=hidden;" coordSize="1678,2000" coordOrigin="-1000,-1000" >
+
+<v:shapetype 
+  id="VISSHAPE"
+  target="_parent"
+  coordsize="1678,2000"
+  coordorigin="-1000,-1000"
+  stroked="f"
+  strokecolor="red"
+  filled="t"
+>
+<v:fill opacity="0.0"/>
+</v:shapetype>
+
+
+<v:shape style="top:-1000.0;left:-1000.0;width:1678.2;height:2000.0;position:absolute" coordSize="1678,2000" coordOrigin="-1000,-1000" >
+<v:imagedata src="vml_1.emz"/>
+</v:shape>
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Is the existing winding integrity good for minimum 20 year..." origTitle="Is the existing winding integrity good for minimum 20 year..."  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m 531,-675 l 564,-700 l 528,-727 l 528,-734 l 519,-734 l 403,-822 l 288,-734 l 283,-734 l 283,-731 l 242,-700 l 280,-671 l 280,-668 l 284,-668 l 403,-578 l 522,-668 l 531,-668 l 531,-675xe" onmouseover="UpdateTooltip(this,0,12)" onclick="OnShapeClick(0,12)" onfocus="UpdateTooltip(this,0,12);" onkeyup="OnShapeKey(0,12)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Motor must be rewound" origTitle="Motor must be rewound"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m 104,-318 l 107,-318 l 107,-342 l 14,-342 l 14,-320 l 12,-320 l 12,-297 l 104,-297 l 104,-318xe" onmouseover="UpdateTooltip(this,0,21)" onclick="OnShapeClick(0,21)" onfocus="UpdateTooltip(this,0,21);" onkeyup="OnShapeKey(0,21)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Motor must be rewound" origTitle="Motor must be rewound"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m -2,-258 l -2,-378 l -2,-378 l -12,-378 l -12,-258xe" onmouseover="UpdateTooltip(this,0,21)" onclick="OnShapeClick(0,21)" onfocus="UpdateTooltip(this,0,21);" onkeyup="OnShapeKey(0,21)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Motor must be rewound" origTitle="Motor must be rewound"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m 118,-258 l 118,-378 l 118,-378 l 108,-378 l 108,-258xe" onmouseover="UpdateTooltip(this,0,21)" onclick="OnShapeClick(0,21)" onfocus="UpdateTooltip(this,0,21);" onkeyup="OnShapeKey(0,21)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Are there any extenuating circumstances such as delivery,..." origTitle="Are there any extenuating circumstances such as delivery,..."  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m 12,-679 l 40,-700 l -15,-741 l -15,-745 l -20,-745 l -121,-821 l -283,-700 l -121,-578 l 12,-679 l 12,-679 l 12,-679xe" onmouseover="UpdateTooltip(this,0,29)" onclick="OnShapeClick(0,29)" onfocus="UpdateTooltip(this,0,29);" onkeyup="OnShapeKey(0,29)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Can the motor be rewound (with good laminations that have no..." origTitle="Can the motor be rewound (with good laminations that have no..."  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m -296,-137 l -484,-278 l -673,-137 l -674,-137 l -674,-136 l -719,-102 l -484,73 l -250,-102 l -290,-132 l -290,-137 l -296,-137xe" onmouseover="UpdateTooltip(this,0,36)" onclick="OnShapeClick(0,36)" onfocus="UpdateTooltip(this,0,36);" onkeyup="OnShapeKey(0,36)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Repair Motor to IP spec 3692 (latest version)" origTitle="Repair Motor to IP spec 3692 (latest version)"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m -201,-405 l -42,-405 l -42,-485 l -201,-485 l -201,-405xe" onmouseover="UpdateTooltip(this,0,28)" onclick="OnShapeClick(0,28)" onfocus="UpdateTooltip(this,0,28);" onkeyup="OnShapeKey(0,28)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Replace Motor" origTitle="Replace Motor"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m -997,-82 l -838,-82 l -838,-122 l -997,-122 l -997,-82xe" onmouseover="UpdateTooltip(this,0,8)" onclick="OnShapeClick(0,8)" onfocus="UpdateTooltip(this,0,8);" onkeyup="OnShapeKey(0,8)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="" origTitle=""  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m 21,-944 l 63,-944 l 85,-944 l 351,-944 l 351,-998 l 85,-998 l 63,-998 l -594,-998 l -594,-944 l -264,-944 l -264,-917 l -172,-917 l -159,-917 l -65,-917 l -40,-917 l -28,-917 l 21,-917 l 21,-944xe" onmouseover="UpdateTooltip(this,0,52)" onclick="OnShapeClick(0,52)" onfocus="UpdateTooltip(this,0,52);" onkeyup="OnShapeKey(0,52)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Repair Motor to IP spec 3692 (latest version)" origTitle="Repair Motor to IP spec 3692 (latest version)"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m -957,311 l -798,311 l -798,231 l -957,231 l -957,311xe" onmouseover="UpdateTooltip(this,0,46)" onclick="OnShapeClick(0,46)" onfocus="UpdateTooltip(this,0,46);" onkeyup="OnShapeKey(0,46)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Are there other extenuating circumstances(2) that would prevent..." origTitle="Are there other extenuating circumstances(2) that would prevent..."  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m 550,105 l 599,68 l 547,29 l 547,23 l 539,23 l 515,5 l 515,2 l 511,2 l 403,-79 l 267,23 l 265,23 l 265,25 l 207,68 l 261,109 l 261,111 l 264,111 l 403,216 l 543,111 l 550,111 l 550,105xe" onmouseover="UpdateTooltip(this,0,40)" onclick="OnShapeClick(0,40)" onfocus="UpdateTooltip(this,0,40);" onkeyup="OnShapeKey(0,40)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Replace Motor" origTitle="Replace Motor"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m 324,489 l 483,489 l 483,449 l 324,449 l 324,489xe" onmouseover="UpdateTooltip(this,0,48)" onclick="OnShapeClick(0,48)" onfocus="UpdateTooltip(this,0,48);" onkeyup="OnShapeKey(0,48)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Is repair cost more than 70% of new motor cost?" origTitle="Is repair cost more than 70% of new motor cost?"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m -103,247 l -181,189 l -291,271 l -181,353 l -72,271 l -103,248 l -103,247 l -103,247xe" onmouseover="UpdateTooltip(this,0,50)" onclick="OnShapeClick(0,50)" onfocus="UpdateTooltip(this,0,50);" onkeyup="OnShapeKey(0,50)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Does motor repair per IP spec 3692 (latest version) meet repair..." origTitle="Does motor repair per IP spec 3692 (latest version) meet repair..."  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m -412,247 l -532,157 l -685,271 l -532,386 l -380,271 l -409,249 l -409,247 l -412,247xe" onmouseover="UpdateTooltip(this,0,3)" onclick="OnShapeClick(0,3)" onfocus="UpdateTooltip(this,0,3);" onkeyup="OnShapeKey(0,3)"/> 
+
+<v:shape type="#VISSHAPE"   tabindex="1" title="Replace Motor" origTitle="Replace Motor"  style="top:-1000;left:-1000;width:1678;height:2000;position:absolute" path=" m -612,509 l -453,509 l -453,469 l -612,469 l -612,509xe" onmouseover="UpdateTooltip(this,0,10)" onclick="OnShapeClick(0,10)" onfocus="UpdateTooltip(this,0,10);" onkeyup="OnShapeKey(0,10)"/> 
+
+</v:group>
+
+
+
+</div>
+
+
+
+</body>
+</html>
+

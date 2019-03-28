@@ -1,0 +1,48 @@
+<%@ Page Language="VB" MasterPageFile="~/RI.master" AutoEventWireup="false" CodeFile="ViewList.aspx.vb"
+	Inherits="RI_ViewList" EnableTheming="true" StylesheetTheme="RIBlackGold" Theme="RIBlackGold"
+	EnableEventValidation="false" Title="International Paper: Reliability Reporting"
+	Trace="false" MaintainScrollPositionOnPostback="true" %>
+
+<%@ MasterType VirtualPath="~/RI.master" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="_cphMain" runat="Server">
+	<div>
+		<asp:Panel ID="_pnlViewSearch" runat="server">
+			<asp:Label ID="_lblRecordCount" runat="server" Text="Record Count: " BackColor="Black"
+				ForeColor="White"></asp:Label>
+			<asp:Label ID="_lblRecCount" runat="server" Text="0" BackColor="Black" ForeColor="White"></asp:Label>
+			<br />
+			<asp:Panel ID="_pnlIncidentListing" Width="100%" Visible="false" runat="server" ScrollBars="None">
+				<asp:GridView CssClass="Border" Width="100%" BorderColor="Black" BorderWidth="2"
+					ID="_gvIncidentListing" runat="server" AutoGenerateColumns="False" DataKeyNames="RINUMBER"
+					EnableViewState="false" AllowSorting="false">
+					<Columns>
+						<asp:BoundField DataField="EVENTDATE" HeaderText="Event Date" SortExpression="EVENTDATE"
+							DataFormatString="{0:d}" HtmlEncode="false" />
+						<asp:BoundField DataField="SITENAME" HeaderText="Site" SortExpression="SITENAME" />
+						<asp:BoundField DataField="RISUPERAREA" HeaderText="Business Unit" SortExpression="RISUPERAREA" />
+						<asp:BoundField DataField="SUBAREA" HeaderText="Area" SortExpression="SUBAREA" />
+						<asp:BoundField DataField="AREA" HeaderText="Line/System" SortExpression="AREA" />
+						<asp:BoundField DataField="RINUMBER" HeaderText="RI Number" SortExpression="RINUMBER" />
+						<asp:TemplateField HeaderText="Incident Title">
+							<ItemTemplate>
+								<a target=_top href="Javascript:viewIncident('<%#string.format(Page.ResolveClientUrl("~/RI/EnterNewRI.aspx?RINumber={0}"),EVAL("RINumber")) %>');">
+										<%#Eval("Incident")%>
+									</a> 
+							</ItemTemplate>
+							
+						</asp:TemplateField>
+						
+						<asp:HyperLinkField DataTextField="RCFA_TYPE" HeaderText="Type (Executive Summary)"
+							SortExpression="RCFA_TYPE" DataNavigateUrlFields="RINUMBER" DataNavigateUrlFormatString="../../CEReporting/frmCrystalReport.aspx?Report=ExecutiveSummary&RINumber={0}"
+							Target="_blank" />
+						<%--<asp:BoundField DataField="COST" HeaderText="Cost" SortExpression="COST" ItemStyle-HorizontalAlign="Right"
+							DataFormatString="{0:c0}" HtmlEncode="false" />
+						<asp:BoundField DataField="TOTCOST" HeaderText="Financial Impact" SortExpression="TOTCOST"
+							ItemStyle-HorizontalAlign="Right" DataFormatString="{0:c0}" HtmlEncode="false" />--%>
+					</Columns>
+					<HeaderStyle CssClass="LockHeader" />
+				</asp:GridView>
+			</asp:Panel>
+		</asp:Panel>
+	</div>
+</asp:Content>
